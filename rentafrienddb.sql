@@ -56,12 +56,12 @@ CREATE TABLE IF NOT EXISTS `rentafrienddb`.`user` (
   PRIMARY KEY (`id`),
   INDEX `id_idx` (`address_id` ASC),
   INDEX `id_idx1` (`profile_id` ASC),
-  CONSTRAINT `id`
+  CONSTRAINT `user_address_fk`
     FOREIGN KEY (`address_id`)
     REFERENCES `rentafrienddb`.`address` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `id`
+  CONSTRAINT `user_profile_fk`
     FOREIGN KEY (`profile_id`)
     REFERENCES `rentafrienddb`.`profile` (`id`)
     ON DELETE NO ACTION
@@ -83,12 +83,12 @@ CREATE TABLE IF NOT EXISTS `rentafrienddb`.`event` (
   PRIMARY KEY (`id`),
   INDEX `id_idx` (`address_id` ASC),
   INDEX `id_idx1` (`owner_id` ASC),
-  CONSTRAINT `id`
+  CONSTRAINT `event_address_fk`
     FOREIGN KEY (`address_id`)
     REFERENCES `rentafrienddb`.`address` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `id`
+  CONSTRAINT `owner_id_fk`
     FOREIGN KEY (`owner_id`)
     REFERENCES `rentafrienddb`.`user` (`id`)
     ON DELETE NO ACTION
@@ -108,12 +108,12 @@ CREATE TABLE IF NOT EXISTS `rentafrienddb`.`event_participant` (
   PRIMARY KEY (`id`),
   INDEX `id_idx` (`user_id` ASC),
   INDEX `id_idx1` (`event_id` ASC),
-  CONSTRAINT `id`
+  CONSTRAINT `user_event_participant_fk`
     FOREIGN KEY (`user_id`)
     REFERENCES `rentafrienddb`.`user` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `id`
+  CONSTRAINT `event_participant_event_fk`
     FOREIGN KEY (`event_id`)
     REFERENCES `rentafrienddb`.`event` (`id`)
     ON DELETE NO ACTION
