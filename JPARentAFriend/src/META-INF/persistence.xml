@@ -5,8 +5,10 @@
     <persistence-unit name="RentAFriend">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-       <!--  <class>entities.Todo</class>
-        <class>entities.User</class> -->
+       <class>entities.Profile</class>
+        <class>entities.User</class>
+        <class>entities.Address</class>
+        <class>entities.Event</class>
 
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sdvid" />
