@@ -1,9 +1,12 @@
 package test;
 
+import java.sql.Date;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import entities.Address;
 import entities.Event;
 
 public class eventTest {
@@ -16,11 +19,17 @@ public class eventTest {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("RentAFriend");
 		EntityManager em = emf.createEntityManager();
 		
-		Event event = em.find(Event.class, 1);
-		System.out.println(event.getAddress().getCity());
+//		EventDAO dao = new EventDAO();
+//		Date date = new Date(2017, 03, 12);
+//		Address address = new Address();
+//		Event event = new Event("Drinking", 1, date, address);
+//		//Event event = em.find(Event.class, 1);
+//		event.setActivity("Drinking");
+//		System.out.println(event);
 
 		em.close();
 		emf.close();
 	}
 
+	
 }
