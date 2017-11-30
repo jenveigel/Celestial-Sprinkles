@@ -20,4 +20,23 @@ public class EventDAO {
 		emf.close();
 		return event;
 	}
+	
+	public boolean delete(int id) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("RentAFriend");
+		EntityManager em = emf.createEntityManager();
+		Event event = em.find(Event.class, id);
+		
+		em.getTransaction().begin();
+		em.remove(event);
+		em.getTransaction().commit();
+
+		if (em.find(Event.class, id) == null) {
+            return true;
+        } else
+
+            em.close();
+            emf.close();
+        return false;
+
+	}
 }
