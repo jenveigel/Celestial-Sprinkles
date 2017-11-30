@@ -15,17 +15,17 @@ public class UserController {
 
 	@Autowired
 	private UserDAO userDAO;
-	
+
 	@RequestMapping(path = "createUser.do", method = RequestMethod.GET)
 	public String createUser() {
 		return "createAccount.jsp";
 	}
-	
+
 	@RequestMapping(path="addUser.do", method = RequestMethod.POST)
-	public ModelAndView addUser(String userName , String password) {
+	public ModelAndView addUser(String userName, String password) {
 		ModelAndView mv = new ModelAndView();
-		userDAO.createUser(userName, password, "", "");
+		userDAO.createUser(userName, password, "","");
 		return mv;
 	}
-	
+
 }
