@@ -36,7 +36,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `user` ;
 
 CREATE TABLE IF NOT EXISTS `user` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `user_name` VARCHAR(60) NOT NULL,
   `password` VARCHAR(60) NOT NULL,
   `profile_id` INT NULL,
@@ -70,9 +70,9 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `event` ;
 
 CREATE TABLE IF NOT EXISTS `event` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `activity` VARCHAR(120) NOT NULL,
-  `owner_id` INT NOT NULL,
+  `owner_id` INT UNSIGNED NOT NULL,
   `time` DATETIME NOT NULL,
   `address_id` INT NOT NULL,
   PRIMARY KEY (`id`),
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `event` (
     REFERENCES `address` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `owner_id_fk`
+  CONSTRAINT `owner_event_fk`
     FOREIGN KEY (`owner_id`)
     REFERENCES `user` (`id`)
     ON DELETE NO ACTION
@@ -98,12 +98,11 @@ DROP TABLE IF EXISTS `event_participant` ;
 
 CREATE TABLE IF NOT EXISTS `event_participant` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `event_id` INT NULL,
-  `user_id` INT NULL,
+  `user_id` INT UNSIGNED NOT NULL,
+  `event_id` INT UNSIGNED NOT NULL,
+  INDEX `event_participant_event_fk_idx` (`event_id` ASC),
   PRIMARY KEY (`id`),
-  INDEX `id_idx` (`user_id` ASC),
-  INDEX `id_idx1` (`event_id` ASC),
-  CONSTRAINT `user_event_participant_fk`
+  CONSTRAINT `user_event_participant_user_fk`
     FOREIGN KEY (`user_id`)
     REFERENCES `user` (`id`)
     ON DELETE NO ACTION
@@ -178,8 +177,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `rentafrienddb`;
-INSERT INTO `event_participant` (`id`, `event_id`, `user_id`) VALUES (1, 1, 1);
-INSERT INTO `event_participant` (`id`, `event_id`, `user_id`) VALUES (2, 2, 2);
+INSERT INTO `event_participant` (`id`, `user_id`, `event_id`) VALUES (DEFAULT, 1, 1);
+INSERT INTO `event_participant` (`id`, `user_id`, `event_id`) VALUES (DEFAULT, 2, 2);
 
 COMMIT;
-
