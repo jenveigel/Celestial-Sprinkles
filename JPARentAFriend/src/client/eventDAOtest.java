@@ -1,6 +1,6 @@
 package client;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -18,18 +18,27 @@ public class eventDAOtest {
 		
 		EventDAO dao = new EventDAO();
 		Event event = new Event();
-		
-		event.setActivity("Fighting");
-		Address add = em.find(Address.class, 1);
-		event.setAddress(add);
-		Date date = new Date(2017, 03, 12);
+//		
+//
+//======Create Test============================		
+		Date date = new Date();
 		event.setDateTime(date);
 		User user = new User();
+		event.setActivity("Drinking");
 		event.setOwnerId(em.find(User.class, 1));
+		Address add = new Address();
+		add = em.find(Address.class, 1);
+		event.setAddress(add);
 		dao.create(event);
+//==============================================
+		
+//		=======Delete======================
+//		System.out.println(dao.delete(3));
+//		===================================
+		
+		
 		em.close();
 		emf.close();
-//		System.out.println(em.find(Address.class, 1));
 //		System.out.println(user.getUserName());
 	}
 }
