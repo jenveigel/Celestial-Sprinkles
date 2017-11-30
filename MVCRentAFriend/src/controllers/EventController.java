@@ -19,5 +19,11 @@ public class EventController {
 		mv.setViewName("createevent.jsp");
 		return mv;
 	}
+	@RequestMapping(path="attendEvent.do", method=RequestMethod.GET)
+	public ModelAndView attendHome() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("attend.jsp");
+		return mv;
+	}
 	
 }

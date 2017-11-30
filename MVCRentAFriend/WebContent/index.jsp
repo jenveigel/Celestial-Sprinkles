@@ -18,10 +18,13 @@
 <title>Welcome</title>
 </head>
 <body>
-	<h1>Hello World</h1>
+	<h1>Welcome</h1>
 
 	<form action="createEvent.do" method="get">
 	<input type="submit" value="Create Event"></input>
+	</form>
+	<form action="attendEvent.do" method="get">
+	<input type="submit" value="Attend Event"></input>
 	</form>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
