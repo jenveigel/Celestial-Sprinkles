@@ -23,6 +23,8 @@ public class Event {
 	@Column(name="time")
 	private Date dateTime;
 	
+	@Column(name="address_id")
+	private Address address;
 	
 	//getters and setters
 
@@ -52,6 +54,14 @@ public class Event {
 
 	public int getId() {
 		return id;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 	@Override
