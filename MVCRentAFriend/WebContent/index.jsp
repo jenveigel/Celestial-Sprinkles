@@ -20,12 +20,37 @@
 <body>
 	<h1>Welcome</h1>
 
-	<form action="createEvent.do" method="get">
+	<%-- <form action="createEvent.do" method="get">
+	<input type="submit" value="Create Event"></input>
+	</form>
+	<form action="attendEvent.do" method="get">
+	<input type="submit" value="Attend Event"></input>
+	</form> --%>
+	
+	
+	<!-- ======================================= -->
+	
+	
+	<div class="card text-white bg-dark mb-3 container center_div" style="max-width: 20rem;">
+  <div class="card-header">WELCOME</div>
+  <div class="card-body">
+    <p class="card-text"><div class="row justify-content-center"> 
+
+ <form action="createEvent.do" method="get">
 	<input type="submit" value="Create Event"></input>
 	</form>
 	<form action="attendEvent.do" method="get">
 	<input type="submit" value="Attend Event"></input>
 	</form>
+
+</div>
+<p class="row justify-content-center">
+<a href="index.do"> Return</a>
+</p></p>
+  </div>
+</div>
+	
+	<!-- ================================================== -->
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
