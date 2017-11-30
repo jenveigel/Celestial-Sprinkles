@@ -19,20 +19,22 @@ public class UserDAOImpl implements UserDAO {
 	private EntityManager em;
 
 	@Override
-	public User createUser(String username, String password) {
+	public boolean createUser(String username, String password) {
 		try {
-			
+			User user = new User();
+			user.setUserName(username);
+			user.setPassword(password);
+			Profile profile = new Profile();
+			profile.setFirstName("jake");
+			profile.setLastName("tooTime");
+			user.setProfile(profile);
+			em.persist(user);
+			em.flush();
+			return true;
 		} catch(Exception e) {
-			
+			e.printStackTrace();
+			return false;
 		}
-		User user = new User();
-		user.setUserName(username);
-		user.setPassword(password);
-		System.out.println(user);
-		em.persist(user);
-		em.flush();
-		//System.out.println(user);
-		return user;
 	}
 
 	@Override

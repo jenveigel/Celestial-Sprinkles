@@ -7,7 +7,7 @@ import entities.Profile;
 import entities.User;
 
 public interface UserDAO {
-	public User createUser(String username, String password);
+	public boolean createUser(String username, String password);
 	public User updateUser(int id, User user);
 	public boolean destroyUserById(int id);
 	public User getUserById(int id);
