@@ -20,16 +20,18 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public User createUser(String username, String password) {
+		try {
+			
+		} catch(Exception e) {
+			
+		}
 		User user = new User();
 		user.setUserName(username);
 		user.setPassword(password);
-		
-		Profile profile = new Profile();
-		em.persist(profile);
-		em.flush();
-		
-		user.setProfile(profile);
+		System.out.println(user);
 		em.persist(user);
+		em.flush();
+		//System.out.println(user);
 		return user;
 	}
 
