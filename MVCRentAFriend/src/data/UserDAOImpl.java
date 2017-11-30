@@ -28,7 +28,7 @@ public class UserDAOImpl implements UserDAO {
 		em.persist(profile);
 		em.flush();
 		
-		user.setProfileId(profile.getId());
+		user.setProfile(profile);
 		em.persist(user);
 		return user;
 	}
@@ -71,14 +71,17 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public List<User> getAllUsersByEvent(Event event) {
-		event.get
-		return null;
+	public List<User> getAllUsersByEvent(int eventId) {
+		String query = "Select e FROM Event e JOIN FETCH e.users WHERE e.id = :eventId";
+		
+		return em.createQuery(query, Event.class)
+				.setParameter("eventId", eventId)
+				.getResultList().get(0).getUsers();
 	}
 
 	@Override
 	public Profile updateProfile(int id, Profile profile) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

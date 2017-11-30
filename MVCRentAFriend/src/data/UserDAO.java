@@ -12,7 +12,7 @@ public interface UserDAO {
 	public boolean destroyUserById(int id);
 	public User getUserById(int id);
 	public List<User> getAllUsers();
-	public List<User> getAllUsersByEvent(Event event);
+	public List<User> getAllUsersByEvent(int eventId);
 	
 
 	public Profile updateProfile(int id, Profile profile);
