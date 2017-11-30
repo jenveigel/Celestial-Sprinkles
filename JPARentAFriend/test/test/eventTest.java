@@ -1,19 +1,21 @@
 package test;
 
-import java.sql.Date;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
 import entities.Event;
 
 public class eventTest {
-	
+
 	private EntityManagerFactory emf;
 	private EntityManager em;
 	private Event event;
-	
+
 	public static void main(String[] args) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("RentAFriend");
 		EntityManager em = emf.createEntityManager();
@@ -46,6 +48,6 @@ public class eventTest {
 		assertEquals("Orlando", event.getAddress().getCity());
 
 	}
-	
-	
+
+
 }

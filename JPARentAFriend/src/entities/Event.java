@@ -23,8 +23,9 @@ public class Event {
 	
 	private String activity;
 	
-	@Column(name="owner_id")
-	private int ownerId;
+	@OneToOne
+	@JoinColumn(name="owner_id")
+	private User owner;
 	
 	@Column(name="time")
 	private Date dateTime;
@@ -51,12 +52,12 @@ public class Event {
 		this.activity = activity;
 	}
 
-	public int getOwnerId() {
-		return ownerId;
+	public User getOwnerId() {
+		return owner;
 	}
 
-	public void setOwnerId(int ownerId) {
-		this.ownerId = ownerId;
+	public void setOwnerId(User owner) {
+		this.owner = owner;
 	}
 
 	public Date getDateTime() {
@@ -80,18 +81,18 @@ public class Event {
 	}
 	
 
-	public Event(String activity, int ownerId, Date dateTime, Address address) {
+	public Event(String activity, User ownerId, Date dateTime, Address address) {
 		super();
 		//this.id = id;  DONT NEED ID BECAUSE ITS AUTO GENERATED.
 		this.activity = activity;
-		this.ownerId = ownerId;
+		this.owner = ownerId;
 		this.dateTime = dateTime;
 		this.address = address;
 	}
 
 	@Override
 	public String toString() {
-		return "Event [id=" + id + ", activity=" + activity + ", ownerId=" + ownerId + ", dateTime=" + dateTime + "]";
+		return "Event [id=" + id + ", activity=" + activity + ", ownerId=" + owner + ", dateTime=" + dateTime + "]";
 	}
 		
 }
