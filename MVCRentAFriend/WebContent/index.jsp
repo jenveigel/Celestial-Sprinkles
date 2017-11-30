@@ -20,9 +20,9 @@
 <body>
 	<h1>Hello World</h1>
 
-	<form:form action="createEvent.do" method="get">
+	<form action="createEvent.do" method="get">
 	<input type="submit" value="Create Event"></input>
-	</form:form>
+	</form>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
