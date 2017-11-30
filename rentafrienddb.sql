@@ -171,3 +171,15 @@ INSERT INTO `event` (`id`, `activity`, `owner_id`, `time`, `address_id`) VALUES 
 INSERT INTO `event` (`id`, `activity`, `owner_id`, `time`, `address_id`) VALUES (2, 'Football Game', 2, '2017-12-1 16:30:00', 2);
 
 COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `event_participant`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `rentafrienddb`;
+INSERT INTO `event_participant` (`id`, `event_id`, `user_id`) VALUES (1, 1, 1);
+INSERT INTO `event_participant` (`id`, `event_id`, `user_id`) VALUES (2, 2, 2);
+
+COMMIT;
+
