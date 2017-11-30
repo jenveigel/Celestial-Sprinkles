@@ -67,20 +67,20 @@ public class EventDAOImpl implements EventDAO {
 
 		@Override
 		public List<Event> getAllEventsByCity(String city) {
-			// TODO Auto-generated method stub
-			return null;
+			String query = "SELECT e FROM Event e WHERE e.address.city = :city";
+			return em.createQuery(query, Event.class).setParameter("city", city).getResultList();
 		}
 
 		@Override
 		public List<Event> getAllEventsByState(String state) {
-			// TODO Auto-generated method stub
-			return null;
+			String query = "SELECT e FROM Event e WHERE e.address.state = :state";
+			return em.createQuery(query, Event.class).setParameter("state", state).getResultList();
 		}
 
 		@Override
 		public List<Event> getAllEventsByActivity(String activity) {
-			// TODO Auto-generated method stub
-			return null;
+			String query = "SELECT e FROM Event e WHERE e.activity = :activity";
+			return em.createQuery(query, Event.class).setParameter("activity", activity).getResultList();
 		}
 		
 }
