@@ -41,9 +41,9 @@ public class UserDAOImplTest {
 	
 	@Test
 	public void test_create_user() {
-		userDao.createUser("jake", "theSnake");
-		//assertEquals("jake",userDao.getUserById(3).getUserName());
-		//assertEquals("theSnake",userDao.getUserById(3).getPassword());
+		userDao.createUser("jake", "theSnake", "jake", "simms");
+		assertEquals("jake", userDao.getUserById(3).getUserName());
+		assertEquals("theSnake", userDao.getUserById(3).getPassword());
 	}
 }
 
