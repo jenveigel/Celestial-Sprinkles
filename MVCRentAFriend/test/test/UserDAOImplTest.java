@@ -12,7 +12,6 @@ import org.junit.Test;
 
 import data.UserDAO;
 import data.UserDAOImpl;
-import entities.User;
 
 public class UserDAOImplTest {
 	private EntityManagerFactory emf;
