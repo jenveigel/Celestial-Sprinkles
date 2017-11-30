@@ -181,3 +181,4 @@ INSERT INTO `event_participant` (`id`, `user_id`, `event_id`) VALUES (DEFAULT, 1
 INSERT INTO `event_participant` (`id`, `user_id`, `event_id`) VALUES (DEFAULT, 2, 2);
 
 COMMIT;
+
