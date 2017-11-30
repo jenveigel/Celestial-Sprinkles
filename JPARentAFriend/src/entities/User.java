@@ -27,7 +27,7 @@ public class User {
 	@ManyToMany(mappedBy = "users")
 	private List<Event> events;
 
-	@OneToOne(cascade = { CascadeType.REMOVE })
+	@OneToOne(cascade = { CascadeType.REMOVE , CascadeType.PERSIST})
 	@JoinColumn(name = "profile_id")
 	private Profile profile;
 

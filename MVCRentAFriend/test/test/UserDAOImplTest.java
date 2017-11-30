@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import data.UserDAO;
 import data.UserDAOImpl;
+import entities.User;
 
 public class UserDAOImplTest {
 	private EntityManagerFactory emf;
@@ -41,8 +42,9 @@ public class UserDAOImplTest {
 	@Test
 	public void test_create_user() {
 		userDao.createUser("jake", "theSnake");
-		assertEquals("",userDao.getAllUsers().get(userDao.getAllUsers().size()-1).getUserName());
-		assertEquals("",userDao.getAllUsers().get(userDao.getAllUsers().size()-1).getPassword());
+//		assertEquals("jake",em.find(User.class, userId).getUserName());
+//		assertEquals("theSnake",userDao.getUserById(userId).getPassword());
+//		userDao.destroyUserById(userId);
 	}
 }
 
