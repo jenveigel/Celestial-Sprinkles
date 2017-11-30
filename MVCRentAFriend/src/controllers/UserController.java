@@ -22,9 +22,9 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="addUser.do", method = RequestMethod.POST)
-	public ModelAndView addUser(@RequestParam("user") User user) {
+	public ModelAndView addUser(String userName, String password) {
 		ModelAndView mv = new ModelAndView();
-		userDAO.createUser(user.getUserName(), user.getPassword(), user.getProfile().getFirstName(), user.getProfile().getLastName());
+		userDAO.createUser(userName, password, "","");
 		return mv;
 	}
 	
