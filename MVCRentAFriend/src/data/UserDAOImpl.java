@@ -42,52 +42,42 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public User destroyUserById(int id) {
+	public boolean destroyUserById(int id) {
 		try {
 			if(em.find(User.class, id) != null) {
 				User deletedUser = em.find(User.class, id);
 				em.remove(deletedUser);
-			}			
-		}
-		catch(Exception){
+				return true;
+			}		
 			
 		}
+		catch(Exception e){
+			e.printStackTrace();
+			return false;
+		}
 		
-		return null;
+		return false;
 	}
 
 	@Override
 	public User getUserById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(User.class, id);
 	}
 
 	@Override
 	public List<User> getAllUsers() {
-		// TODO Auto-generated method stub
-		return null;
+		String query = "SELECT u FROM user u";
+		return em.createQuery(query, User.class).getResultList();
 	}
 
 	@Override
 	public List<User> getAllUsersByEvent(Event event) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Profile createProfile(String firstName, String lastName) {
-		// TODO Auto-generated method stub
+		event.get
 		return null;
 	}
 
 	@Override
 	public Profile updateProfile(int id, Profile profile) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Profile destroyProfileById(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

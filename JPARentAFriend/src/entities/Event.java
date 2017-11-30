@@ -79,6 +79,13 @@ public class Event {
 		this.address = address;
 	}
 	
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
 
 	public Event(String activity, int ownerId, Date dateTime, Address address) {
 		super();

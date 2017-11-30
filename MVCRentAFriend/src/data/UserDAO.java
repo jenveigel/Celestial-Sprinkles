@@ -9,7 +9,7 @@ import entities.User;
 public interface UserDAO {
 	public User createUser(String username, String password);
 	public User updateUser(int id, User user);
-	public User destroyUserById(int id);
+	public boolean destroyUserById(int id);
 	public User getUserById(int id);
 	public List<User> getAllUsers();
 	public List<User> getAllUsersByEvent(Event event);
