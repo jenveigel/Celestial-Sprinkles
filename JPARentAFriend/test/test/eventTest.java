@@ -1,5 +1,7 @@
 package test;
 
+import static org.junit.Assert.assertEquals;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -24,7 +26,7 @@ public class eventTest {
 		System.out.println(event);
 
 		em.close();
-		emf.close();
+		emf.close(); 
 	}
 
 
