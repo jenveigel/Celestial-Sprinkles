@@ -23,11 +23,11 @@ public class User {
 	private String userName;
 
 	private String password;
-	
+
 	@ManyToMany(mappedBy = "users")
 	private List<Event> events;
 
-	@OneToOne(cascade = { CascadeType.REMOVE })
+	@OneToOne(cascade = { CascadeType.REMOVE , CascadeType.PERSIST})
 	@JoinColumn(name = "profile_id")
 	private Profile profile;
 
@@ -57,6 +57,14 @@ public class User {
 
 	public int getId() {
 		return id;
+	}
+
+	public List<Event> getEvents() {
+		return events;
+	}
+
+	public void setEvents(List<Event> events) {
+		this.events = events;
 	}
 
 	@Override

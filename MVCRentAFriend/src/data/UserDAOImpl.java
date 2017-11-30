@@ -20,16 +20,18 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public User createUser(String username, String password) {
+		try {
+			
+		} catch(Exception e) {
+			
+		}
 		User user = new User();
 		user.setUserName(username);
 		user.setPassword(password);
-		
-		Profile profile = new Profile();
-		em.persist(profile);
-		em.flush();
-		
-		user.setProfile(profile);
+		System.out.println(user);
 		em.persist(user);
+		em.flush();
+		//System.out.println(user);
 		return user;
 	}
 
@@ -81,20 +83,26 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public Profile updateProfile(int id, Profile profile) {
-		
-		return null;
+		User user = em.find(User.class, id);
+		Profile updatedProfile = user.getProfile();
+		updatedProfile.setBio(profile.getBio());
+		updatedProfile.setFirstName(profile.getFirstName());
+		updatedProfile.setLastName(profile.getLastName());
+		updatedProfile.setImageURL(profile.getImageURL());
+		return updatedProfile;
 	}
 
 	@Override
 	public Profile getProfileById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(Profile.class, id);
 	}
 
-	@Override
-	public List<Profile> getProfileByKey(String keyword) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public List<Profile> getProfileByKey(String keyword) {
+//		String query = "SELECT p FROM profile pLIKE %:keyword%";
+//		return em.createQuery(query, User.class)
+//				.setParameter("keyword", keyword)
+//				.getResultList();
+//	}
 
 }
