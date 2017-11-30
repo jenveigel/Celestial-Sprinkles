@@ -26,7 +26,8 @@ public class EventDAOImpl implements EventDAO {
 		@Override
 		public Event update(int id, Event event) {
 			Event updatedEvent  = em.find(Event.class, id);
-	
+			updatedEvent.setActivity(event.getActivity());
+			updatedEvent.setDateTime(dateTime);
 			
 			return updatedEvent;
 		}
