@@ -1,25 +1,29 @@
 package entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class User {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	@Column(name="user_name")
+
+	@Column(name = "user_name")
 	private String userName;
-	
+
 	private String password;
-	
-	@Column(name="profile_id")
-	private int profileId;
+
+	@OneToOne(cascade = { CascadeType.REMOVE })
+	@JoinColumn(name = "profile_id")
+	private Profile profile;
 
 	public String getUserName() {
 		return userName;
@@ -37,12 +41,12 @@ public class User {
 		this.password = password;
 	}
 
-	public int getProfileId() {
-		return profileId;
+	public Profile getProfile() {
+		return profile;
 	}
 
-	public void setProfileId(int profileId) {
-		this.profileId = profileId;
+	public void setProfile(Profile profile) {
+		this.profile = profile;
 	}
 
 	public int getId() {
@@ -51,11 +55,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", userName=" + userName + ", password=" + password + ", profileId=" + profileId
-				+ "]";
+		return "User [id=" + id + ", userName=" + userName + ", password=" + password + "]";
 	}
-	
-	
-	
-	
+
 }
