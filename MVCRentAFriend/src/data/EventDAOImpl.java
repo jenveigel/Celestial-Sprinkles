@@ -49,21 +49,20 @@ public class EventDAOImpl implements EventDAO {
 		}
 
 		@Override
-		public Event getEventById(int id) {
-			// TODO Auto-generated method stub
-			return null;
+		public Event getEventById(int id) {	
+			return em.find(Event.class, id);
 		}
 
 		@Override
 		public List<Event> getAllEvents() {
-			// TODO Auto-generated method stub
-			return null;
+			String query = "SELECT e FROM Event e";
+			return em.createQuery(query, Event.class).getResultList();
 		}
 
 		@Override
 		public List<Event> getAllEventsByUserId(int id) {
-			// TODO Auto-generated method stub
-			return null;
+			String query = "SELECT u.events FROM User u JOIN FETCH u.events WHERE u.id = :id";
+			return em.createQuery(query, Event.class).setParameter("id", id).getResultList();
 		}
 
 		@Override
