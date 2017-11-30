@@ -1,12 +1,13 @@
 package test;
 
-import java.sql.Date;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import entities.Address;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
 import entities.Event;
 
 public class eventTest {
@@ -15,21 +16,23 @@ public class eventTest {
 	private EntityManager em;
 	private Event event;
 
-	public static void main(String[] args) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("RentAFriend");
-		EntityManager em = emf.createEntityManager();
+	@Before
+	public void setUp() throws Exception {
+		this.emf = Persistence.createEntityManagerFactory("RentAFriend");
+		this.em = emf.createEntityManager();
+		this.event = em.find(Event.class, 1);
 		
-//		EventDAO dao = new EventDAO();
-//		Date date = new Date(2017, 03, 12);
-//		Address address = new Address();
-//		Event event = new Event("Drinking", 1, date, address);
-//		//Event event = em.find(Event.class, 1);
-//		event.setActivity("Drinking");
-//		System.out.println(event);
-
+	}
+	
+	@After
+	public void tearDown() throws Exception{
 		em.close();
 		emf.close();
 	}
-
+	
+	@Test
+	public void test_Address() {
+		
+	}
 	
 }
