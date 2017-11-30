@@ -80,6 +80,26 @@ public class Event {
 		this.address = address;
 	}
 	
+	public Event() {
+		// TODO Auto-generated constructor stub
+	}
+	
+
+	public User getOwner() {
+		return owner;
+	}
+
+	public void setOwner(User owner) {
+		this.owner = owner;
+	}
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
 
 	public Event(String activity, User ownerId, Date dateTime, Address address) {
 		super();

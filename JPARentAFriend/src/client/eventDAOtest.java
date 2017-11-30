@@ -19,7 +19,7 @@ public class eventDAOtest {
 		EventDAO dao = new EventDAO();
 		Event event = new Event();
 		
-		event.setActivity("Drinking");
+		event.setActivity("Fighting");
 		Address add = em.find(Address.class, 1);
 		event.setAddress(add);
 		Date date = new Date(2017, 03, 12);
