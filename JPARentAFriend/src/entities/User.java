@@ -18,7 +18,7 @@ public class User {
 	
 	private String password;
 	
-	@Column(name="provile_id")
+	@Column(name="profile_id")
 	private int profileId;
 
 	public String getUserName() {
