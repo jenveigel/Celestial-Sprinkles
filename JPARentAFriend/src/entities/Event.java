@@ -36,7 +36,7 @@ public class Event {
 	
 	@ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
 	@JoinTable(
-			name="event_participant", 
+			name="event_participant",
 			joinColumns=@JoinColumn(name="event_id"),
 			inverseJoinColumns=@JoinColumn(name="user_id")
 	)
@@ -80,6 +80,19 @@ public class Event {
 		this.address = address;
 	}
 	
+	public Event() {
+		// TODO Auto-generated constructor stub
+	}
+	
+
+	public User getOwner() {
+		return owner;
+	}
+
+	public void setOwner(User owner) {
+		this.owner = owner;
+	}
+
 	public List<User> getUsers() {
 		return users;
 	}
@@ -95,10 +108,6 @@ public class Event {
 		this.owner = ownerId;
 		this.dateTime = dateTime;
 		this.address = address;
-	}
-	
-	public Event() {
-		
 	}
 
 	@Override
