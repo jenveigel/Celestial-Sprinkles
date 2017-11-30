@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `profile_id` INT NULL,
   PRIMARY KEY (`id`),
   INDEX `id_idx1` (`profile_id` ASC),
+  UNIQUE INDEX `user_name_UNIQUE` (`user_name` ASC),
   CONSTRAINT `user_profile_fk`
     FOREIGN KEY (`profile_id`)
     REFERENCES `profile` (`id`)
@@ -177,8 +178,8 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `rentafrienddb`;
-INSERT INTO `event_participant` (`id`, `user_id`, `event_id`) VALUES (DEFAULT, 1, 1);
-INSERT INTO `event_participant` (`id`, `user_id`, `event_id`) VALUES (DEFAULT, 2, 2);
+INSERT INTO `event_participant` (`id`, `user_id`, `event_id`) VALUES (1, 1, 1);
+INSERT INTO `event_participant` (`id`, `user_id`, `event_id`) VALUES (2, 2, 2);
 
 COMMIT;
 
