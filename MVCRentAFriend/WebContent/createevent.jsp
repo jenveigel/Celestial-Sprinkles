@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,23 +22,17 @@
 			<p class="card-text">
 			<div class="row justify-content-center">
 
-				<form:form action="createEvent.do" method="post" modelAttribute="item">
+				<form action="createEvent.do" method="post" modelAttribute="item">
 
- Event: <form:input path="type" />
-					<form:errors path="type" />
-					<br>
- Location: <form:input path="value" />
-					<form:errors path="value" />
-					<br>
- Description:	<form:input path="name" />
-					<form:errors path="name" />
-					<br>
+ Event: <input path="type" /><br>
+ Location: <input path="value" /><br>
+ Description:	<input path="name" /><br>
 					<input class="btn btn-success" type="submit" value="Add" />
-				</form:form>
+				</form>
 
 			</div>
 			<p class="row justify-content-center">
-				<a href="createevent.do"> Return</a>
+				<a href="index.do"> Return</a>
 			</p>
 			</p>
 		</div>
