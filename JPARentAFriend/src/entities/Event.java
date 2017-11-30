@@ -36,7 +36,7 @@ public class Event {
 	
 	@ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
 	@JoinTable(
-			name="event_participant", 
+			name="event_participant",
 			joinColumns=@JoinColumn(name="event_id"),
 			inverseJoinColumns=@JoinColumn(name="user_id")
 	)
@@ -80,13 +80,6 @@ public class Event {
 		this.address = address;
 	}
 	
-	public List<User> getUsers() {
-		return users;
-	}
-
-	public void setUsers(List<User> users) {
-		this.users = users;
-	}
 
 	public Event(String activity, User ownerId, Date dateTime, Address address) {
 		super();
@@ -95,10 +88,6 @@ public class Event {
 		this.owner = ownerId;
 		this.dateTime = dateTime;
 		this.address = address;
-	}
-	
-	public Event() {
-		
 	}
 
 	@Override
