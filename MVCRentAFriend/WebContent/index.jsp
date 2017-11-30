@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Virtual Wallet</title>
+<title>Celestial Sprinkles</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
 	integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -18,7 +18,6 @@
 <title>Welcome</title>
 </head>
 <body>
-	<h1>Welcome</h1>
 
 	<%-- <form action="createEvent.do" method="get">
 	<input type="submit" value="Create Event"></input>
