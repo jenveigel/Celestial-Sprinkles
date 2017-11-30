@@ -95,6 +95,10 @@ public class Event {
 		this.dateTime = dateTime;
 		this.address = address;
 	}
+	
+	public Event() {
+		
+	}
 
 	@Override
 	public String toString() {
