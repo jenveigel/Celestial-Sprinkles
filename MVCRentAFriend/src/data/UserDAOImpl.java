@@ -36,13 +36,23 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public User updateUser(int id, User user) {
 		User updatedUser = em.find(User.class, id);
-		updatedUser.setPassword(password);
+		updatedUser.setPassword(user.getPassword());
+		updatedUser.setUserName(user.getUserName());
 		return null;
 	}
 
 	@Override
 	public User destroyUserById(int id) {
-		// TODO Auto-generated method stub
+		try {
+			if(em.find(User.class, id) != null) {
+				User deletedUser = em.find(User.class, id);
+				em.remove(deletedUser);
+			}			
+		}
+		catch(Exception){
+			
+		}
+		
 		return null;
 	}
 
