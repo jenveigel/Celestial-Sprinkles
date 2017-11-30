@@ -5,8 +5,8 @@ import java.util.List;
 import entities.Event;
 
 public interface EventDAO {
-	public Event create();
-	public Event update(int id, Event updatedEvent);
+	public Event create(Event event);
+	public Event update(int id, Event event);
 	public Event destroyById(int id);
 	public Event getEventById(int id);
 	public List<Event> getAllEvents();
