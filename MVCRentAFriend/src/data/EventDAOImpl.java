@@ -26,16 +26,26 @@ public class EventDAOImpl implements EventDAO {
 		@Override
 		public Event update(int id, Event event) {
 			Event updatedEvent  = em.find(Event.class, id);
-			updatedEvent.setActivity(event.getActivity());
-			updatedEvent.setDateTime(dateTime);
+			updatedEvent.setActivity(updatedEvent.getActivity());
+			updatedEvent.setDateTime(updatedEvent.getDateTime());
+			updatedEvent.setAddress(updatedEvent.getAddress());
 			
 			return updatedEvent;
 		}
 
 		@Override
-		public Event destroyById(int id) {
-			// TODO Auto-generated method stub
-			return null;
+		public boolean destroyById(int id) {
+			Event destroyEvent = em.find(Event.class, id) ;
+			em.remove(destroyEvent);
+			if (em.find(Event.class, id) == null) {
+				return true;
+			} else
+
+				em.close();
+				
+			return false;
+
+		
 		}
 
 		@Override

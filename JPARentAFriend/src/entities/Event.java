@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Event {
@@ -23,6 +25,9 @@ public class Event {
 	@Column(name="time")
 	private Date dateTime;
 	
+	@OneToOne
+    @JoinColumn(name="address_id")
+	private Address address;
 	
 	//getters and setters
 
@@ -52,6 +57,24 @@ public class Event {
 
 	public int getId() {
 		return id;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
+
+	public Event(String activity, int ownerId, Date dateTime, Address address) {
+		super();
+		//this.id = id;  DONT NEED ID BECAUSE ITS AUTO GENERATED.
+		this.activity = activity;
+		this.ownerId = ownerId;
+		this.dateTime = dateTime;
+		this.address = address;
 	}
 
 	@Override
