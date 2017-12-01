@@ -86,9 +86,9 @@ public class UserDAOImpl implements UserDAO {
 	public Profile updateProfile(int id, Profile profile) {
 		User user = em.find(User.class, id);
 		Profile updatedProfile = user.getProfile();
-		updatedProfile.setBio(profile.getBio());
 		updatedProfile.setFirstName(profile.getFirstName());
 		updatedProfile.setLastName(profile.getLastName());
+		updatedProfile.setBio(profile.getBio());
 		updatedProfile.setImageURL(profile.getImageURL());
 		return updatedProfile;
 	}
@@ -96,6 +96,11 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public Profile getProfileById(int id) {
 		return em.find(Profile.class, id);
+	}
+	
+	@Override
+	public Profile getProfileByUserId(int id) {
+		return em.find(User.class, id).getProfile();
 	}
 
 	@Override

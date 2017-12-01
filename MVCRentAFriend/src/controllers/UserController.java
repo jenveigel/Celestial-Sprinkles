@@ -15,7 +15,7 @@ import entities.User;
 public class UserController {
 
 	@Autowired
-	private UserDAO userDAO;
+	private UserDAO dao;
 
 	@RequestMapping(path = "createUser.do", method = RequestMethod.GET)
 	public String createUser() {
@@ -27,7 +27,7 @@ public class UserController {
 	public ModelAndView addUser(String userName, String password) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("login.jsp");
-		userDAO.createUser(userName, password, "","");
+		dao.createUser(userName, password, "","");
 		return mv;
 	}
 	
@@ -38,14 +38,14 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="login.do", method = RequestMethod.POST)
-	public ModelAndView login(HttpSession session, String userName, String password) {
+	public ModelAndView login(HttpSession sessionId, String userName, String password) {
 		ModelAndView mv = new ModelAndView();
-		User user = userDAO.getUserByUserName(userName);
+		User user = dao.getUserByUserName(userName);
 		if(user!=null&&user.getPassword().equals(password)) {
 			mv.setViewName("index.jsp");
-			session.setAttribute("userId", user.getId());
-			Object obj = session.getAttribute("userId");
-			int i = (Integer) obj;
+			sessionId.setAttribute("sessionId", user.getId());
+//			Object obj = sessionId.getAttribute("sessionId");
+//			int id = (Integer) obj;
 			//USER ID SAVED TO SESSION GOES HERE
 		} else {
 			mv.addObject("errorMessage","Username or password Incorrect.");

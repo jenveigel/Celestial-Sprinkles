@@ -8,5 +8,16 @@
 </head>
 <body>
 <h1>HERES A PROFILE OR SOMETHING</h1>
+		
+		<!-- edit profile button -->
+		<a href="editprofile.jsp"> 
+				<input class="submit" type="submit" value="Sign-In">
+		</a>
+		Your Session ID is: ${sessionId }
+		${profile.firstName }
+		${profile.lastName }
+		${profile.bio }
+		${profile.imageURL}
+		
 </body>
 </html>
