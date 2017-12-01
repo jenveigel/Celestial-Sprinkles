@@ -14,7 +14,7 @@
 </head>
 <body>
 <h1>ATTEND</h1>
-
+<h3>${errorMessage}</h3>
 <c:forEach var="event" items="${events }">
  ${event.activity } ${event.address} 
 
