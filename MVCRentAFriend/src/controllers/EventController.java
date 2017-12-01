@@ -84,7 +84,14 @@ public class EventController {
 		if(user == null) {
 			mv.setViewName("login.jsp");
 		}
-		dao.addUserToEvent(eventId, user);
+		boolean alreadyGoing = dao.addUserToEvent(eventId, user);
+		if(alreadyGoing) {
+			String errorMessage = "You are already attending this event";
+			mv.addObject("errorMessage", errorMessage);
+		}
+		List<Event> events = dao.getAllEvents();
+		mv.addObject("events", events);
+		
 		mv.setViewName("attend.jsp");
 		return mv;
 	}

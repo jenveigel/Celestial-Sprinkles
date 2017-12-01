@@ -13,8 +13,8 @@
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<h1>ATTENNNNNNNNNND</h1>
-
+<h1>ATTEND</h1>
+<h3>${errorMessage}</h3>
 <c:forEach var="event" items="${events }">
  ${event.activity } ${event.address} 
 
@@ -37,7 +37,9 @@
         </button>
       </div>
       <div class="modal-body">
-        ${event.activity } in ${event.address.city} 
+        ${event.activity } at ${event.address}<br> 
+        on ${event.dateTime} <br>
+        Attendees: 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
