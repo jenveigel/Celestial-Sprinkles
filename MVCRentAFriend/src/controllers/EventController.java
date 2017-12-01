@@ -56,7 +56,7 @@ public class EventController {
 		//date time
 		String str = when;
 		str = str.replace("T", " ");
-		System.out.println(when);
+		//System.out.println(when);
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 		LocalDateTime dateTime = LocalDateTime.parse(str, formatter);
 		
