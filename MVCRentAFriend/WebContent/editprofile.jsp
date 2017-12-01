@@ -14,7 +14,7 @@
 			<input type="text" name="lastName" placeholder="Enter your Last Name">
 			<input type="text" name="bio" placeholder="Enter a short Bio">
 			<input type="text" name="imageURL" placeholder="Enter a url for a profile Picture">
-			<input class="submit" type="submit" value="Sign-In">
+			<input class="submit" type="submit" value="Done">
 		</form>
 		
 </body>
