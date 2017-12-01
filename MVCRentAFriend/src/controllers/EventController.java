@@ -36,6 +36,12 @@ public class EventController {
 		mv.setViewName("createevent.jsp");
 		return mv;
 	}
+	@RequestMapping(path="eventdetails.do", method=RequestMethod.GET)
+	public ModelAndView eventDetails() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("eventdetails.jsp");
+		return mv;
+	}
 	
 	//This method causes the actual event to populate
 	@RequestMapping(path="createEvent.do", method=RequestMethod.POST)
