@@ -1,5 +1,7 @@
 package controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,14 +10,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import data.EventDAO;
 import data.UserDAO;
+import entities.Event;
 import entities.Profile;
+import entities.User;
 
 @Controller
-public class LoginController {
+public class ProfileController {
 	
 	@Autowired
 	private UserDAO dao;
+	private EventDAO eventDao;
 	
 	//This method takes you from the index page to the profile page
 		@RequestMapping(path="viewprofile.do", method=RequestMethod.GET)
@@ -25,11 +31,35 @@ public class LoginController {
 			Object obj = sessionId.getAttribute("sessionId");
 			int id = (Integer) obj;
 			
+			User user = dao.getUserById(id);
+			Profile prof = dao.getProfileByUserId(id);
+//			List<Event> events = eventDao.getAllEventsByUserId(id);
+			
+			
+			
+			
+			mv.addObject("user", user);
+			mv.addObject("profile", prof);
+//			mv.addObject("events", events);
+			
+			mv.setViewName("viewprofile.jsp");
+			return mv;
+		}
+		
+		@RequestMapping(path="editProfileWithValues.do", method=RequestMethod.GET)
+		public ModelAndView editProfileWithValues(HttpSession sessionId, Profile profile) {
+			
+			ModelAndView mv = new ModelAndView();
+			
+			Object obj = sessionId.getAttribute("sessionId");
+			int id = (Integer) obj;
+			
+			
 			Profile prof = dao.getProfileByUserId(id);
 			
 			mv.addObject("profile", prof);
-			System.out.println(prof);
-			mv.setViewName("viewprofile.jsp");
+			mv.setViewName("editprofile.jsp");
+			
 			return mv;
 		}
 		
@@ -40,6 +70,7 @@ public class LoginController {
 			
 			Object obj = sessionId.getAttribute("sessionId");
 			int id = (Integer) obj;
+			
 			
 			Profile prof = dao.updateProfile(id, profile);
 			

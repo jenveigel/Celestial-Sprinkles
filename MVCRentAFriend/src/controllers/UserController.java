@@ -37,6 +37,7 @@ public class UserController {
 		return "login.jsp";
 	}
 	
+	
 	@RequestMapping(path="login.do", method = RequestMethod.POST)
 	public ModelAndView login(HttpSession sessionId, String userName, String password) {
 		ModelAndView mv = new ModelAndView();
@@ -44,15 +45,15 @@ public class UserController {
 		if(user!=null&&user.getPassword().equals(password)) {
 			mv.setViewName("index.jsp");
 			sessionId.setAttribute("sessionId", user.getId());
-//			Object obj = sessionId.getAttribute("sessionId");
-//			int id = (Integer) obj;
-			//USER ID SAVED TO SESSION GOES HERE
 		} else {
 			mv.addObject("errorMessage","Username or password Incorrect.");
 			mv.setViewName("login.jsp");
 		}
 		return mv;
 	}
+//			USER ID SAVED TO SESSION GOES HERE ^ ^ ^
+//			Object obj = sessionId.getAttribute("sessionId");
+//			int id = (Integer) obj;
 	
 	
 	
