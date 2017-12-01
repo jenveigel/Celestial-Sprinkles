@@ -1,5 +1,6 @@
 package controllers;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -35,8 +36,8 @@ public class EventController {
 	}
 	
 	//This method causes the actual event to populate
-	@RequestMapping(path="createEvent.do")
-	public ModelAndView createEvent(HttpSession session, String activity, Date dateTime, String street
+	@RequestMapping(path="createEvent.do", method=RequestMethod.POST)
+	public ModelAndView createEvent(HttpSession session, String activity, Timestamp when, String street
 			,String city, String state, String desc, String event) {
 		ModelAndView mv = new ModelAndView();
 		//Generate a Address object from the address fields
@@ -44,14 +45,21 @@ public class EventController {
 		newAddress.setAddress(street);
 		newAddress.setCity(city);
 		newAddress.setState(state);
+		//date time
+		
+		
 		//Get session userId to see who is currently loged in
 		Object contextObject = session.getAttribute("userId");
+		if(contextObject == null) {
+			mv.setViewName("login.jsp");
+		}
 		int ownerId = (Integer) contextObject;
 		User owner = userDao.getUserById(ownerId);
 		//Create a new event object
-		Event newEvent = new Event(activity, owner, dateTime, newAddress);
+		Event newEvent = new Event(activity, owner, when, newAddress);
 		//The dao adds the event to the database here
 		dao.create(newEvent);
+		mv.setViewName("createevent.jsp");
 		return mv;
 	}
 	

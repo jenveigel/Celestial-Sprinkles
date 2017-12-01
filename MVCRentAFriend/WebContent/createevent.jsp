@@ -30,7 +30,9 @@
 					 State: <input name="state" /><br>
 					 Description:	<input name="desc" /><br>
 					 Activity: <input name="activity" /><br>
-					 Time: <input name="dateTime" /><br>
+					 When (date and time):
+							  <input type="datetime-local" name="when"/> <br>
+					 
 					<input class="btn btn-success" type="submit" value="Add" />
 				</form>
 
