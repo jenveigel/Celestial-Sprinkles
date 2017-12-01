@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import entities.Event;
+import entities.User;
 
 @Repository
 @Transactional
@@ -44,8 +45,6 @@ public class EventDAOImpl implements EventDAO {
 				em.close();
 				
 			return false;
-
-		
 		}
 
 		@Override
@@ -53,6 +52,10 @@ public class EventDAOImpl implements EventDAO {
 			return em.find(Event.class, id);
 		}
 
+		public void addUserToEvent() {
+			
+		}
+		
 		@Override
 		public List<Event> getAllEvents() {
 			String query = "SELECT e FROM Event e";
@@ -81,6 +84,16 @@ public class EventDAOImpl implements EventDAO {
 		public List<Event> getAllEventsByActivity(String activity) {
 			String query = "SELECT e FROM Event e WHERE e.activity = :activity";
 			return em.createQuery(query, Event.class).setParameter("activity", activity).getResultList();
+		}
+
+		@Override
+		public boolean addUserToEvent(int eventId, User user) {
+			Event event = em.find(Event.class, eventId);
+			List<User> e = event.getUsers();
+			e.add(user);
+			event.setUsers(e); 
+			em.persist(event);
+			return true;
 		}
 		
 }

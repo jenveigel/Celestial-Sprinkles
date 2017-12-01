@@ -39,21 +39,19 @@ public class UserController {
 	
 	
 	@RequestMapping(path="login.do", method = RequestMethod.POST)
-	public ModelAndView login(HttpSession sessionId, String userName, String password) {
+	public ModelAndView login(HttpSession session, String userName, String password) {
 		ModelAndView mv = new ModelAndView();
 		User user = dao.getUserByUserName(userName);
 		if(user!=null&&user.getPassword().equals(password)) {
 			mv.setViewName("index.jsp");
-			sessionId.setAttribute("sessionId", user.getId());
+			session.setAttribute("sessionId", user.getId());
+			session.setAttribute("user", user);
 		} else {
 			mv.addObject("errorMessage","Username or password Incorrect.");
 			mv.setViewName("login.jsp");
 		}
 		return mv;
 	}
-//			USER ID SAVED TO SESSION GOES HERE ^ ^ ^
-//			Object obj = sessionId.getAttribute("sessionId");
-//			int id = (Integer) obj;
 	
 	
 	
