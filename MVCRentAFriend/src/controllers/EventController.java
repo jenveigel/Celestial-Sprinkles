@@ -61,7 +61,7 @@ public class EventController {
 		LocalDateTime dateTime = LocalDateTime.parse(str, formatter);
 		
 		//Get session userId to see who is currently loged in
-		Object contextObject = session.getAttribute("userId");
+		Object contextObject = session.getAttribute("sessionId");
 		if(contextObject == null) {
 			mv.setViewName("login.jsp");
 		}
