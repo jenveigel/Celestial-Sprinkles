@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import data.UserDAO;
+import entities.Event;
 import entities.User;
 
 @Controller
@@ -52,6 +53,14 @@ public class UserController {
 		}
 		return mv;
 	}
+//	@RequestMapping(path="login.do", method = RequestMethod.POST)
+//	public ModelAndView login(HttpSession session, Event event) {
+//		ModelAndView mv = new ModelAndView();
+////		dao.get
+//
+//		return mv;
+//	}
+	
 	
 	
 	
