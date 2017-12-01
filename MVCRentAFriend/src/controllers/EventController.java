@@ -16,12 +16,23 @@ public class EventController {
 	@Autowired
 	private EventDAO dao;
 	
-	@RequestMapping(path="createEvent.do", method=RequestMethod.GET)
+	//This method takes you from the index page to the create event page
+	@RequestMapping(path="createEventPage.do", method=RequestMethod.GET)
 	public ModelAndView createHome() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("createevent.jsp");
 		return mv;
 	}
+	
+	//This method causes the actual event to populate
+	@RequestMapping(path="createEvent.do")
+	public ModelAndView createEvent() {
+		ModelAndView mv = new ModelAndView();
+		Event newEvent = new Event(activity, ownerId, dateTime, address)
+		
+		return mv;
+	}
+	
 	@RequestMapping(path="attendEvent.do", method=RequestMethod.GET)
 	public ModelAndView attendHome() {
 		ModelAndView mv = new ModelAndView();

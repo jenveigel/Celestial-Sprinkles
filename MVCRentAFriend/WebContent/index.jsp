@@ -35,7 +35,7 @@
   <div class="card-body">
     <p class="card-text"><div class="row justify-content-center"> 
 
- <form action="createEvent.do" method="get">
+ <form action="createEventPage.do" method="get">
 	<input type="submit" value="Create Event"></input>
 	</form>
 	<form action="attendEvent.do" method="get">
