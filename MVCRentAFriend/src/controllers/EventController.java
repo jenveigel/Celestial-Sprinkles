@@ -23,6 +23,9 @@ public class EventController {
 	@Autowired
 	private EventDAO dao;
 	
+	@Autowired
+	private UserDAO userDao;
+	
 	//This method takes you from the index page to the create event page
 	@RequestMapping(path="createEventPage.do", method=RequestMethod.GET)
 	public ModelAndView createHome() {
@@ -41,17 +44,14 @@ public class EventController {
 		newAddress.setAddress(street);
 		newAddress.setCity(city);
 		newAddress.setState(state);
-		//Save session userId to see who is currently loged in
-		Object obj = session.getAttribute("userId");
-		int ownerId = (Integer) obj;
-		//new userdao to get user by the id
-		UserDAO udao = new UserDAOImpl();
-		User owner =udao.getUserById(ownerId);
+		//Get session userId to see who is currently loged in
+		Object contextObject = session.getAttribute("userId");
+		int ownerId = (Integer) contextObject;
+		User owner = userDao.getUserById(ownerId);
 		//Create a new event object
 		Event newEvent = new Event(activity, owner, dateTime, newAddress);
 		//The dao adds the event to the database here
 		dao.create(newEvent);
-
 		return mv;
 	}
 	

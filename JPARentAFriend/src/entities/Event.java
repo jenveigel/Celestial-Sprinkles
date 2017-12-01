@@ -32,7 +32,7 @@ public class Event {
 	@Column(name="time")
 	private Date dateTime;
 	
-	@OneToOne
+	@OneToOne(cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinColumn(name="address_id")
 	private Address address;
 	

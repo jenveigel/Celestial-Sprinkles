@@ -24,12 +24,13 @@
 
 				<form action="createEvent.do" method="post" modelAttribute="item">
 
-					 Event Title: <input type="text" path="event" /><br>
-					 Street Address: <input type="text" path="street" /><br>
-					 City: <input path="city" /><br>
-					 State: <input path="state" /><br>
-					 Description:	<input path="desc" /><br>
-					 Activity: <input path="activity" /><br>
+					 Event Title: <input type="text" name="event" /><br>
+					 Street Address: <input type="text" name="street" /><br>
+					 City: <input name="city" /><br>
+					 State: <input name="state" /><br>
+					 Description:	<input name="desc" /><br>
+					 Activity: <input name="activity" /><br>
+					 Time: <input name="dateTime" /><br>
 					<input class="btn btn-success" type="submit" value="Add" />
 				</form>
 
