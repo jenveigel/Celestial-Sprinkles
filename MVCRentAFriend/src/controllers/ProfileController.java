@@ -21,6 +21,7 @@ public class ProfileController {
 	
 	@Autowired
 	private UserDAO dao;
+	@Autowired
 	private EventDAO eventDao;
 	
 	//This method takes you from the index page to the profile page
@@ -34,7 +35,7 @@ public class ProfileController {
 			User user = dao.getUserById(id);
 			Profile prof = dao.getProfileByUserId(id);
 			
-			List<Event> events = eventDao.getAllEventsByUserId(id);
+			List<Event> events = eventDao.getAllEventsByUserId(user);
 			System.out.println(events);
 			
 			
