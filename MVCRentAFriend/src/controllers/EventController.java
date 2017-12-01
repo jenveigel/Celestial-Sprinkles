@@ -36,12 +36,6 @@ public class EventController {
 		mv.setViewName("createevent.jsp");
 		return mv;
 	}
-	@RequestMapping(path="eventdetails.do", method=RequestMethod.GET)
-	public ModelAndView eventDetails() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("eventdetails.jsp");
-		return mv;
-	}
 	
 	//This method causes the actual event to populate
 	@RequestMapping(path="createEvent.do", method=RequestMethod.POST)
@@ -80,6 +74,20 @@ public class EventController {
 		ModelAndView mv = new ModelAndView();
 		List<Event> events = dao.getAllEvents();
 		mv.addObject("events", events);
+		mv.setViewName("attend.jsp");
+		return mv;
+	}
+	@RequestMapping(path="addEventToUser.do", method=RequestMethod.GET)
+	public ModelAndView addEventToUser(HttpSession session, int eventId) {
+		ModelAndView mv = new ModelAndView();
+		Object contextObject = session.getAttribute("sessionId");
+		if(contextObject == null) {
+			mv.setViewName("login.jsp");
+		}
+		int ownerId = (Integer) contextObject;
+		
+		User owner = userDao.getUserById(ownerId);
+		owner.getEvents().add(dao.getEventById(eventId));
 		mv.setViewName("attend.jsp");
 		return mv;
 	}

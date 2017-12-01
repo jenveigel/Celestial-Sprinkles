@@ -22,8 +22,9 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#details${event.id }">
   See Event Details
 </button><br>
-<form action="viewprofile.do" method="get">
+<form action="addEventToUser.do" method="get">
 		<input type="submit" class="btn btn-primary" value="Attend Event"></input><br> 
+		<input type="hidden" value="${event.id }" name="eventId"></input>
 </form>
 <!-- Modal -->
 <div class="modal fade" id="details${event.id }" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -41,7 +42,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-        <form action="viewprofile.do" method="get">
+        <form action="addEventToUser.do" method="get">
 		<input type="submit" class="btn btn-primary" value="Attend Event"></input><br> 
 </form>
       </div>
