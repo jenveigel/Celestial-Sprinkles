@@ -19,8 +19,16 @@ public class LoginController {
 	
 	//This method takes you from the index page to the profile page
 		@RequestMapping(path="viewprofile.do", method=RequestMethod.GET)
-		public ModelAndView viewProfile() {
+		public ModelAndView viewProfile(HttpSession sessionId) {
 			ModelAndView mv = new ModelAndView();
+			
+			Object obj = sessionId.getAttribute("sessionId");
+			int id = (Integer) obj;
+			
+			Profile prof = dao.getProfileByUserId(id);
+			
+			mv.addObject("profile", prof);
+			System.out.println(prof);
 			mv.setViewName("viewprofile.jsp");
 			return mv;
 		}
@@ -29,10 +37,13 @@ public class LoginController {
 		public ModelAndView editProfile(HttpSession sessionId, Profile profile) {
 			
 			ModelAndView mv = new ModelAndView();
+			
 			Object obj = sessionId.getAttribute("sessionId");
 			int id = (Integer) obj;
-			dao.updateProfile(id, profile);
 			
+			Profile prof = dao.updateProfile(id, profile);
+			
+			mv.addObject("profile", prof);
 			mv.setViewName("viewprofile.jsp");
 			
 			return mv;

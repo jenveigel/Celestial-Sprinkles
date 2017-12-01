@@ -17,4 +17,5 @@ public interface UserDAO {
 	public Profile updateProfile(int id, Profile profile);
 	public Profile getProfileById(int id);
 	//public List<Profile> getProfileByKey(String keyword);
+	Profile getProfileByUserId(int id);
 }
