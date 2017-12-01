@@ -13,8 +13,8 @@ public interface UserDAO {
 	public User getUserById(int id);
 	public List<User> getAllUsers();
 	public List<User> getAllUsersByEvent(int eventId);
+	public User getUserByUserName(String username);
 	
-
 	public Profile updateProfile(int id, Profile profile);
 	public Profile getProfileById(int id);
 	//public List<Profile> getProfileByKey(String keyword);

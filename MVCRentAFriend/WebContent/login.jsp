@@ -7,6 +7,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+		<h1> LOGIN IN PLEASE</h1>
+		<form action="login.do" method="post">
+			<input type="text" name="userName" placeholder="Enter User Name">
+			<input type="text" name="password" placeholder="Enter Password">
+			<input class="submit" type="submit" value="Sign-In">
+		</form>
+		
+		<form action="createUser.do" method="get">
+			<input class="submit" type="submit" value="Create Account">
+		</form>
+		
+		<h3>${errorMessage}</h3>
 </body>
 </html>

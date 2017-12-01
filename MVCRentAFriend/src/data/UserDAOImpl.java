@@ -30,10 +30,10 @@ public class UserDAOImpl implements UserDAO {
 			user.setProfile(profile);
 			em.persist(user);
 			em.flush();
-			
+
 			return true;
-			
-		} catch(Exception e) {
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return false;
@@ -50,18 +50,17 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public boolean destroyUserById(int id) {
 		try {
-			if(em.find(User.class, id) != null) {
+			if (em.find(User.class, id) != null) {
 				User deletedUser = em.find(User.class, id);
 				em.remove(deletedUser);
 				return true;
-			}		
-			
-		}
-		catch(Exception e){
+			}
+
+		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
 		}
-		
+
 		return false;
 	}
 
@@ -79,10 +78,8 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public List<User> getAllUsersByEvent(int eventId) {
 		String query = "Select e FROM Event e JOIN FETCH e.users WHERE e.id = :eventId";
-		
-		return em.createQuery(query, Event.class)
-				.setParameter("eventId", eventId)
-				.getResultList().get(0).getUsers();
+
+		return em.createQuery(query, Event.class).setParameter("eventId", eventId).getResultList().get(0).getUsers();
 	}
 
 	@Override
@@ -101,12 +98,22 @@ public class UserDAOImpl implements UserDAO {
 		return em.find(Profile.class, id);
 	}
 
-//	@Override
-//	public List<Profile> getProfileByKey(String keyword) {
-//		String query = "SELECT p FROM profile pLIKE %:keyword%";
-//		return em.createQuery(query, User.class)
-//				.setParameter("keyword", keyword)
-//				.getResultList();
-//	}
+	@Override
+	public User getUserByUserName(String username) {
+		try {
+		String query = "Select u FROM User u WHERE u.userName=:username";
+		return em.createQuery(query, User.class).setParameter("username", username).getResultList().get(0);
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
+	// @Override
+	// public List<Profile> getProfileByKey(String keyword) {
+	// String query = "SELECT p FROM profile pLIKE %:keyword%";
+	// return em.createQuery(query, User.class)
+	// .setParameter("keyword", keyword)
+	// .getResultList();
+	// }
 
 }
