@@ -107,17 +107,6 @@ public class EventDAOImpl implements EventDAO {
 			return true;
 		}
 
-		@Override
-		public List<Event> getAllEventsByUserId(int id) {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		@Override
-		public List<Event> getAllEventsByUserId(int id, User user) {
-			// TODO Auto-generated method stub
-			return null;
-		}
 		
 		
 }

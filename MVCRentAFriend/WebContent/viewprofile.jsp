@@ -21,13 +21,46 @@
 		${profile.lastName }
 		${profile.bio }
 		${profile.imageURL}
+		<br>
 		
 	<c:if test="${events != null }">
 	<c:forEach var="event" items="${events }">  
-		${event.activity }
-		${event.owner }
-		${event.dateTime }
-		${event.address }
+	<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#details${event.id }">
+  ${event.activity }
+</button><br>
+<form action="addEventToUser.do" method="get">
+		<input type="submit" class="btn btn-primary" value="Attend Event"></input><br> 
+		<input type="hidden" value="${event.id }" name="eventId"></input>
+</form>
+<!-- Modal -->
+<div class="modal fade" id="details${event.id }" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">${event.activity }</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ${event.activity } at ${event.address}<br> 
+        on ${event.dateTime} <br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        <form action="addEventToUser.do" method="get">
+		<input type="submit" class="btn btn-primary" value="Attend Event"></input><br> 
+</form>
+      </div>
+    </div>
+  </div>
+</div>
+		${event.activity }<br>
+		${event.owner }<br>
+		${event.dateTime }<br>
+		${event.address }<br>
 		
 	</c:forEach>	
 	</c:if>

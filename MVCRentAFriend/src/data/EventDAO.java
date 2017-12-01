@@ -11,11 +11,9 @@ public interface EventDAO {
 	public boolean destroyById(int id);
 	public Event getEventById(int id);
 	public List<Event> getAllEvents();
-	public List<Event> getAllEventsByUserId(int id);
 	public List<Event> getAllEventsByCity(String city);
 	public List<Event> getAllEventsByState(String state);
 	public List<Event> getAllEventsByActivity(String activity);
 	public boolean addUserToEvent(int eventId,User user);
-	List<Event> getAllEventsByUserId(int id, User user);
 	List<Event> getAllEventsByUserId(User user);
 }
