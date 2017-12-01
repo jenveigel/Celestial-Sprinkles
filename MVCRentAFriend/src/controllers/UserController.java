@@ -24,6 +24,7 @@ public class UserController {
 	@RequestMapping(path="addUser.do", method = RequestMethod.POST)
 	public ModelAndView addUser(String userName, String password) {
 		ModelAndView mv = new ModelAndView();
+		mv.setViewName("index.jsp");
 		userDAO.createUser(userName, password, "","");
 		return mv;
 	}
