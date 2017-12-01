@@ -46,7 +46,6 @@ public class UserController {
 			session.setAttribute("userId", user.getId());
 			Object obj = session.getAttribute("userId");
 			int i = (Integer) obj;
-			System.out.println(i);
 			//USER ID SAVED TO SESSION GOES HERE
 		} else {
 			mv.addObject("errorMessage","Username or password Incorrect.");

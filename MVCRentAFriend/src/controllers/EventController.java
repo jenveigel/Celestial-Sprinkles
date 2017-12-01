@@ -1,6 +1,9 @@
 package controllers;
 
+import java.util.Date;
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,7 +12,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import data.EventDAO;
+import data.UserDAO;
+import data.UserDAOImpl;
+import entities.Address;
 import entities.Event;
+import entities.User;
 
 @Controller
 public class EventController {
@@ -26,10 +33,25 @@ public class EventController {
 	
 	//This method causes the actual event to populate
 	@RequestMapping(path="createEvent.do")
-	public ModelAndView createEvent() {
+	public ModelAndView createEvent(HttpSession session, String activity, Date dateTime, String street
+			,String city, String state, String desc, String event) {
 		ModelAndView mv = new ModelAndView();
-		Event newEvent = new Event(activity, ownerId, dateTime, address)
-		
+		//Generate a Address object from the address fields
+		Address newAddress= new Address();
+		newAddress.setAddress(street);
+		newAddress.setCity(city);
+		newAddress.setState(state);
+		//Save session userId to see who is currently loged in
+		Object obj = session.getAttribute("userId");
+		int ownerId = (Integer) obj;
+		//new userdao to get user by the id
+		UserDAO udao = new UserDAOImpl();
+		User owner =udao.getUserById(ownerId);
+		//Create a new event object
+		Event newEvent = new Event(activity, owner, dateTime, newAddress);
+		//The dao adds the event to the database here
+		dao.create(newEvent);
+
 		return mv;
 	}
 	

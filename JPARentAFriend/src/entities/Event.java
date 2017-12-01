@@ -1,7 +1,7 @@
 package entities;
 
 
-import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -110,6 +110,7 @@ public class Event {
 		this.owner = ownerId;
 		this.dateTime = dateTime;
 		this.address = address;
+		this.users = new ArrayList<User>();
 	}
 
 	@Override
