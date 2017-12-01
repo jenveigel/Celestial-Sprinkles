@@ -39,7 +39,7 @@
       <div class="modal-body">
         ${event.activity } at ${event.address}<br> 
         on ${event.dateTime} <br>
-        Attendees: <c:forEach var="user" items="${event.users}">
+        Attendees: <c:forEach var="user" items="${eventsWithUsers.users}">
         					${user.userName}
         </c:forEach>
       </div>

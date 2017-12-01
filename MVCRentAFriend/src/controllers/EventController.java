@@ -73,6 +73,8 @@ public class EventController {
 	public ModelAndView attendHome() {
 		ModelAndView mv = new ModelAndView();
 		List<Event> events = dao.getAllEvents();
+		List<Event> eventsWithUsers = dao.getAllEventsWithUsers();
+		mv.addObject("eventsWithUsers", eventsWithUsers);
 		mv.addObject("events", events);
 		mv.setViewName("attend.jsp");
 		return mv;
@@ -94,11 +96,11 @@ public class EventController {
 			mv.addObject("errorMessage", errorMessage);
 		}
 		
-		
 		//list of all events
 		List<Event> events = dao.getAllEvents();
+		List<Event> events1 = dao.getAllEventsWithUsers();
+		mv.addObject("eventsWithUsers", events1);
 		mv.addObject("events", events);
-		
 		mv.setViewName("attend.jsp");
 		return mv;
 	}

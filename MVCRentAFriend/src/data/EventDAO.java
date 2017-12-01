@@ -17,4 +17,5 @@ public interface EventDAO {
 	public List<Event> getAllEventsByActivity(String activity);
 	public boolean addUserToEvent(int eventId,User user);
 	List<Event> getAllEventsByUserId(User user);
+	List<Event> getAllEventsWithUsers();
 }
