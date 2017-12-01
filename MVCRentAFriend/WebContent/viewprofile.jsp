@@ -24,7 +24,7 @@
 		
 	<c:if test="${events != null }">
 	<c:forEach var="event" items="${events }">  
-		${event }
+		${event.activity }
 		${event.owner }
 		${event.dateTime }
 		${event.address }
