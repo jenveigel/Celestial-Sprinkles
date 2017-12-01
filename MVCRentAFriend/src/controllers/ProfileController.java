@@ -33,8 +33,9 @@ public class ProfileController {
 			
 			User user = dao.getUserById(id);
 			Profile prof = dao.getProfileByUserId(id);
-			List<Event> events = eventDao.getAllEventsByUserId(id);
 			
+			List<Event> events = eventDao.getAllEventsByUserId(id);
+			System.out.println(events);
 			
 			
 			
