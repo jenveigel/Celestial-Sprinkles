@@ -40,7 +40,7 @@
         ${event.activity } at ${event.address}<br> 
         on ${event.dateTime} <br>
         Attendees: <c:forEach var="user" items="${event.users}">
-        					
+        					${user.userName}
         </c:forEach>
       </div>
       <div class="modal-footer">

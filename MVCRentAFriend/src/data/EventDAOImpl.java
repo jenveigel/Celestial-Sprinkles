@@ -89,6 +89,7 @@ public class EventDAOImpl implements EventDAO {
 		@Override
 		public boolean addUserToEvent(int eventId, User user) {
 			Event event = em.find(Event.class, eventId);
+			System.out.println(user);
 			User userManaged = em.find(User.class, user.getId());
 			List<User> userList = event.getUsers();
 			boolean isGoing = false;
@@ -105,6 +106,18 @@ public class EventDAOImpl implements EventDAO {
 			}
 			
 			return true;
+		}
+
+		@Override
+		public List<Event> getAllEventsByUserId(int id) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public List<Event> getAllEventsByUserId(int id, User user) {
+			// TODO Auto-generated method stub
+			return null;
 		}
 
 		

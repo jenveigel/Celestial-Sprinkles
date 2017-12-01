@@ -98,8 +98,6 @@ public class EventController {
 		List<Event> events = dao.getAllEvents();
 		mv.addObject("events", events);
 		
-		
-		
 		mv.setViewName("attend.jsp");
 		return mv;
 	}
