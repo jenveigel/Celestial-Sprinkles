@@ -37,7 +37,9 @@
         </button>
       </div>
       <div class="modal-body">
-        ${event.activity } in ${event.address.city} 
+        ${event.activity } at ${event.address}<br> 
+        on ${event.dateTime} <br>
+        Attendees: 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
