@@ -16,7 +16,7 @@
 
 
 	<div class="card text-white bg-dark mb-3 container center_div"
-		style="max-width: 20rem;">
+		style="max-width: 40rem;">
 		<div class="card-header">Create Event</div>
 		<div class="card-body">
 			<p class="card-text">
@@ -24,9 +24,12 @@
 
 				<form action="createEvent.do" method="post" modelAttribute="item">
 
- Event: <input path="type" /><br>
- Location: <input path="value" /><br>
- Description:	<input path="name" /><br>
+					 Event Title: <input path="event" /><br>
+					 Street Address: <input path="street" /><br>
+					 City: <input path="city" /><br>
+					 State: <input path="state" /><br>
+					 Description:	<input path="desc" /><br>
+					 Activity: <input path="activity" /><br>
 					<input class="btn btn-success" type="submit" value="Add" />
 				</form>
 

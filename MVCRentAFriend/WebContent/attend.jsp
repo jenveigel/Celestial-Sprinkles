@@ -11,9 +11,10 @@
 <body>
 <h1>ATTENNNNNNNNNND</h1>
 
-${events }
 <c:forEach var="event" items="${events }">
- ${event.activity } ${event} 
+ ${event.activity } ${event.address} 
+ <a href="eventdetails.do">EventDetails</a>
+ <br>
 </c:forEach>
 
 </body>
