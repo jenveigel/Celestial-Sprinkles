@@ -33,14 +33,14 @@ public class ProfileController {
 			
 			User user = dao.getUserById(id);
 			Profile prof = dao.getProfileByUserId(id);
-//			List<Event> events = eventDao.getAllEventsByUserId(id);
+			List<Event> events = eventDao.getAllEventsByUserId(id);
 			
 			
 			
 			
 			mv.addObject("user", user);
 			mv.addObject("profile", prof);
-//			mv.addObject("events", events);
+			mv.addObject("events", events);
 			
 			mv.setViewName("viewprofile.jsp");
 			return mv;
