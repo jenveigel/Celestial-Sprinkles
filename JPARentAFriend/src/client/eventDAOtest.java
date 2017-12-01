@@ -1,5 +1,6 @@
 package client;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.EntityManager;
@@ -22,7 +23,7 @@ public class eventDAOtest {
 //
 //======Create Test============================		
 		Date date = new Date();
-		event.setDateTime(date);
+//		event.setDateTime(date);
 		User user = new User();
 		event.setActivity("Drinking");
 		event.setOwnerId(em.find(User.class, 1));

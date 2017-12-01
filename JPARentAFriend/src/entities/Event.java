@@ -1,6 +1,7 @@
 package entities;
 
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -30,7 +31,7 @@ public class Event {
 	private User owner;
 	
 	@Column(name="time")
-	private Date dateTime;
+	private LocalDateTime dateTime;
 	
 	@OneToOne(cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinColumn(name="address_id")
@@ -62,11 +63,11 @@ public class Event {
 		this.owner = owner;
 	}
 
-	public Date getDateTime() {
+	public LocalDateTime getDateTime() {
 		return dateTime;
 	}
 
-	public void setDateTime(Date dateTime) {
+	public void setDateTime(LocalDateTime dateTime) {
 		this.dateTime = dateTime;
 	}
 
@@ -103,7 +104,7 @@ public class Event {
 		this.users = users;
 	}
 
-	public Event(String activity, User ownerId, Date dateTime, Address address) {
+	public Event(String activity, User ownerId, LocalDateTime dateTime, Address address) {
 		super();
 		//this.id = id;  DONT NEED ID BECAUSE ITS AUTO GENERATED.
 		this.activity = activity;

@@ -30,13 +30,16 @@
 					 State: <input name="state" /><br>
 					 Description:	<input name="desc" /><br>
 					 Activity: <input name="activity" /><br>
-					 Time: <input name="dateTime" /><br>
+					 When (date and time):
+							  <input type="datetime-local" name="when"/> <br>
+					 
 					<input class="btn btn-success" type="submit" value="Add" />
 				</form>
 
 			</div>
 			<p class="row justify-content-center">
-				<a href="index.do"> Return</a>
+				<a href="index.jsp"> Return To Home</a><br/>
+				<a href="attendEvent.do"> View Events</a>
 			</p>
 			</p>
 		</div>
