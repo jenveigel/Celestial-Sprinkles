@@ -38,7 +38,8 @@
 
 			</div>
 			<p class="row justify-content-center">
-				<a href="index.do"> Return</a>
+				<a href="index.jsp"> Return To Home</a><br/>
+				<a href="attendEvent.do"> View Events</a>
 			</p>
 			</p>
 		</div>

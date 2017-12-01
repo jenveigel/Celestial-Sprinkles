@@ -14,7 +14,7 @@
 <c:forEach var="event" items="${events }">
  ${event.activity } ${event.address} 
  <a href="eventdetails.do">EventDetails</a>
- <br>
+ 
 </c:forEach>
 
 </body>
