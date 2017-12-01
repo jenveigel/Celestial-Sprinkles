@@ -81,6 +81,8 @@ public class UserDAOImpl implements UserDAO {
 
 		return em.createQuery(query, Event.class).setParameter("eventId", eventId).getResultList().get(0).getUsers();
 	}
+	
+	
 
 	@Override
 	public Profile updateProfile(int id, Profile profile) {

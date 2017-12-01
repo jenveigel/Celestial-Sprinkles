@@ -80,14 +80,11 @@ public class EventController {
 	@RequestMapping(path="addEventToUser.do", method=RequestMethod.GET)
 	public ModelAndView addEventToUser(HttpSession session, int eventId) {
 		ModelAndView mv = new ModelAndView();
-		Object contextObject = session.getAttribute("sessionId");
-		if(contextObject == null) {
+		User user = (User) session.getAttribute("user");
+		if(user == null) {
 			mv.setViewName("login.jsp");
 		}
-		int ownerId = (Integer) contextObject;
-		
-		User owner = userDao.getUserById(ownerId);
-		owner.getEvents().add(dao.getEventById(eventId));
+		dao.addUserToEvent(eventId, user);
 		mv.setViewName("attend.jsp");
 		return mv;
 	}
