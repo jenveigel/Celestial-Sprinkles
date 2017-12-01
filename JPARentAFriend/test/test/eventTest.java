@@ -1,14 +1,10 @@
 package test;
 
-import static org.junit.Assert.assertEquals;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 
 import entities.Event;
 
@@ -27,28 +23,6 @@ public class eventTest {
 
 		em.close();
 		emf.close(); 
-	}
-
-
-	@Before
-	public void setUp() throws Exception {
-		this.emf = Persistence.createEntityManagerFactory("RentAFriend");
-		this.em = emf.createEntityManager();
-
-		event = em.find(Event.class, 1);
-	}
-
-	@After
-	public void tearDown() throws Exception {
-		this.em.close();
-		this.emf.close();
-	}
-
-	@Test
-	public void test_event_city() {
-		// Rating rating = em.find(Rating.class, 1);
-		assertEquals("Orlando", event.getAddress().getCity());
-
 	}
 
 

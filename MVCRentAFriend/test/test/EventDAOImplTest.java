@@ -16,7 +16,5 @@ public class EventDAOImplTest {
 	EntityManager em;
 	
 
-	
-
 
 }
