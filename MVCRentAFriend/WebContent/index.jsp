@@ -30,7 +30,7 @@
 	<!-- ================WLECOME BUTTONS======================= -->
 	
 	
-	<div class="card text-white bg-dark mb-3 container center_div" style="max-width: 20rem;">
+	<div class="card text-white bg-dark mb-3 container center_div" style="max-width: 40rem;">
   <div class="card-header">WELCOME</div>
   <div class="card-body">
     <p class="card-text"><div class="row justify-content-center"> 
