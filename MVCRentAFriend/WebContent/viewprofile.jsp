@@ -22,13 +22,14 @@
 		${profile.bio }
 		${profile.imageURL}
 		
-	<%-- <c:forEach var="event" items="${events }">  
+	<c:if test="${events != null }">
+	<c:forEach var="event" items="${events }">  
 		${event }
 		${event.owner }
 		${event.dateTime }
 		${event.address }
 		
-	</c:forEach>	 --%>
-		
+	</c:forEach>	
+	</c:if>
 </body>
 </html>
