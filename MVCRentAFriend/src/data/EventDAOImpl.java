@@ -92,8 +92,19 @@ public class EventDAOImpl implements EventDAO {
 			Event event = em.find(Event.class, eventId);
 			User userManaged = em.find(User.class, user.getId());
 			List<User> userList = event.getUsers();
-			userList.add(userManaged);
-			event.setUsers(userList);
+			boolean isGoing = false;
+			for(int x=0; x<userList.size(); x++) {
+				if(userList.get(x).getId() == userManaged.getId()) {
+					isGoing = true;
+				}
+			}
+			
+			if(!isGoing) {
+				userList.add(userManaged);
+				event.setUsers(userList);
+				return userList;
+			}
+			
 			return userList;
 		}
 		

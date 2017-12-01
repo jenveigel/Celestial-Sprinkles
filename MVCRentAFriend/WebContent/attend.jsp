@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<h1>ATTENNNNNNNNNND</h1>
+<h1>ATTEND</h1>
 
 <c:forEach var="event" items="${events }">
  ${event.activity } ${event.address} 

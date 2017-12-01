@@ -85,6 +85,8 @@ public class EventController {
 			mv.setViewName("login.jsp");
 		}
 		dao.addUserToEvent(eventId, user);
+		List<Event> events = dao.getAllEvents();
+		mv.addObject("events", events);
 		mv.setViewName("attend.jsp");
 		return mv;
 	}
