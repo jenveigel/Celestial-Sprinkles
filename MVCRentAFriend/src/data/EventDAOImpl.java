@@ -64,14 +64,9 @@ public class EventDAOImpl implements EventDAO {
 
 		@Override
 		public List<Event> getAllEventsByUserId(User user) {
-			User userManaged = em.find(User.class, user.getId());
-			Event event = em.find(Event.class, user.getEvents().get(0).getId());
-			List<Event> events = userManaged.getEvents();			
-			return events;
+			String query = "SELECT u FROM User u JOIN FETCH u.events WHERE u.id = :id";
+			return em.createQuery(query, User.class).setParameter("id", user.getId()).getResultList().get(0).getEvents();
 		}
-//			String query = "SELECT u.events FROM User u JOIN FETCH u.events WHERE u.id = :id";
-//			return em.createQuery(query, Event.class).setParameter("id", id).getResultList();
-//		}
 
 		@Override
 		public List<Event> getAllEventsByCity(String city) {
