@@ -24,8 +24,8 @@
 
 				<form action="createEvent.do" method="post" modelAttribute="item">
 
-					 Event Title: <input path="event" /><br>
-					 Street Address: <input path="street" /><br>
+					 Event Title: <input type="text" path="event" /><br>
+					 Street Address: <input type="text" path="street" /><br>
 					 City: <input path="city" /><br>
 					 State: <input path="state" /><br>
 					 Description:	<input path="desc" /><br>
