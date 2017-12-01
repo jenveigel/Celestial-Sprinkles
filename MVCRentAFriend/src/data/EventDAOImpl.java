@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import entities.Event;
+import entities.Profile;
 import entities.User;
 
 @Repository
@@ -87,13 +88,14 @@ public class EventDAOImpl implements EventDAO {
 		}
 
 		@Override
-		public boolean addUserToEvent(int eventId, User user) {
+		public List<User> addUserToEvent(int eventId, User user) {
 			Event event = em.find(Event.class, eventId);
-			List<User> e = event.getUsers();
-			e.add(user);
-			event.setUsers(e); 
-			em.persist(event);
-			return true;
+			User userManaged = em.find(User.class, user.getId());
+			List<User> userList = event.getUsers();
+			userList.add(userManaged);
+			event.setUsers(userList);
+			return userList;
 		}
+		
 		
 }
