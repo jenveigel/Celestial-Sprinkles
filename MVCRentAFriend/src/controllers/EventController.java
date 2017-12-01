@@ -77,6 +77,7 @@ public class EventController {
 		mv.setViewName("attend.jsp");
 		return mv;
 	}
+	
 	@RequestMapping(path="addEventToUser.do", method=RequestMethod.GET)
 	public ModelAndView addEventToUser(HttpSession session, int eventId) {
 		ModelAndView mv = new ModelAndView();
