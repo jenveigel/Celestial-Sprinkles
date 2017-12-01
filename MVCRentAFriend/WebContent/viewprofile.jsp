@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Profile</title>
 </head>
 <body>
-
+<h1>HERES A PROFILE OR SOMETHING</h1>
 </body>
 </html>
