@@ -15,7 +15,7 @@
 <body>
 <h1>ATTEND</h1>
 <h3>${errorMessage}</h3>
-<c:forEach var="event" items="${events }">
+<c:forEach var="event" items="${events}">
  ${event.activity } ${event.address} 
 
 <!-- Button trigger modal -->
@@ -39,7 +39,9 @@
       <div class="modal-body">
         ${event.activity } at ${event.address}<br> 
         on ${event.dateTime} <br>
-        Attendees: 
+        Attendees: <c:forEach var="user" items="${event.users}">
+        					
+        </c:forEach>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

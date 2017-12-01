@@ -80,17 +80,25 @@ public class EventController {
 	@RequestMapping(path="addEventToUser.do", method=RequestMethod.GET)
 	public ModelAndView addEventToUser(HttpSession session, int eventId) {
 		ModelAndView mv = new ModelAndView();
+		//get user from session
 		User user = (User) session.getAttribute("user");
 		if(user == null) {
 			mv.setViewName("login.jsp");
 		}
+		
+		//error message for attending event already going too
 		boolean alreadyGoing = dao.addUserToEvent(eventId, user);
 		if(alreadyGoing) {
 			String errorMessage = "You are already attending this event";
 			mv.addObject("errorMessage", errorMessage);
 		}
+		
+		
+		//list of all events
 		List<Event> events = dao.getAllEvents();
 		mv.addObject("events", events);
+		
+		
 		
 		mv.setViewName("attend.jsp");
 		return mv;
