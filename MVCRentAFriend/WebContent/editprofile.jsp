@@ -8,5 +8,14 @@
 </head>
 <body>
 
+<h1>Edit Profile</h1>
+		<form action="editprofile.do" method="post">
+			<input type="text" name="firstName" placeholder="Enter your First Name">
+			<input type="text" name="lastName" placeholder="Enter your Last Name">
+			<input type="text" name="bio" placeholder="Enter a short Bio">
+			<input type="text" name="imageURL" placeholder="Enter a url for a profile Picture">
+			<input class="submit" type="submit" value="Sign-In">
+		</form>
+		
 </body>
 </html>

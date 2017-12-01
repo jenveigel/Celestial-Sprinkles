@@ -2,7 +2,6 @@ package data;
 
 import java.util.List;
 
-import entities.Event;
 import entities.Profile;
 import entities.User;
 
