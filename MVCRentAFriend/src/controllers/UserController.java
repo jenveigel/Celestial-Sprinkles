@@ -1,5 +1,7 @@
 package controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,7 @@ public class UserController {
 
 	@Autowired
 	private UserDAO dao;
+	
 
 	@RequestMapping(path = "createUser.do", method = RequestMethod.GET)
 	public String createUser() {
@@ -53,13 +56,17 @@ public class UserController {
 		}
 		return mv;
 	}
-//	@RequestMapping(path="login.do", method = RequestMethod.POST)
-//	public ModelAndView login(HttpSession session, Event event) {
-//		ModelAndView mv = new ModelAndView();
-////		dao.get
-//
-//		return mv;
-//	}
+	@RequestMapping(path="cancelrsvp.do", method = RequestMethod.GET)
+	public ModelAndView login(HttpSession sessionId, Event event) {
+		ModelAndView mv = new ModelAndView();
+		System.out.println(event.getId());
+		Object obj = sessionId.getAttribute("sessionId");
+		int id = (Integer) obj;
+		User user = dao.getUserById(id);
+		dao.deleteEventFromUser(user.getId(), event.getId());		
+		mv.setViewName("viewprofile.do");
+		return mv;
+	}
 	
 	
 	

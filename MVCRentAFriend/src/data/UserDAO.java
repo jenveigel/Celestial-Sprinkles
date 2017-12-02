@@ -19,4 +19,5 @@ public interface UserDAO {
 	public Profile getProfileById(int id);
 	//public List<Profile> getProfileByKey(String keyword);
 	Profile getProfileByUserId(int id);
+	boolean deleteEventFromUser(int uid, int eid);
 }

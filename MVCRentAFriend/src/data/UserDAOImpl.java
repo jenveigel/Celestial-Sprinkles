@@ -1,5 +1,6 @@
 package data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -73,6 +74,29 @@ public class UserDAOImpl implements UserDAO {
 	public List<User> getAllUsers() {
 		String query = "SELECT u FROM user u";
 		return em.createQuery(query, User.class).getResultList();
+	}
+	
+	@Override
+	public boolean deleteEventFromUser(int uid, int eid) {
+		String query = "SELECT u FROM User u JOIN FETCH u.events WHERE u.id = :uid";
+		
+		User user = em.createQuery(query, User.class).setParameter("uid", uid).getResultList().get(0);
+		List<Event> userEvents = user.getEvents();
+		List<Event> updatedEvents = new ArrayList<>();
+		for (Event event : userEvents) {
+			if(event.getId() != eid) {
+				updatedEvents.add(event);
+			}
+		}
+		user.setEvents(updatedEvents);
+		em.flush();
+		em.persist(user);
+		
+//		DELETE FROM event_participant WHERE event.id=:eid AND user.id = :uid;
+//		Event event = events.get(0);
+
+		return false;
+		
 	}
 
 	@Override
