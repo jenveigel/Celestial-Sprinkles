@@ -33,4 +33,5 @@ dependencies {
   compile "mysql:mysql-connector-java:5.1.39"
   compile "org.hibernate:hibernate-core:$hibernateVersion"
   compile "org.hibernate:hibernate-c3p0:$hibernateVersion"
+  compile "log4j:log4j:1.2.17"
 }

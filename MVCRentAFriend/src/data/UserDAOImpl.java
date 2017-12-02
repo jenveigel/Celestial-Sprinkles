@@ -76,6 +76,9 @@ public class UserDAOImpl implements UserDAO {
 		return em.createQuery(query, User.class).getResultList();
 	}
 	
+	
+	// Method currently does not work. It will do everything correctly up until about maybe the setEvents
+	// or the persist. It doesnt add the new List<Event> to the database.
 	@Override
 	public boolean deleteEventFromUser(int uid, int eid) {
 		String query = "SELECT u FROM User u JOIN FETCH u.events WHERE u.id = :uid";
