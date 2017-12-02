@@ -36,21 +36,21 @@
     <p class="card-text"><div class="row justify-content-center"> 
 
  	<form action="createEventPage.do" method="get">
-	<input type="submit" value="Create Event"></input>
+	<input class="btn btn-lg btn-secondary" type="submit" value="Create Event"></input>
 	</form>
 	<form action="attendEvent.do" method="get">
-	<input type="submit" value="Attend Event"></input>
+	<input class="btn btn-lg btn-secondary" type="submit" value="Attend Event"></input>
 	</form>
 	<form action="viewprofile.do" method="get">
-	<input type="submit" value="View Profile"></input>
+	<input class="btn btn-lg btn-secondary" type="submit" value="View Profile"></input>
 	</form>
 
-</div>
+<!-- </div>
 <p class="row justify-content-center">
 <a href="index.do"> Return</a>
 </p></p>
   </div>
-</div>
+</div> -->
 	
 	<!-- ================================================== -->
 
