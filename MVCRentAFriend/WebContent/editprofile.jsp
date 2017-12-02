@@ -10,10 +10,10 @@
 
 <h1>Edit Profile</h1>
 		<form action="editprofile.do" method="post">
-			<input type="text" name="firstName" value="${profile.firstName }">
-			<input type="text" name="lastName" value="${profile.lastName }">
-			<input type="text" name="bio" value="${profile.bio }">
-			<input type="text" name="imageURL" value="${profile.imageURL }">
+			<input type="text" name="firstName" placeholder="Enter First Name" value="${profile.firstName }" >
+			<input type="text" name="lastName" placeholder="Enter Last Name" value="${profile.lastName }">
+			<input type="text" name="bio" placeholder="Enter Bio" value="${profile.bio }">
+			<input type="text" name="imageURL" placeholder="Enter url" value="${profile.imageURL }">
 			<input class="submit" type="submit" value="Done">
 		</form>
 

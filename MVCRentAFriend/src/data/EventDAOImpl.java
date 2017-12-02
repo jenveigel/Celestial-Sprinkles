@@ -70,6 +70,7 @@ public class EventDAOImpl implements EventDAO {
 		@Override
 		public List<Event> getAllEventsByUserId(User user) {
 			String query = "SELECT u FROM User u JOIN FETCH u.events WHERE u.id = :id";
+			
 			return em.createQuery(query, User.class).setParameter("id", user.getId()).getResultList().get(0).getEvents();
 		}
 
