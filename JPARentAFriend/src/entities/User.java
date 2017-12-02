@@ -24,7 +24,7 @@ public class User {
 
 	private String password;
 
-	@ManyToMany(mappedBy = "users")
+	@ManyToMany(mappedBy = "users", cascade=CascadeType.ALL)
 	private List<Event> events;
 
 	@OneToOne(cascade = { CascadeType.REMOVE , CascadeType.PERSIST})

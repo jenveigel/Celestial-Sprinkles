@@ -83,6 +83,7 @@
 		<c:if test="${user.id == event.owner.id }">
         <form action="deleteEvent.do" method="get">
 			<input type="submit" class="btn btn-primary" value="Delete Event"></input><br> 
+			<input type="hidden" value="${event.id }" name="eventId"></input>
 		</form>
 	      
 	      </c:if>

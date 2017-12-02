@@ -37,7 +37,7 @@ public class Event {
     @JoinColumn(name="address_id")
 	private Address address; 
 	
-	@ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE})
+	@ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
 	@JoinTable(
 			name="event_participant",
 			joinColumns=@JoinColumn(name="event_id"),

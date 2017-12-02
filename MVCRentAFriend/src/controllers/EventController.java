@@ -80,13 +80,11 @@ public class EventController {
 		return mv;
 	}
 	@RequestMapping(path="deleteEvent.do", method=RequestMethod.GET)
-	public ModelAndView deleteEvent() {
+	public ModelAndView deleteEvent(int eventId) {
 		ModelAndView mv = new ModelAndView();
-		List<Event> events = dao.getAllEvents();
-		List<Event> eventsWithUsers = dao.getAllEventsWithUsers();
-		mv.addObject("eventsWithUsers", eventsWithUsers);
-		mv.addObject("events", events);
-		mv.setViewName("attend.jsp");
+		System.out.println("HELLO");
+		dao.destroyById(eventId);
+		mv.setViewName("redirect:viewprofile.do");
 		return mv;
 	}
 	
