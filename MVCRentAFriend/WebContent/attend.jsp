@@ -40,16 +40,16 @@
 <div class="container">
 <c:forEach var="event" items="${events}">
 <div class="row justify-content-center">
-<div class="col-sm-8">
+<div class="col-sm-6">
  ${event.activity } ${event.address} 
 </div>
 <!-- Button trigger modal -->
-<div class="col-sm-2">
+<div class="col-sm-3">
 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#details${event.id }">
   See Event Details
 </button>
 </div>
-<div class="col-sm-2">
+<div class="col-sm-3">
 <form action="addEventToUser.do" method="get">
 		<input type="submit" class="btn btn-secondary" value="Attend Event"></input><br> 
 		<input type="hidden" value="${event.id }" name="eventId"></input>
