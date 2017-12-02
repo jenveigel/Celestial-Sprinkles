@@ -90,16 +90,13 @@ public class UserDAOImpl implements UserDAO {
 		}
 		System.out.println(updatedEvents);
 		user.setEvents(updatedEvents);
-		
-		em.merge(user);
 		em.persist(user);
-		em.refresh(user);
 		em.flush();
 		
 //		DELETE FROM event_participant WHERE event.id=:eid AND user.id = :uid;
 //		Event event = events.get(0);
 
-		return false;
+		return true;
 		
 	}
 
