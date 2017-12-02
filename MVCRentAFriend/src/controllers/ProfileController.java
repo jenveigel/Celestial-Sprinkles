@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,19 +28,20 @@ public class ProfileController {
 
 	//This method takes you from the index page to the profile page
 		@RequestMapping(path="viewprofile.do", method=RequestMethod.GET)
-		public ModelAndView viewProfile(HttpSession sessionId) {
+		public ModelAndView viewProfile(HttpSession sessionObj) {
 			ModelAndView mv = new ModelAndView();
-
-			Object obj = sessionId.getAttribute("sessionId");
-			int id = (Integer) obj;
-			User user = dao.getUserById(id);
+			User user = (User) sessionObj.getAttribute("sessionObj");
+//			User obj = sessionId.getAttribute("sessionObj");
+//			int id = (Integer) obj;
+//			user = dao.getUserById(id);
 //			System.out.println(user + " " + user.getId());
-			Profile prof = dao.getProfileByUserId(id);
-
+			Profile prof = dao.getProfileByUserId(user.getId());
+			int id = user.getId();
 			List<Event> events = eventDao.getAllEventsByUserId(user);
-			mv.addObject("sessionId1", id);
 			List<Event> eventsWithUsers = eventDao.getAllEventsWithUsers();
+			
 			mv.addObject("user", user);
+			mv.addObject("userId", id);
 			mv.addObject("profile", prof);
 			mv.addObject("events", events);
 			mv.addObject("eventsWithUsers", eventsWithUsers);

@@ -16,6 +16,7 @@
 </head>
 <body>
 
+<<<<<<< HEAD
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 <a class="navbar-brand" href="index.jsp">
     <img src="mountains.png" style="width:60px;">
@@ -61,6 +62,16 @@
 					</form>
 				</div>
 			</div>
+=======
+
+
+		<h1> LOGIN PLEASE</h1>
+		<form action="login.do" method="post">
+			<input type="text" name="userName" placeholder="Enter User Name">
+			<input type="text" name="password" placeholder="Enter Password">
+			<input class="submit" type="submit" value="Sign-In">
+		</form>
+>>>>>>> 1563fbc5eb4a60c6a47575a580b48eead23b478a
 		
 		</div>
 		

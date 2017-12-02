@@ -6,13 +6,50 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+	integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+	crossorigin="anonymous" />
+<link rel="stylesheet" href="css/styles.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Create Account</title>
 </head>
 <body>
-	<h1>Hello new user</h1>
+	
+	
+	<form action="addUser.do" method="post">
+	 <div class="container">
+<p class="well"></p>
+     <h3>Registration</h3>
+    <hr>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Username</label>
+                <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text" class="form-control" name="userName" id="userName" placeholder="Requested Username" required value="UserName">
+                </div>
+            </div>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                    <input type="text" class="form-control" name="password" id="password" placeholder="Password" required data-toggle="popover" title="Password Strength" data-content="Enter Password...">
+                </div>
+            </div><br>
+            <!-- <div class="form-group">
+                <label>Confirm Password</label>
+                <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-resize-vertical"></span></span>
+                    <input type="password" class="form-control" name="confirm" id="confirm" placeholder="Confirm Password" required>
+                </div>
+            </div>  -->
+            <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-primary pull-right">
+        </div>
+    </div>
+</div> 
+    </form>
 
-	<div>
+	 <%-- <div>
 
 		<form action="addUser.do" method="post">
 			<input type="text" name="userName" placeholder="Enter User Name">
@@ -20,7 +57,19 @@
 			<input class="submit" type="submit" value="Create Account">
 		</form>
 
-	</div>
+	</div>  --%>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+		integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+		integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+		crossorigin="anonymous"></script>
 
 </body>
 </html>
