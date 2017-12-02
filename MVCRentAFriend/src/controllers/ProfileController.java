@@ -1,5 +1,6 @@
 package controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -33,9 +34,11 @@ public class ProfileController {
 			int id = (Integer) obj;
 			
 			User user = dao.getUserById(id);
+			System.out.println(user + " " + user.getId());
 			Profile prof = dao.getProfileByUserId(id);
 			
-			List<Event> events = eventDao.getAllEventsByUserId(user);
+			List<Event> events = new ArrayList<>();
+//			List<Event> events = eventDao.getAllEventsByUserId(user);
 			
 			
 			

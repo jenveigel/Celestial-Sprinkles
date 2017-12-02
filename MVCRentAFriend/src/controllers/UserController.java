@@ -31,7 +31,7 @@ public class UserController {
 	public ModelAndView addUser(String userName, String password) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("login.jsp");
-		dao.createUser(userName, password, "","");
+		dao.createUser(userName, password, " "," ");
 		return mv;
 	}
 	
