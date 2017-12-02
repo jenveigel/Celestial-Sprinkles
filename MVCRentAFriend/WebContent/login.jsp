@@ -32,11 +32,20 @@
     </li> -->
   </ul>
 </nav>
+<br>
+<br>
+
 
 		<div class="container">
+		<div class="card text-white bg-dark mb-3 container center_div" style="max-width: 60rem;">
+			<div class="row justify-content-center">
+		  		<div class="card-header">Login or Create New User</div>
+			</div>
+	  		<div class="card-body">
+	    <p class="card-text">
 			<div class="row justify-content-center">
 				<div class="col-sm-6">
-					<h1>Login or Create New User</h1>
+					<!-- <h1>Login or Create New User</h1> -->
 				</div>
 			</div>
 			<div class="row justify-content-center">
@@ -62,6 +71,8 @@
 				</div>
 			</div>
 		
+		</div>
+		</div>
 		</div>
 		
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
