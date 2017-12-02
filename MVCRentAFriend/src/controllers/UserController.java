@@ -59,7 +59,6 @@ public class UserController {
 	@RequestMapping(path="cancelrsvp.do", method = RequestMethod.GET)
 	public ModelAndView login(HttpSession sessionId, Event event) {
 		ModelAndView mv = new ModelAndView();
-		System.out.println(event.getId());
 		Object obj = sessionId.getAttribute("sessionId");
 		int id = (Integer) obj;
 		User user = dao.getUserById(id);
