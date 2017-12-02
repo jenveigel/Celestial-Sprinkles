@@ -26,7 +26,7 @@ public class Event {
 	
 	private String activity;
 	
-	@OneToOne
+	@OneToOne //but can't an owner have many events? OneToMany?
 	@JoinColumn(name="owner_id")
 	private User owner;
 	
@@ -35,7 +35,7 @@ public class Event {
 	
 	@OneToOne(cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinColumn(name="address_id")
-	private Address address;
+	private Address address; 
 	
 	@ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE})
 	@JoinTable(
