@@ -1,5 +1,6 @@
 package data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -69,9 +70,29 @@ public class EventDAOImpl implements EventDAO {
 
 		@Override
 		public List<Event> getAllEventsByUserId(User user) {
-			String query = "SELECT u FROM User u JOIN FETCH u.events WHERE u.id = :id";
 			
-			return em.createQuery(query, User.class).setParameter("id", user.getId()).getResultList().get(0).getEvents();
+			try {
+				String query = "SELECT u FROM User u JOIN FETCH u.events WHERE u.id = :id";
+				
+				List<Event> events = em.createQuery(query, User.class)
+				.setParameter("id", user.getId())
+				.getResultList()
+				.get(0)
+				.getEvents();
+				
+				if(events == null) {
+					events = new ArrayList<>();
+					
+				}
+				
+				return events;
+				
+			}
+			catch(Exception e){
+				e.printStackTrace();
+				return new ArrayList<Event>();
+			}
+			
 		}
 
 		@Override
