@@ -66,7 +66,7 @@ public class ProfileController {
 			return mv;
 		}
 
-		@RequestMapping(path="editprofile.do", method=RequestMethod.POST)
+		@RequestMapping(path="editprofile.do", method=RequestMethod.GET)
 		public ModelAndView editProfile(HttpSession sessionId, Profile profile) {
 
 			ModelAndView mv = new ModelAndView();
@@ -78,7 +78,7 @@ public class ProfileController {
 			Profile prof = dao.updateProfile(id, profile);
 
 			mv.addObject("profile", prof);
-			mv.setViewName("viewprofile.jsp");
+			mv.setViewName("viewprofile.do");
 
 			return mv;
 		}
