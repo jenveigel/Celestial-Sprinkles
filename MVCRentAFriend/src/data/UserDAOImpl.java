@@ -89,8 +89,8 @@ public class UserDAOImpl implements UserDAO {
 			}
 		}
 		user.setEvents(updatedEvents);
-		em.flush();
 		em.persist(user);
+		em.flush();
 		
 //		DELETE FROM event_participant WHERE event.id=:eid AND user.id = :uid;
 //		Event event = events.get(0);
