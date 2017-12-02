@@ -16,13 +16,12 @@
 </head>
 <body>
 
-<<<<<<< HEAD
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 <a class="navbar-brand" href="index.jsp">
     <img src="mountains.png" style="width:60px;">
   </a>
   <ul class="navbar-nav">
-    <li class="nav-item active">
+    <!-- <li class="nav-item active">
       <a class="nav-link" href="attendEvent.do">Attend</a>
     </li>
     <li class="nav-item">
@@ -30,7 +29,7 @@
     </li>
     <li class="nav-item">
       <a class="nav-link" href="viewprofile.do">Your Profile</a>
-    </li>
+    </li> -->
   </ul>
 </nav>
 
@@ -58,20 +57,10 @@
 			<div class="row justify-content-center">
 				<div class="col-sm">
 					<form action="createUser.do" method="get">
-						<button type="button" class="btn btn-secondary" value="Create Account">Create Account</button>
+						<button type="submit" class="btn btn-secondary" value="Create Account">Create Account</button>
 					</form>
 				</div>
 			</div>
-=======
-
-
-		<h1> LOGIN PLEASE</h1>
-		<form action="login.do" method="post">
-			<input type="text" name="userName" placeholder="Enter User Name">
-			<input type="text" name="password" placeholder="Enter Password">
-			<input class="submit" type="submit" value="Sign-In">
-		</form>
->>>>>>> 1563fbc5eb4a60c6a47575a580b48eead23b478a
 		
 		</div>
 		

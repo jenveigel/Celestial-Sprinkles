@@ -18,24 +18,27 @@
 	
 	
 	<form action="addUser.do" method="post">
-	 <div class="container">
-<p class="well"></p>
-     <h3>Registration</h3>
-    <hr>
+	 	<div class="container">
+		<p class="well"></p>
+     	<h3>Registration</h3>
+    		<hr>
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-sm-5">
             <div class="form-group">
-                <label>Username</label>
+                <!-- <label>Username</label> -->
                 <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
                     <input type="text" class="form-control" name="userName" id="userName" placeholder="Requested Username" required value="UserName">
                 </div>
             </div>
             </div>
             <div class="form-group">
-                <label>Password</label>
+                <!-- <label>Password</label> -->
                 <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
                     <input type="text" class="form-control" name="password" id="password" placeholder="Password" required data-toggle="popover" title="Password Strength" data-content="Enter Password...">
                 </div>
+            </div><br>
+            <div class="form-group">
+            		<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-secondary pull-right">
             </div><br>
             <!-- <div class="form-group">
                 <label>Confirm Password</label>
@@ -43,7 +46,6 @@
                     <input type="password" class="form-control" name="confirm" id="confirm" placeholder="Confirm Password" required>
                 </div>
             </div>  -->
-            <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-primary pull-right">
         </div>
     </div>
 </div> 
