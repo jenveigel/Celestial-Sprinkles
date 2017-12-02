@@ -39,8 +39,16 @@
       <div class="modal-body">
         ${event.activity } at ${event.address}<br> 
         on ${event.dateTime} <br>
-        Attendees: <c:forEach var="user" items="${eventsWithUsers.users}">
-        					${user.userName}
+        Attendees: 
+        
+        <c:forEach var="ewu" items="${eventsWithUsers}">
+		        <c:choose>
+		         <c:when test ="${ewu.id eq event.id}">
+		           <c:forEach var="user" items="${ewu.users}">
+	        					${user.userName}
+	      		 </c:forEach>
+		         </c:when>
+		        </c:choose>    
         </c:forEach>
       </div>
       <div class="modal-footer">
