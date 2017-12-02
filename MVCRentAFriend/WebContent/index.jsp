@@ -45,12 +45,12 @@
 	<input class="btn btn-lg btn-secondary" type="submit" value="View Profile"></input>
 	</form>
 
-</div>
+<!-- </div>
 <p class="row justify-content-center">
 <a href="index.do"> Return</a>
 </p></p>
   </div>
-</div>
+</div> -->
 	
 	<!-- ================================================== -->
 
