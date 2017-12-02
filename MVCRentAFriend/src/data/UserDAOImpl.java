@@ -26,8 +26,10 @@ public class UserDAOImpl implements UserDAO {
 			user.setUserName(username);
 			user.setPassword(password);
 			Profile profile = new Profile();
-			profile.setFirstName(firstName);
-			profile.setLastName(lastName);
+			profile.setFirstName("");
+			profile.setLastName("");
+			profile.setBio("");
+			profile.setImageURL("");
 			user.setProfile(profile);
 			em.persist(user);
 			em.flush();
@@ -76,7 +78,6 @@ public class UserDAOImpl implements UserDAO {
 		return em.createQuery(query, User.class).getResultList();
 	}
 	
-	@Override
 	public boolean deleteEventFromUser(int uid, int eid) {
 		String query = "SELECT u FROM User u JOIN FETCH u.events WHERE u.id = :uid";
 		User user = em.createQuery(query, User.class).setParameter("uid", uid).getResultList().get(0);
