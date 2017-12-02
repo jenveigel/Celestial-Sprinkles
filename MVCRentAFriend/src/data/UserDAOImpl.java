@@ -77,7 +77,11 @@ public class UserDAOImpl implements UserDAO {
 		String query = "SELECT u FROM user u";
 		return em.createQuery(query, User.class).getResultList();
 	}
-	
+
+
+	// Method currently does not work. It will do everything correctly up until about maybe the setEvents
+	// or the persist. It doesnt add the new List<Event> to the database.
+	@Override
 	public boolean deleteEventFromUser(int uid, int eid) {
 		String query = "SELECT u FROM User u JOIN FETCH u.events WHERE u.id = :uid";
 		User user = em.createQuery(query, User.class).setParameter("uid", uid).getResultList().get(0);
@@ -93,12 +97,12 @@ public class UserDAOImpl implements UserDAO {
 		user.setEvents(updatedEvents);
 		em.persist(user);
 		em.flush();
-		
+
 //		DELETE FROM event_participant WHERE event.id=:eid AND user.id = :uid;
 //		Event event = events.get(0);
 
 		return true;
-		
+
 	}
 
 	@Override
@@ -107,8 +111,8 @@ public class UserDAOImpl implements UserDAO {
 
 		return em.createQuery(query, Event.class).setParameter("eventId", eventId).getResultList().get(0).getUsers();
 	}
-	
-	
+
+
 
 	@Override
 	public Profile updateProfile(int id, Profile profile) {
@@ -125,7 +129,7 @@ public class UserDAOImpl implements UserDAO {
 	public Profile getProfileById(int id) {
 		return em.find(Profile.class, id);
 	}
-	
+
 	@Override
 	public Profile getProfileByUserId(int id) {
 		return em.find(User.class, id).getProfile();
@@ -140,7 +144,7 @@ public class UserDAOImpl implements UserDAO {
 			return null;
 		}
 	}
-	
+
 
 	// @Override
 	// public List<Profile> getProfileByKey(String keyword) {
