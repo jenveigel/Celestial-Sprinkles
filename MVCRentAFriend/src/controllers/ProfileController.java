@@ -32,7 +32,6 @@ public class ProfileController {
 
 			Object obj = sessionId.getAttribute("sessionId");
 			int id = (Integer) obj;
-
 			User user = dao.getUserById(id);
 //			System.out.println(user + " " + user.getId());
 			Profile prof = dao.getProfileByUserId(id);
