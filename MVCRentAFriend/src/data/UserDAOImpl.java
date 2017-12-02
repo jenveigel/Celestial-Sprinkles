@@ -79,15 +79,16 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public boolean deleteEventFromUser(int uid, int eid) {
 		String query = "SELECT u FROM User u JOIN FETCH u.events WHERE u.id = :uid";
-		
 		User user = em.createQuery(query, User.class).setParameter("uid", uid).getResultList().get(0);
 		List<Event> userEvents = user.getEvents();
+		System.out.println(userEvents);
 		List<Event> updatedEvents = new ArrayList<>();
 		for (Event event : userEvents) {
 			if(event.getId() != eid) {
 				updatedEvents.add(event);
 			}
 		}
+		System.out.println(updatedEvents);
 		user.setEvents(updatedEvents);
 		em.persist(user);
 		em.flush();
