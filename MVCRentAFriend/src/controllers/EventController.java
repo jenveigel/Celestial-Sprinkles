@@ -79,6 +79,16 @@ public class EventController {
 		mv.setViewName("attend.jsp");
 		return mv;
 	}
+	@RequestMapping(path="deleteEvent.do", method=RequestMethod.GET)
+	public ModelAndView deleteEvent() {
+		ModelAndView mv = new ModelAndView();
+		List<Event> events = dao.getAllEvents();
+		List<Event> eventsWithUsers = dao.getAllEventsWithUsers();
+		mv.addObject("eventsWithUsers", eventsWithUsers);
+		mv.addObject("events", events);
+		mv.setViewName("attend.jsp");
+		return mv;
+	}
 	
 	@RequestMapping(path="addEventToUser.do", method=RequestMethod.GET)
 	public ModelAndView addEventToUser(HttpSession session, int eventId) {
