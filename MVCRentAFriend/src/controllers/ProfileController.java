@@ -38,11 +38,11 @@ public class ProfileController {
 			Profile prof = dao.getProfileByUserId(id);
 			
 			List<Event> events = eventDao.getAllEventsByUserId(user);
-			
+			List<Event> eventsWithUsers = eventDao.getAllEventsWithUsers();
 			mv.addObject("user", user);
 			mv.addObject("profile", prof);
 			mv.addObject("events", events);
-			
+			mv.addObject("eventsWithUsers", eventsWithUsers);
 			mv.setViewName("viewprofile.jsp");
 			return mv;
 		}
