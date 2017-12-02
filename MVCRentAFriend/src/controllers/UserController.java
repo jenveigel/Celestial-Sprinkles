@@ -49,6 +49,7 @@ public class UserController {
 		if(user!=null&&user.getPassword().equals(password)) {
 			mv.setViewName("index.jsp");
 			session.setAttribute("sessionId", user.getId());
+			session.setAttribute("sessionObj", user);
 			session.setAttribute("user", user);
 		} else {
 			mv.addObject("errorMessage","Username or password Incorrect.");
