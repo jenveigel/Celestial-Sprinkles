@@ -41,11 +41,11 @@
  ${event.activity } ${event.address} 
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#details${event.id }">
+<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#details${event.id }">
   See Event Details
 </button><br>
 <form action="addEventToUser.do" method="get">
-		<input type="submit" class="btn btn-primary" value="Attend Event"></input><br> 
+		<input type="submit" class="btn btn-secondary" value="Attend Event"></input><br> 
 		<input type="hidden" value="${event.id }" name="eventId"></input>
 </form>
 <!-- Modal -->

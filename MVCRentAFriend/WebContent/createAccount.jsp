@@ -16,6 +16,22 @@
 </head>
 <body>
 	
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<a class="navbar-brand" href="loginPage.do">
+    <img src="mountains.png" style="width:60px;">
+  </a>
+  <ul class="navbar-nav">
+    <!-- <li class="nav-item active">
+      <a class="nav-link" href="attendEvent.do">Attend</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="createEventPage.do">Create</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="viewprofile.do">Your Profile</a>
+    </li> -->
+  </ul>
+</nav>
 	
 	<form action="addUser.do" method="post">
 	 	<div class="container">
@@ -31,10 +47,12 @@
                 </div>
             </div>
             </div>
+            <div class="col-sm-5">
             <div class="form-group">
                 <!-- <label>Password</label> -->
                 <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
                     <input type="text" class="form-control" name="password" id="password" placeholder="Password" required data-toggle="popover" title="Password Strength" data-content="Enter Password...">
+                </div>
                 </div>
             </div><br>
             <div class="form-group">
@@ -50,6 +68,13 @@
     </div>
 </div> 
     </form>
+    
+    </div>
+<p class="row justify-content-center">
+<a href="loginPage.do"> Return to Login</a>
+</p></p>
+  </div>
+</div>
 
 	 <%-- <div>
 
