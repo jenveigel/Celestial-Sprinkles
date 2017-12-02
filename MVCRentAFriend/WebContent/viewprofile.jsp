@@ -59,7 +59,7 @@
         <form action="cancelrsvp.do" method="get">
 			<input type="submit" class="btn btn-primary" value="Cancel RSVP"></input><br> 
 		</form>
-		<a href="cancelrsvp.do?event=${event }">Cancel RSVP</a>
+		<a href="cancelrsvp.do?eid=${event.id }">Cancel RSVP</a>
       </div>
     </div>
   </div>

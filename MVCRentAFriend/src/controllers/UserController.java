@@ -57,13 +57,13 @@ public class UserController {
 		return mv;
 	}
 	@RequestMapping(path="cancelrsvp.do", method = RequestMethod.GET)
-	public ModelAndView login(HttpSession sessionId, Event event) {
+	public ModelAndView login(HttpSession sessionId, Integer eid) {
 		ModelAndView mv = new ModelAndView();
-		System.out.println(event);
+		System.out.println(eid);
 		Object obj = sessionId.getAttribute("sessionId");
 		int id = (Integer) obj;
 		User user = dao.getUserById(id);
-		dao.deleteEventFromUser(user.getId(), event.getId());		
+		dao.deleteEventFromUser(user.getId(), eid);		
 		mv.setViewName("viewprofile.do");
 		return mv;
 	}
