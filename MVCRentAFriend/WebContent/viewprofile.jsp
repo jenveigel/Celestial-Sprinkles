@@ -14,7 +14,23 @@
 <title>Profile</title>
 </head>
 <body>
-<h1>HERES A PROFILE OR SOMETHING</h1>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<a class="navbar-brand" href="index.jsp">
+    <img src="mountains.png" style="width:60px;">
+  </a>
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="attend.jsp">Attend</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="createevent.jsp">Create</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="viewprofile.jsp">Your Profile</a>
+    </li>
+  </ul>
+</nav>
 		
 		<!-- edit profile button -->
 		<form action="editProfileWithValues.do" method="get">
