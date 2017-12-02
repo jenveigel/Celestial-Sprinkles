@@ -8,6 +8,23 @@
 </head>
 <body>
 
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<a class="navbar-brand" href="index.jsp">
+    <img src="mountains.png" style="width:60px;">
+  </a>
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="attend.jsp">Attend</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="createevent.jsp">Create</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="viewprofile.jsp">Your Profile</a>
+    </li>
+  </ul>
+</nav>
+
 <h1>Edit Profile</h1>
 		<form action="editprofile.do" method="post">
 			<input type="text" name="firstName" placeholder="Enter First Name" value="${profile.firstName }" >
