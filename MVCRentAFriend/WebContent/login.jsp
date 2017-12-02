@@ -35,12 +35,12 @@
 
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-sm">
+				<div class="col-sm-6">
 					<h1>Login or Create New User</h1>
 				</div>
 			</div>
 			<div class="row justify-content-center">
-				<div class="col-sm">
+				<div class="col-sm-6">
 					<form action="login.do" method="post">
 						<input type="text" name="userName" placeholder="Enter User Name">
 						<input type="text" name="password" placeholder="Enter Password">
@@ -49,13 +49,13 @@
 				</div>
 			</div>
 			<div class="row justify-content-center">
-				<div class="col-sm">
+				<div class="col-sm-6">
 					<!-- error message for wrong username/password -->
 					<h3>${errorMessage}</h3>
 				</div>
 			</div>
 			<div class="row justify-content-center">
-				<div class="col-sm">
+				<div class="col-sm-6">
 					<form action="createUser.do" method="get">
 						<button type="submit" class="btn btn-secondary" value="Create Account">Create Account</button>
 					</form>
