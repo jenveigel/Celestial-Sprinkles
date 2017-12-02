@@ -21,13 +21,13 @@
   </a>
   <ul class="navbar-nav">
     <li class="nav-item active">
-      <a class="nav-link" href="attend.jsp">Attend</a>
+      <a class="nav-link" href="attendEvent.do">Attend</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="createevent.jsp">Create</a>
+      <a class="nav-link" href="createEventPage.do">Create</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="viewprofile.jsp">Your Profile</a>
+      <a class="nav-link" href="viewprofile.do">Your Profile</a>
     </li>
   </ul>
 </nav>
