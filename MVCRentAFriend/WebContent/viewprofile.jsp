@@ -70,9 +70,9 @@
         on ${event.dateTime} <br>
       </div>
       <div class="modal-footer">
-	      <c:if test="${sessionId == event.ownerId }">
+<%-- 	      <c:if test="${sessionId1 == event.ownerId }">
 	      
-	      </c:if>
+	      </c:if> --%>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         <form action="deleteEvent.do" method="get">
