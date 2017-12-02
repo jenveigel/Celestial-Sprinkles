@@ -27,6 +27,7 @@ public class EventDAOImpl implements EventDAO {
 
 		@Override
 		public Event update(int id, Event event) {
+			System.out.println("update event");
 			Event updatedEvent  = em.find(Event.class, id);
 			updatedEvent.setActivity(updatedEvent.getActivity());
 			updatedEvent.setDateTime(updatedEvent.getDateTime());
@@ -37,7 +38,8 @@ public class EventDAOImpl implements EventDAO {
 
 		@Override
 		public boolean destroyById(int id) {
-			Event destroyEvent = em.find(Event.class, id) ;
+			Event destroyEvent = em.find(Event.class, id);
+			System.out.println(destroyEvent);
 			em.remove(destroyEvent);
 			if (em.find(Event.class, id) == null) {
 				return true;

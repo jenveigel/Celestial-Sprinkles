@@ -73,9 +73,9 @@ DROP TABLE IF EXISTS `event` ;
 CREATE TABLE IF NOT EXISTS `event` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `activity` VARCHAR(120) NOT NULL,
-  `owner_id` INT UNSIGNED NOT NULL,
-  `time` DATETIME NOT NULL,
-  `address_id` INT NOT NULL,
+  `owner_id` INT UNSIGNED NULL,
+  `time` DATETIME NULL,
+  `address_id` INT NULL,
   PRIMARY KEY (`id`),
   INDEX `id_idx` (`address_id` ASC),
   INDEX `id_idx1` (`owner_id` ASC),
@@ -182,4 +182,3 @@ INSERT INTO `event_participant` (`id`, `user_id`, `event_id`) VALUES (1, 1, 1);
 INSERT INTO `event_participant` (`id`, `user_id`, `event_id`) VALUES (2, 2, 2);
 
 COMMIT;
-
