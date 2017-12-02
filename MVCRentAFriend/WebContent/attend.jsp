@@ -12,7 +12,7 @@
 	crossorigin="anonymous" />
 <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="attendbackground">
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 <a class="navbar-brand" href="index.jsp">
@@ -29,25 +29,33 @@
       <a class="nav-link" href="viewprofile.do">Your Profile</a>
     </li>
   </ul>
-</nav>
+</nav><br>
 
-
+<div class="container" style="background-color:lightgrey;">
+<div class="row justify-content-center">
 <h1>ATTEND</h1>
-
-
 <h3>${errorMessage}</h3>
+</div>
 
+<div class="container">
 <c:forEach var="event" items="${events}">
+<div class="row justify-content-center">
+<div class="col-sm-8">
  ${event.activity } ${event.address} 
-
+</div>
 <!-- Button trigger modal -->
+<div class="col-sm-2">
 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#details${event.id }">
   See Event Details
-</button><br>
+</button>
+</div>
+<div class="col-sm-2">
 <form action="addEventToUser.do" method="get">
 		<input type="submit" class="btn btn-secondary" value="Attend Event"></input><br> 
 		<input type="hidden" value="${event.id }" name="eventId"></input>
 </form>
+</div>
+
 <!-- Modal -->
 <div class="modal fade" id="details${event.id }" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -90,10 +98,12 @@
     </div>
   </div>
 </div>
-
+</div>
+<br>
 </c:forEach>
-	
-	
+</div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 		crossorigin="anonymous"></script>
