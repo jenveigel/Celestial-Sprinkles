@@ -31,7 +31,7 @@
 </nav>
 
 <h1>Edit Profile</h1>
-		<form action="editprofile.do" method="post">
+		<form action="editprofile.do" method="get">
 			<input type="text" name="firstName" placeholder="Enter First Name" value="${profile.firstName }" >
 			<input type="text" name="lastName" placeholder="Enter Last Name" value="${profile.lastName }">
 			<input type="text" name="bio" placeholder="Enter Bio" value="${profile.bio }">
