@@ -13,8 +13,30 @@
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<a class="navbar-brand" href="index.jsp">
+    <img src="mountains.png" style="width:60px;">
+  </a>
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="attend.jsp">Attend</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="createevent.jsp">Create</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="viewprofile.jsp">Your Profile</a>
+    </li>
+  </ul>
+</nav>
+
+
 <h1>ATTEND</h1>
+
+
 <h3>${errorMessage}</h3>
+
 <c:forEach var="event" items="${events}">
  ${event.activity } ${event.address} 
 
@@ -41,6 +63,8 @@
         on ${event.dateTime} <br>
         Attendees: 
         
+        
+        
         <c:forEach var="ewu" items="${eventsWithUsers}">
 		        <c:choose>
 		         <c:when test ="${ewu.id eq event.id}">
@@ -50,20 +74,29 @@
 		         </c:when>
 		        </c:choose>    
         </c:forEach>
+        </tbody>
+	</table>
       </div>
       <div class="modal-footer">
+      
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        
+        
+        
         <form action="addEventToUser.do" method="get">
 		<input type="submit" class="btn btn-primary" value="Attend Event"></input><br> 
+		<input type="hidden" value="${event.id }" name="eventId"></input>
 </form>
+
       </div>
     </div>
   </div>
 </div>
 
 </c:forEach>
-
+	
+	
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 		crossorigin="anonymous"></script>
