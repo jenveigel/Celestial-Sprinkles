@@ -3,3 +3,23 @@
 body {
 	background-image: url("http://shop.fieldsfabrics.com/assets/images/D27820.jpg");
 }
+
+h1 {
+	color: white;
+	text-align: center;
+}
+
+.col-9 {
+	text-align: center;
+}
+
+.profileDetails {
+	color: lightgray;
+	padding: 10px;
+}
+
+.span8 {
+	color: lightgray;
+	text-align: center;
+	
+}
