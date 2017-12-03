@@ -65,6 +65,7 @@ public class EventController {
 		Event newEvent = new Event(activity, owner, dateTime, newAddress);
 		//The dao adds the event to the database here
 		dao.create(newEvent);
+		dao.addUserToEvent(newEvent.getId(), owner);
 		mv.setViewName("createevent.jsp");
 		return mv;
 	}
