@@ -43,7 +43,7 @@
             <div class="form-group">
                 <!-- <label>Username</label> -->
                 <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                    <input type="text" class="form-control" name="userName" id="userName" placeholder="Requested Username" required value="UserName">
+                    <input type="text" class="form-control" name="userName" id="userName" placeholder="Enter a Username">
                 </div>
             </div>
             </div>
@@ -51,7 +51,7 @@
             <div class="form-group">
                 <!-- <label>Password</label> -->
                 <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                    <input type="text" class="form-control" name="password" id="password" placeholder="Password" required data-toggle="popover" title="Password Strength" data-content="Enter Password...">
+                    <input type="text" class="form-control" name="password" id="password" placeholder="Enter a Password" required data-toggle="popover" title="Password Strength" data-content="Enter Password...">
                 </div>
                 </div>
             </div><br>
