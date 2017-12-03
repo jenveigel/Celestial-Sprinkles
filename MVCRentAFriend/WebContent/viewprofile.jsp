@@ -143,7 +143,7 @@
   <a href="https://www.linkedin.com/in/david-chirdon-140560b6"><i class="fa fa-linkedin"></i></a> 
   <a href="https://www.facebook.com/dave.chirdon.9"><i class="fa fa-facebook"></i></a> 
   </div><br>
-  <p><a class="btn btn-secondary btn-lg btn-block" href="editProfileWithValues.do" role="button">Edit Profile</a></p>
+  <p><a class="btn btn-outline-warning" href="editProfileWithValues.do" role="button">Edit Profile</a></p>
   
 </div>
 
