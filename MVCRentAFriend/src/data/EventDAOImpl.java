@@ -1,5 +1,7 @@
 package data;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +11,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import entities.Address;
 import entities.Event;
 import entities.User;
 
@@ -26,13 +29,30 @@ public class EventDAOImpl implements EventDAO {
 		}
 
 		@Override
-		public Event update(int id, Event event) {
+		public Event updateEvent(int id, Event event) {
 			System.out.println("update event");
-			Event updatedEvent  = em.find(Event.class, id);
-			updatedEvent.setActivity(updatedEvent.getActivity());
-			updatedEvent.setDateTime(updatedEvent.getDateTime());
-			updatedEvent.setAddress(updatedEvent.getAddress());
+			Event updatedEvent = em.find(Event.class, event.getId());
+			updatedEvent.setActivity(event.getActivity());
+			updatedEvent.setDateTime(event.getDateTime());
+			updatedEvent.setAddress(event.getAddress());
 
+			return updatedEvent;
+		}
+		@Override
+		public Event updateEvent(int eid, String activity, String when, String street, String city, String state, int id) {
+			System.out.println("update event");
+			Event updatedEvent = em.find(Event.class, eid);
+			Address add = new Address();
+			add.setCity(city);
+			add.setState(state);
+			add.setAddress(street);
+			updatedEvent.setActivity(activity);
+			updatedEvent.setAddress(add);
+			String str = when;
+			str = str.replace("T", " ");
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+			LocalDateTime dateTime = LocalDateTime.parse(str, formatter);
+			updatedEvent.setDateTime(dateTime);
 			return updatedEvent;
 		}
 

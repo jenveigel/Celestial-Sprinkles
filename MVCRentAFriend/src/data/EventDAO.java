@@ -8,7 +8,7 @@ import entities.User;
 
 public interface EventDAO {
 	public Event create(Event event);
-	public Event update(int id, Event event);
+	public Event updateEvent(int id, Event event);
 	public boolean destroyById(int id);
 	public Event getEventById(int id);
 	public List<Event> getAllEvents();
@@ -18,4 +18,5 @@ public interface EventDAO {
 	public boolean addUserToEvent(int eventId,User user);
 	List<Event> getAllEventsByUserId(User user);
 	List<Event> getAllEventsWithUsers();
+	public Event updateEvent(int eid, String activity, String when, String street, String city, String state, int id);
 }

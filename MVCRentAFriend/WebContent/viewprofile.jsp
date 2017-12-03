@@ -100,7 +100,7 @@
         </button>
       </div>
       <div class="modal-body">
-       	<form action="editprofile.do" method="get">
+       	<form action="updateevent.do" method="get">
        			Event Title: <input type="text" name="event" value=""/><br>
 					 Street Address: <input type="text" name="street" value="${event.address.address }"/><br>
 					 City: <input name="city" value="${event.address.city }"/><br>
@@ -109,11 +109,13 @@
 					 Activity: <input name="activity" value="${event.activity }"/><br>
 					 When (date and time): <input type="datetime-local" name="when" value="${event.dateTime }"/> <br>
 					 
-			<input class="submit" type="submit" value="Done">
+			<!-- <input class="submit" type="submit" value="Update"> -->
+	        <input type="hidden" value="${event.id }" name="eid"></input>
+	        <%-- <input type="hidden" value="${event.owner.id }" name="ownerId"></input> --%>
+	        <input type="submit" class="btn btn-primary" value="Update" ></input>
 		</form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
