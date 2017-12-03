@@ -1,9 +1,7 @@
 package controllers;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -16,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import data.EventDAO;
 import data.UserDAO;
-import data.UserDAOImpl;
 import entities.Address;
 import entities.Event;
 import entities.User;
@@ -120,9 +117,12 @@ public class EventController {
 		return mv;
 	}
 	@RequestMapping(path="deleteEvent.do", method=RequestMethod.GET)
-	public ModelAndView deleteEvent(int eventId) {
+	public ModelAndView deleteEvent(HttpSession session, int eventId) {
 		ModelAndView mv = new ModelAndView();
-		System.out.println("HELLO");
+		
+		Object obj = session.getAttribute("sessionId");
+		int id = (Integer) obj;
+		
 		dao.destroyById(eventId);
 		mv.setViewName("redirect:viewprofile.do");
 		return mv;

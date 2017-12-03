@@ -3,7 +3,6 @@ package entities;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -26,20 +25,22 @@ public class Event {
 	
 	private String activity;
 	
-	@OneToOne //but can't an owner have many events? OneToMany?
+	//created a bi-directional relationship with User owner;
+	//added the cascade persist and remove
+	//but can't an owner have many events? OneToMany?
+	@OneToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
 	@JoinColumn(name="owner_id")
 	private User owner;
 	
 	@Column(name="time")
 	private LocalDateTime dateTime;
 	
-	@OneToOne(cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
+	@OneToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinColumn(name="address_id")
 	private Address address; 
 	
-	@ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
-	@JoinTable(
-			name="event_participant",
+	@ManyToMany(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
+	@JoinTable(name="event_participant",
 			joinColumns=@JoinColumn(name="event_id"),
 			inverseJoinColumns=@JoinColumn(name="user_id")
 	)
@@ -53,14 +54,6 @@ public class Event {
 
 	public void setActivity(String activity) {
 		this.activity = activity;
-	}
-
-	public User getOwnerId() {
-		return owner;
-	}
-
-	public void setOwnerId(User owner) {
-		this.owner = owner;
 	}
 
 	public LocalDateTime getDateTime() {
