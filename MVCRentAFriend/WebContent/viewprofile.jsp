@@ -107,7 +107,8 @@
 					 State: <input name="state" value="${event.address.state }"/><br>
 					 Description:	<input name="desc" value=""/><br>
 					 Activity: <input name="activity" value="${event.activity }"/><br>
-					 When (date and time):
+					 When (date and time): <input type="datetime-local" name="when" value="${event.dateTime }"/> <br>
+					 
 			<input class="submit" type="submit" value="Done">
 		</form>
       </div>
@@ -120,13 +121,13 @@
 </div>
 	      
 	      </c:if>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         <form action="cancelrsvp.do" method="get">
 			<input type="submit" class="btn btn-primary" value="Cancel RSVP"></input><br> 
 		</form>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 		<%-- <a href="cancelrsvp.do?eid=${event.id }">Cancel RSVP</a> --%>
       </div>
     </div>
