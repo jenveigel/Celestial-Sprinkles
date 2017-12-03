@@ -38,10 +38,10 @@
 		<c:forEach var="event" items="${events }">
 
 			<!-- Button trigger modal -->
-			<button type="button" class="btn btn-primary" data-toggle="modal"
+			<button type="button" class="btn btn-secondary" data-toggle="modal"
 				data-target="#details${event.id }">${event.activity }</button>
 			<br>
-			<br>
+			
 			<%-- <form action="addEventToUser.do" method="get">
 		<input type="submit" class="btn btn-primary" value="Attend Event"></input><br> 
 		<input type="hidden" value="${event.id }" name="eventId"></input>
