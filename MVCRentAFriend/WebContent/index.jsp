@@ -37,6 +37,9 @@
     <li class="nav-item">
       <a class="nav-link" href="viewprofile.do">Your Profile</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link " href="loginPage.do">Logout</a>
+    </li>
   </ul>
 </nav>
 <br>
