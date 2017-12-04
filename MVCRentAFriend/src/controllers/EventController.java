@@ -100,39 +100,12 @@ public class EventController {
 	
 	//This method causes the actual event to populate
 	@RequestMapping(path="updateevent.do", method=RequestMethod.GET)
-	public ModelAndView updateEvent(HttpSession session, int eid, String activity, String when, String street
+	public ModelAndView updateEvent(HttpSession session, int eid, String event, String activity, String when, String street
 			,String city, String state, String desc) {
 		ModelAndView mv = new ModelAndView();
 		Event e = dao.getEventById(eid);
-		System.out.println(e);
-//		Event updatedEvent = dao.updateEvent(event.getId(), event);
-		Event updatedEvent = dao.updateEvent(eid, activity, when, street, city, state, e.getOwner().getId());
-//		Event updatedEvent = dao.getEventById(eventId);
-		//Generate a Address object from the address fields
-//		Address newAddress= new Address();
-//		newAddress.setAddress(street);
-//		newAddress.setCity(city);
-//		newAddress.setState(state);
-		//date time
-//		String str = when;
-//		str = str.replace("T", " ");
-		//System.out.println(when);
-//		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-//		LocalDateTime dateTime = LocalDateTime.parse(str, formatter);
-		
-		//Get session userId to see who is currently loged in
-//		Object contextObject = session.getAttribute("sessionId");
-//		if(contextObject == null) {
-//			mv.setViewName("login.jsp");
-//		}
-//		int ownerId = (Integer) contextObject;
-//		User owner = userDao.getUserById(ownerId);
-//		updatedEvent.setActivity(activity);
-//		updatedEvent.setAddress(newAddress);
-//		updatedEvent.setDateTime(dateTime);
-		//Create a new event object
-//		Event newEvent = new Event(activity, owner, dateTime, newAddress);
-		//The dao updates the event to the database here
+		Event updatedEvent = dao.updateEvent(eid, event, activity, when, street, city, state, desc, e.getOwner().getId());
+
 		mv.addObject("event", updatedEvent);
 		mv.setViewName("viewprofile.do");
 		return mv;

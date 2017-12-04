@@ -39,13 +39,15 @@ public class EventDAOImpl implements EventDAO {
 			return updatedEvent;
 		}
 		@Override
-		public Event updateEvent(int eid, String activity, String when, String street, String city, String state, int id) {
+		public Event updateEvent(int eid, String title, String activity, String when, String street, String city, String state, String desc, int id) {
 			System.out.println("update event");
 			Event updatedEvent = em.find(Event.class, eid);
 			Address add = new Address();
 			add.setCity(city);
 			add.setState(state);
 			add.setAddress(street);
+			updatedEvent.setTitle(title);
+			updatedEvent.setDescription(desc);
 			updatedEvent.setActivity(activity);
 			updatedEvent.setAddress(add);
 			String str = when;
