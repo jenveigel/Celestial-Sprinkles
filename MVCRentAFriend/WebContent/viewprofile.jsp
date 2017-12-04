@@ -48,7 +48,7 @@
 
 				<!-- Button trigger modal -->
 				<button type="button" class="btn btn-secondary" data-toggle="modal"
-					data-target="#details${event.id }">${event.activity }</button>
+					data-target="#details${event.id }">${event.title }</button>
 				<br>
 
 				<%-- <form action="addEventToUser.do" method="get">
@@ -62,7 +62,7 @@
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLabel">${event.activity }</h5>
+								<h5 class="modal-title" id="exampleModalLabel">${event.title }</h5>
 								<button type="button" class="close" data-dismiss="modal"
 									aria-label="Close">
 									<span aria-hidden="true">&times;</span>
@@ -107,12 +107,12 @@
 												</div>
 												<div class="modal-body">
 													<form action="updateevent.do" method="get">
-														Event Title: <input type="text" name="event" value="" /><br>
+														Event Title: <input type="text" name="event" value="${event.title }" /><br>
 														Street Address: <input type="text" name="street"
 															value="${event.address.address }" /><br> City: <input
 															name="city" value="${event.address.city }" /><br>
 														State: <input name="state" value="${event.address.state }" /><br>
-														Description: <input name="desc" value="" /><br>
+														Description: <input name="desc" value="${event.description}" /><br>
 														Activity: <input name="activity"
 															value="${event.activity }" /><br> When (date and
 														time): <input type="datetime-local" name="when"
