@@ -39,15 +39,14 @@
 	<div class="card">
 		<img src="${profile.imageURL }" class="img-thumbnail"
 			alt="${profile.firstName }" style="width: 100%">
-		<p class="name">First Name: ${profile.firstName }</p>
-		<p class="name">Last Name: ${profile.lastName }</p>
+		<p class="name">${profile.firstName} ${profile.lastName}</p>
 		<p class="bio">Bio: ${profile.bio }</p>
 		<br>
 		<c:if test="${events != null }">
 			<c:forEach var="event" items="${events }">
 
 				<!-- Button trigger modal -->
-				<button type="button" class="btn btn-secondary" data-toggle="modal"
+				<button type="button" class="btn btn-secondary btn-lg" data-toggle="modal"
 					data-target="#details${event.id }">${event.title }</button>
 				<br>
 
@@ -59,14 +58,10 @@
 				<div class="modal fade" id="details${event.id }" tabindex="-1"
 					role="dialog" aria-labelledby="exampleModalLabel"
 					aria-hidden="true">
-					<div class="modal-dialog" role="document">
+					<div class="modal-dialog modal-lg" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
 								<h5 class="modal-title" id="exampleModalLabel">${event.title }</h5>
-								<button type="button" class="close" data-dismiss="modal"
-									aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
 							</div>
 							<div class="modal-body">
 								${event.activity } at ${event.address}<br> on
@@ -81,15 +76,31 @@
 									</c:choose>
 								</c:forEach>
 							</div>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
 							<div class="modal-footer">
 								<c:if test="${sessionUser.id == event.owner.id }">
 									<form action="deleteEvent.do" method="get">
-										<input type="submit" class="btn btn-primary"
+										<input type="submit" class="btn btn-warning"
 											value="Delete Event"></input><br> <input type="hidden"
 											value="${event.id }" name="eventId"></input>
 									</form>
 
-									<button type="button" class="btn btn-primary"
+									<button type="button" class="btn btn-warning"
 										data-toggle="modal" data-target="#updateEvent${event.id }">
 										Update Event</button>
 
@@ -97,15 +108,12 @@
 										tabindex="-1" role="dialog"
 										aria-labelledby="exampleModalLabel" aria-hidden="true">
 										<div class="modal-dialog" role="document">
-											<div class="modal-content">
-												<div class="modal-header">
+											<div class="modal-content2">
+												<div class="modal-header2">
 													<h5 id="" class="modal-title">Update Event</h5>
-													<button type="button" class="close" data-dismiss="modal"
-														aria-label="Close">
-														<span aria-hidden="true">&times;</span>
-													</button>
+				
 												</div>
-												<div class="modal-body">
+												<div class="modal-body2">
 													<form action="updateevent.do" method="get">
 														Event Title: <input type="text" name="event" value="${event.title }" /><br>
 														Street Address: <input type="text" name="street"
