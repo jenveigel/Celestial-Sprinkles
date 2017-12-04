@@ -39,6 +39,8 @@
 <div class="container" style="background-color:lightgrey;">
 <div class="row justify-content-center">
 <h1>ATTEND</h1>
+</div>
+<div class="row justify-content-center">
 <h3>${errorMessage}</h3>
 </div>
 
