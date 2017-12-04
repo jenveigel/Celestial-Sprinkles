@@ -167,21 +167,21 @@
 						</div>
 		
 					</c:forEach>
-						</c:if>
+					</c:if>
 						<div class="col-9">
 							<a href="#"><i class="fa fa-twitter"></i></a> <a
 							href="https://www.linkedin.com/in/david-chirdon-140560b6"><i
 							class="fa fa-linkedin"></i></a> <a
 							href="https://www.facebook.com/dave.chirdon.9"><i
 							class="fa fa-facebook"></i></a>
-		</div>
-		<br>
-		<p>
-		<c:if test="${sessionUser.id == user.id }">
-			<a class="btn btn-outline-warning" href="editProfileWithValues.do"
-				role="button">Edit Profile</a>
-		</c:if>
-		</p>
+						</div>
+						<br>
+						<p>
+						<c:if test="${sessionUser.id == user.id }">
+							<a class="btn btn-outline-warning" href="editProfileWithValues.do"
+								role="button">Edit Profile</a>
+						</c:if>
+						</p>
 					
 				</div>
 				
