@@ -160,10 +160,10 @@
 		</div>
 		<br>
 		<p>
-		<c:if test="${session.id == user.id }">
+		<c:if test="${sessionUser.id == user.id }">
 			<a class="btn btn-outline-warning" href="editProfileWithValues.do"
 				role="button">Edit Profile</a>
-			</c:if>
+		</c:if>
 		</p>
 
 	</div>
