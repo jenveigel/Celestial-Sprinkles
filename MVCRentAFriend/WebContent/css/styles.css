@@ -64,11 +64,3 @@ a {
 button:hover, a:hover {
     opacity: 0.7;
 }
-.logout {
-	float: right;
-	position: absolute;
-  top: 20px;
-  right: 15px;
-}
-
-

@@ -29,7 +29,7 @@ public class Event {
 	//added the cascade persist and remove
 	//but can't an owner have many events? OneToMany?
 	//(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name="owner_id")
 	private User owner;
 	
