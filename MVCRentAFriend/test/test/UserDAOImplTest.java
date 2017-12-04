@@ -17,26 +17,25 @@ public class UserDAOImplTest {
 	private EntityManagerFactory emf;
 	private EntityManager em;
 	private UserDAO userDao;
-	
-	
+
+
 	@Before
 	public void setUp() throws Exception {
 		this.userDao  = new UserDAOImpl();
 		this.emf = Persistence.createEntityManagerFactory("RentAFriend");
 		this.em = emf.createEntityManager();
 	}
-	
+
 	@After
 	public void tearDown() throws Exception{
 		em.close();
 		emf.close();
 	}
-	
+
 	@Test
 	public void test() {
 		boolean pass = true;
 		assertEquals(pass, true);
 	}
-	
-}
 
+}
