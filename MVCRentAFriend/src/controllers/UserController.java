@@ -32,10 +32,13 @@ public class UserController {
 			String lastName, String imgUrl, String bio) {
 		ModelAndView mv = new ModelAndView();
 		boolean notNullValues = dao.createUser(userName, password, firstName,lastName , bio,imgUrl);
+		
+		
 		if(notNullValues == false) {
 			mv.setViewName("createAccount.jsp");
-			String errorMessage = "You are missing a filled field";
-			mv.addObject(errorMessage);
+			String error = "Don't be an idiot. \n Fill out all the fields.";
+			mv.addObject("error", error);
+			return mv;
 		}
 		mv.setViewName("login.jsp");
 		return mv;

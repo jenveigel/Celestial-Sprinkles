@@ -27,6 +27,7 @@
 		<div class="container">
 			<p class="well"></p>
 			<h1 class="header">Registration</h1>
+			<h1> ${error }</h1>
 			<hr>
 			<div class="row justify-content-center">
 				<div class="col-sm-5">
