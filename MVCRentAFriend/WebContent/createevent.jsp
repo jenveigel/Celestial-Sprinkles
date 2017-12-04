@@ -8,6 +8,7 @@
 <title>New Event</title>
 <jsp:include page="bootstrapHeader.jsp"></jsp:include>
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/createEvent.css">
 </head>
 <body>
 
@@ -41,19 +42,20 @@
 
 				<form action="createEvent.do" method="post" modelAttribute="item">
 
-					Event Title: <input type="text" name="event" /><br> Street
-					Address: <input type="text" name="street" /><br> City: <input
-						name="city" /><br> State: <input name="state" /><br>
-					Description: <input name="desc" /><br> Activity: <input
-						name="activity" /><br> When (date and time): <input
-						type="datetime-local" name="when" /> <br> <input
-						class="btn btn-success" type="submit" value="Add" />
+					<label>Event Title:</label> <input type="text" name="event" /><br> 
+					<label>Street Address: </label><input type="text" name="street" /><br> 
+					<label>City:</label><input name="city" /><br>
+					<label> State: </label> <input name="state" /><br>
+					<label>Description:</label> <input name="desc" /><br>
+					<label> Activity:</label><input name="activity" /><br> 
+					<label>When (date and time): </label><input type="datetime-local" name="when" /> <br> <input
+					class="btn btn-success" type="submit" value="Add" />
 				</form>
 
 			</div>
 			<p class="row justify-content-center">
-				<a href="index.jsp"> Return To Home</a> <br> <a
-					href="attendEvent.do"> View Events</a>
+				<a href="index.jsp"> Return To Home </a>&nbsp; <br> 
+				<a href="attendEvent.do"> View Events</a>
 			</p>
 		</div>
 	</div>
