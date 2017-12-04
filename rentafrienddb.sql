@@ -72,10 +72,12 @@ DROP TABLE IF EXISTS `event` ;
 
 CREATE TABLE IF NOT EXISTS `event` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(50) NOT NULL,
+  `address_id` INT NOT NULL,
+  `description` VARCHAR(200) NOT NULL,
   `activity` VARCHAR(120) NOT NULL,
-  `owner_id` INT UNSIGNED NULL,
-  `time` DATETIME NULL,
-  `address_id` INT NULL,
+  `time` DATETIME NOT NULL,
+  `owner_id` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `id_idx` (`address_id` ASC),
   INDEX `id_idx1` (`owner_id` ASC),
@@ -167,8 +169,8 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `rentafrienddb`;
-INSERT INTO `event` (`id`, `activity`, `owner_id`, `time`, `address_id`) VALUES (1, 'Going to the Movies', 1, '2016-01-15 12:30:00', 1);
-INSERT INTO `event` (`id`, `activity`, `owner_id`, `time`, `address_id`) VALUES (2, 'Football Game', 2, '2017-12-1 16:30:00', 2);
+INSERT INTO `event` (`id`, `title`, `address_id`, `description`, `activity`, `time`, `owner_id`) VALUES (1, 'Going to the Movies', 1, 'Going to the Movies', 'movies', '2016-01-15 12:30:00', 1);
+INSERT INTO `event` (`id`, `title`, `address_id`, `description`, `activity`, `time`, `owner_id`) VALUES (2, 'Football Game', 2, 'Football Game', 'football', '2017-12-1 16:30:00', 2);
 
 COMMIT;
 
@@ -182,3 +184,4 @@ INSERT INTO `event_participant` (`id`, `user_id`, `event_id`) VALUES (1, 1, 1);
 INSERT INTO `event_participant` (`id`, `user_id`, `event_id`) VALUES (2, 2, 2);
 
 COMMIT;
+
