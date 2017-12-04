@@ -58,21 +58,12 @@ public class EventDAOImpl implements EventDAO {
 
 		@Override
 		public boolean destroyById(int id) {
-//			Event event = new Event();
-			
 			Event destroyEvent = em.find(Event.class, id);
-			System.out.println(destroyEvent.getOwner());
-			System.out.println(destroyEvent);
-//			System.out.println(destroyEvent);
-			
-			//trying to remove owner_id foreign key before removing event
-			//still not working
-//			User user = new User();
-			
-//			destroyEvent.setOwner();
-//			em.remove(destroyEvent.getOwner());
-			em.remove(destroyEvent);
-			if (em.find(Event.class, id) == null) {
+			String query = "DELETE FROM Event e WHERE e.id = :id";
+
+			int num = em.createQuery(query).setParameter("id", id).executeUpdate();
+//			em.remove(destroyEvent);
+			if (num > 0) {
 				return true;
 			} else
 
@@ -103,29 +94,29 @@ public class EventDAOImpl implements EventDAO {
 
 		@Override
 		public List<Event> getAllEventsByUserId(User user) {
-			
+
 			try {
 				String query = "SELECT u FROM User u JOIN FETCH u.events WHERE u.id = :id";
-				
+
 				List<Event> events = em.createQuery(query, User.class)
 				.setParameter("id", user.getId())
 				.getResultList()
 				.get(0)
 				.getEvents();
-				
+
 				if(events == null) {
 					events = new ArrayList<>();
-					
+
 				}
-				
+
 				return events;
-				
+
 			}
 			catch(Exception e){
 				e.printStackTrace();
 				return new ArrayList<Event>();
 			}
-			
+
 		}
 
 		@Override
@@ -167,9 +158,9 @@ public class EventDAOImpl implements EventDAO {
 
 			return true;
 		}
-		
-		
-		
+
+
+
 
 		@Override
 		public boolean deleteUserFromEvent(int uid, int eid) {
@@ -185,7 +176,7 @@ public class EventDAOImpl implements EventDAO {
 			event = em.find(Event.class, eid);
 			//set users events so that the new events list persists
 			event.setUsers(listOfUsers);
-			
+
 			return true;
 		}
 

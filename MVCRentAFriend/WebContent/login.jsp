@@ -7,7 +7,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <jsp:include page="bootstrapHeader.jsp"></jsp:include>
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/styles.css"
+	href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300'>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Login Page</title>
 </head>
@@ -32,47 +33,133 @@
 	<br>
 
 
+
+
+
+
 	<div class="container">
-		<div class="card text-white bg-dark mb-3 container center_div"
-			style="max-width: 60rem;">
-			<div class="row justify-content-center">
-				<div class="card-header">Login or Create New User</div>
-			</div>
-			<div class="card-body">
-				<p class="card-text">
-				<div class="row justify-content-center">
-					<div class="col-sm-6">
-						<!-- <h1>Login or Create New User</h1> -->
+		<form action="login.do" method="post" class="register-form">
+			<div class="card text-white bg-dark mb-3 container center_div"
+            style="max-width: 100%;" >
+            <div class="row justify-content-center">
+                <div class="card-header">Login or Create New User</div>
+            </div>
+					<p class="card-text">
+					<div class="row justify-content-center">
+			
+						<div class="col"></div>
+						<div class="col">
+							<input name="userName" class="form-control" type="text" placeholder="username">
+						</div>
+						<div class="col"></div>
+				    </div>
+						<br>
+						<div class="row justify-content-center">
+							<div class="col"></div>
+							<div class="col">
+								<input name="password" class="form-control" type="password" placeholder="password">
+							</div>
+							<div class="col"></div>
 					</div>
-				</div>
-				<div class="row justify-content-center">
-					<div class="col-sm-6">
-						<form action="login.do" method="post">
-							<input type="text" name="userName" placeholder="Enter User Name">
-							<input type="text" name="password" placeholder="Enter Password">
-							<input class="submit" type="submit" value="Sign-In">
-						</form>
-					</div>
-				</div>
-				<div class="row justify-content-center">
-					<div class="col-sm-6">
-						<!-- error message for wrong username/password -->
-						<h3>${errorMessage}</h3>
-					</div>
-				</div>
-				<div class="row justify-content-center">
-					<div class="col-sm-6">
-						<form action="createUser.do" method="get">
-							<button type="submit" class="btn btn-secondary"
-								value="Create Account">Create Account</button>
-						</form>
-					</div>
-				</div>
+						<hr>
+						<div class="row justify-content-center">
+							<div class="error">
+								<div class="col-sm-12">
+									<!-- error message for wrong username/password -->
+									<h3>${errorMessage}</h3>
+								</div>
+							</div>
+						</div>
+						<div class="row justify-content-center">
+						<div class="col"></div>
+							<div class="col">
+								<form action="login.do" method="post">
+									<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+										<input type="submit" class="btn btn-default logbutton"
+											value="Sign in" />
+									</div>
+								</form>
+							</div>
+							<div class="col"></div>
+							</div>
+							<br>
+							<div class="row justify-content-center">
+							<!-- <div class="row"> -->
+							<div class="col"></div>
+							<div class="col">
+								<form action="createUser.do" method="get">
+									<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+										<input type="submit" class="btn btn-default logbutton"
+											value="Create account" />
+									</div>
+								</form>
+							</div>
+							<div class="col"></div>
+							<!-- </div> -->
+						</div>
 
-			</div>
-		</div>
-	</div>
+					</div>
+			</form>
+				</div>
+	
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<%-- <div class="container">
+        <div class="card text-white bg-dark mb-3 container center_div"
+            style="max-width: 60rem;">
+            <div class="row justify-content-center">
+                <div class="card-header">Login or Create New User</div>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                <div class="row justify-content-center">
+                    <div class="col-sm-6">
+                        <!-- <h1>Login or Create New User</h1> -->
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-sm-6">
+                        <form action="login.do" method="post">
+                            <input type="text" name="userName" placeholder="Enter User Name">
+                            <input type="text" name="password" placeholder="Enter Password">
+                            <input class="submit" type="submit" value="Sign-In">
+                        </form>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-sm-6">
+                        <!-- error message for wrong username/password -->
+                        <h3>${errorMessage}</h3>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-sm-6">
+                        <form action="createUser.do" method="get">
+                            <button type="submit" class="btn btn-secondary"
+                                value="Create Account">Create Account</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+ --%>
 	<jsp:include page="bootstrapFooter.jsp"></jsp:include>
 </body>
 </html>

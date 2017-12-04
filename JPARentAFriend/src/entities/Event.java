@@ -23,13 +23,13 @@ public class Event {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
+	private String title;
+	
+	private String description;
+	
 	private String activity;
 	
-	//created a bi-directional relationship with User owner;
-	//added the cascade persist and remove
-	//but can't an owner have many events? OneToMany?
-	//(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name="owner_id")
 	private User owner;
 	
@@ -80,7 +80,6 @@ public class Event {
 	public Event() {
 		// TODO Auto-generated constructor stub
 	}
-	
 
 	public User getOwner() {
 		return owner;
@@ -104,6 +103,22 @@ public class Event {
 
 	public void setUsers(List<User> users) {
 		this.users = users;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public Event(String activity, User ownerId, LocalDateTime dateTime, Address address) {

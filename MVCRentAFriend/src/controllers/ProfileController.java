@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import data.EventDAO;
@@ -40,8 +41,27 @@ public class ProfileController {
 			List<Event> events = eventDao.getAllEventsByUserId(user);
 			List<Event> eventsWithUsers = eventDao.getAllEventsWithUsers();
 			
+			mv.addObject("sessionUser", user);
 			mv.addObject("user", user);
 			mv.addObject("userId", id);
+			mv.addObject("profile", prof);
+			mv.addObject("events", events);
+			mv.addObject("eventsWithUsers", eventsWithUsers);
+			mv.setViewName("viewprofile.jsp");
+			return mv;
+		}
+		@RequestMapping(path="viewUserProfile.do", method=RequestMethod.GET)
+		public ModelAndView viewUserProfile(@RequestParam("uid") int uid, HttpSession session) {
+			ModelAndView mv = new ModelAndView();
+			User user = dao.getUserById(uid);
+			User sessionUser = (User) session.getAttribute("sessionObj");
+			Profile prof = dao.getProfileByUserId(uid);
+			List<Event> events = eventDao.getAllEventsByUserId(user);
+			List<Event> eventsWithUsers = eventDao.getAllEventsWithUsers();
+			
+			mv.addObject("sessionUser", sessionUser);
+			mv.addObject("user", user);
+			mv.addObject("userId", uid);
 			mv.addObject("profile", prof);
 			mv.addObject("events", events);
 			mv.addObject("eventsWithUsers", eventsWithUsers);
