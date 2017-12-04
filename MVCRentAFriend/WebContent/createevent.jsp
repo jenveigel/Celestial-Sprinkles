@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -39,13 +40,12 @@
 		<div class="card-body">
 			<p class="card-text">
 			<div class="row justify-content-center">
-
-				<form action="createEvent.do" method="post" modelAttribute="item">
-
+					<h3>${errorMessage}</h3>
+				<form action="createEvent.do" method="get" modelAttribute="item">
 					<label>Event Title:</label> <input type="text" name="title" /><br> 
 					<label>Street Address: </label><input type="text" name="street" /><br> 
 					<label>City:</label><input name="city" /><br>
-					<label> State: </label> <input name="state" /><br>
+					<label>State Abbreviation: </label> <input name="state" /><br>
 					<label>Description:</label> <input name="desc" /><br>
 					<label> Activity:</label><input name="activity" /><br> 
 					<label>When (date and time): </label><input type="datetime-local" name="when" /> <br> <input
