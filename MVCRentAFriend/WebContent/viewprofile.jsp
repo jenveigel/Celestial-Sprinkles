@@ -39,8 +39,7 @@
 	<div class="card">
 		<img src="${profile.imageURL }" class="img-thumbnail"
 			alt="${profile.firstName }" style="width: 100%">
-		<p class="name">First Name: ${profile.firstName }</p>
-		<p class="name">Last Name: ${profile.lastName }</p>
+		<p class="name">${profile.firstName} ${profile.lastName}</p>
 		<p class="bio">Bio: ${profile.bio }</p>
 		<br>
 		<c:if test="${events != null }">
