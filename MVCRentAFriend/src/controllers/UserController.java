@@ -28,10 +28,16 @@ public class UserController {
 
 	////Creates 
 	@RequestMapping(path="addUser.do", method = RequestMethod.POST)
-	public ModelAndView addUser(String userName, String password) {
+	public ModelAndView addUser(String userName, String password, String firstName,
+			String lastName, String imgUrl, String bio) {
 		ModelAndView mv = new ModelAndView();
+		boolean notNullValues = dao.createUser(userName, password, firstName,lastName , bio,imgUrl);
+		if(notNullValues == false) {
+			mv.setViewName("createAccount.jsp");
+			String errorMessage = "You are missing a filled field";
+			mv.addObject(errorMessage);
+		}
 		mv.setViewName("login.jsp");
-		dao.createUser(userName, password, " "," ");
 		return mv;
 	}
 	

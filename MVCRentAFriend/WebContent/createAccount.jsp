@@ -47,14 +47,41 @@
                 </div>
             </div>
             </div>
+            <div class="form-group">
+        </div>
+       
+        <div class="col-sm-5">
+            <div class="form-group">
+                <!-- <label>name</label> -->
+                <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter your first name">
+                </div>
+                 <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter your last name">
+                </div>
+            </div>
+            </div>
             <div class="col-sm-5">
             <div class="form-group">
+                <!-- <label>bio and image</label> -->
+                <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text" class="form-control" name="bio" id="bio" placeholder="Enter something about you">
+                </div>
+                 <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text" class="form-control" name="imgUrl" id="imgUrl" placeholder="Enter your imgUrl">
+                </div>
+            </div>
+            </div>
+            <div class="col-sm-5">
+            <div class="form-group">
+        </div>
+        
                 <!-- <label>Password</label> -->
                 <div class="input-group"> <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
                     <input type="text" class="form-control" name="password" id="password" placeholder="Enter a Password" required data-toggle="popover" title="Password Strength" data-content="Enter Password...">
                 </div>
-                </div>
-            </div><br>
+                
+            </div>
             <div class="form-group">
             		<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-secondary pull-right">
             </div><br>
@@ -64,8 +91,8 @@
                     <input type="password" class="form-control" name="confirm" id="confirm" placeholder="Confirm Password" required>
                 </div>
             </div>  -->
-        </div>
-    </div>
+        
+    
 </div> 
     </form>
     
