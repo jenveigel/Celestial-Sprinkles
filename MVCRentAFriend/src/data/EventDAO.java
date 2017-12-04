@@ -18,6 +18,6 @@ public interface EventDAO {
 	public boolean addUserToEvent(int eventId,User user);
 	List<Event> getAllEventsByUserId(User user);
 	List<Event> getAllEventsWithUsers();
-	public Event updateEvent(int eid, String activity, String when, String street, String city, String state, int id);
+	public Event updateEvent(int eid, String title, String activity, String when, String street, String city, String state, String desc, int id);
 	boolean deleteUserFromEvent(int uid, int eid);
 }

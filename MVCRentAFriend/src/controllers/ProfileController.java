@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestAttribute;
@@ -32,11 +33,15 @@ public class ProfileController {
 		public ModelAndView viewProfile(HttpSession sessionObj) {
 			ModelAndView mv = new ModelAndView();
 			User user = (User) sessionObj.getAttribute("sessionObj");
-//			User obj = sessionId.getAttribute("sessionObj");
-//			int id = (Integer) obj;
-//			user = dao.getUserById(id);
-//			System.out.println(user + " " + user.getId());
-			Profile prof = dao.getProfileByUserId(user.getId());
+			Profile prof;
+
+			
+			if(user == null) {
+				mv.setViewName("login.jsp");
+				return mv;
+			}
+			prof = dao.getProfileByUserId(user.getId());
+			
 			int id = user.getId();
 			List<Event> events = eventDao.getAllEventsByUserId(user);
 			List<Event> eventsWithUsers = eventDao.getAllEventsWithUsers();
@@ -102,24 +107,5 @@ public class ProfileController {
 
 			return mv;
 		}
-
-//		public Profile updateProfile(int id, Profile profile) {
-//			User user = em.find(User.class, id);
-//			Profile updatedProfile = user.getProfile();
-//			updatedProfile.setBio(profile.getBio());
-//			updatedProfile.setFirstName(profile.getFirstName());
-//			updatedProfile.setLastName(profile.getLastName());
-//			updatedProfile.setImageURL(profile.getImageURL());
-//			return updatedProfile;
-//		}
-
-//		@RequestMapping(path="addUser.do", method = RequestMethod.POST)
-//		public ModelAndView addUser(String userName, String password) {
-//			ModelAndView mv = new ModelAndView();
-//			mv.setViewName("login.jsp");
-//			dao.createUser(userName, password, "","");
-//			return mv;
-//		}
-
 
 }

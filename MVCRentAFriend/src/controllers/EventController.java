@@ -35,16 +35,30 @@ public class EventController {
 	}
 	
 	//This method causes the actual event to populate
-	@RequestMapping(path="createEvent.do", method=RequestMethod.POST)
-	public ModelAndView createEvent(HttpSession session, String activity, String when, String street
-			,String city, String state, String desc, String event, String title) {
+	@RequestMapping(path="createEvent.do", method=RequestMethod.GET)
+	public ModelAndView createEvent(HttpSession session, String activity, 
+			String when, String street
+			,String city, String state, String desc, 
+			String event, String title) {
 		ModelAndView mv = new ModelAndView();
+		
+		//error checking for state field
+		if(state.length()!=2){
+			mv.addObject("errorMessage","Enter two character state code");
+			mv.setViewName("createevent.jsp");
+			return mv;
+		}
 		//Generate a Address object from the address fields
 		Address newAddress= new Address();
 		newAddress.setAddress(street);
 		newAddress.setCity(city);
 		newAddress.setState(state);
 		//date time
+		if(when.trim().equals("")) {
+			mv.addObject("errorMessage","fix you time foo");
+			mv.setViewName("createevent.jsp");
+			return mv;
+		}
 		String str = when;
 		str = str.replace("T", " ");
 		//System.out.println(when);
@@ -58,51 +72,40 @@ public class EventController {
 		}
 		int ownerId = (Integer) contextObject;
 		User owner = userDao.getUserById(ownerId);
+		
 		//Create a new event object
 		Event newEvent = new Event(activity, owner, dateTime, newAddress);
 		newEvent.setDescription(desc);
 		newEvent.setTitle(title);
+		if(newEvent.getTitle()==""||newEvent.getActivity()==""||
+		   newEvent.getDateTime()==null||newEvent.getDescription()==""||
+		   newEvent.getOwner()==null||newEvent.getAddress().getAddress()==""||
+		   newEvent.getAddress().getCity()==""||
+		   newEvent.getAddress().getState()=="") 
+		{
+			mv.addObject("errorMessage","No blank fields");
+			mv.setViewName("createevent.jsp");
+			return mv;
+		}
+			
+		
 		//The dao adds the event to the database here
 		dao.create(newEvent);
 		dao.addUserToEvent(newEvent.getId(), owner);
-		mv.setViewName("createevent.jsp");
+		
+		mv.setViewName("viewprofile.do");
 		return mv;
 	}
+	
+	
 	//This method causes the actual event to populate
 	@RequestMapping(path="updateevent.do", method=RequestMethod.GET)
-	public ModelAndView updateEvent(HttpSession session, int eid, String activity, String when, String street
+	public ModelAndView updateEvent(HttpSession session, int eid, String event, String activity, String when, String street
 			,String city, String state, String desc) {
 		ModelAndView mv = new ModelAndView();
 		Event e = dao.getEventById(eid);
-		System.out.println(e);
-//		Event updatedEvent = dao.updateEvent(event.getId(), event);
-		Event updatedEvent = dao.updateEvent(eid, activity, when, street, city, state, e.getOwner().getId());
-//		Event updatedEvent = dao.getEventById(eventId);
-		//Generate a Address object from the address fields
-//		Address newAddress= new Address();
-//		newAddress.setAddress(street);
-//		newAddress.setCity(city);
-//		newAddress.setState(state);
-		//date time
-//		String str = when;
-//		str = str.replace("T", " ");
-		//System.out.println(when);
-//		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-//		LocalDateTime dateTime = LocalDateTime.parse(str, formatter);
-		
-		//Get session userId to see who is currently loged in
-//		Object contextObject = session.getAttribute("sessionId");
-//		if(contextObject == null) {
-//			mv.setViewName("login.jsp");
-//		}
-//		int ownerId = (Integer) contextObject;
-//		User owner = userDao.getUserById(ownerId);
-//		updatedEvent.setActivity(activity);
-//		updatedEvent.setAddress(newAddress);
-//		updatedEvent.setDateTime(dateTime);
-		//Create a new event object
-//		Event newEvent = new Event(activity, owner, dateTime, newAddress);
-		//The dao updates the event to the database here
+		Event updatedEvent = dao.updateEvent(eid, event, activity, when, street, city, state, desc, e.getOwner().getId());
+
 		mv.addObject("event", updatedEvent);
 		mv.setViewName("viewprofile.do");
 		return mv;
