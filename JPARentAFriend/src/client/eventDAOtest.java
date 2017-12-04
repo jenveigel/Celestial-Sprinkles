@@ -26,7 +26,7 @@ public class eventDAOtest {
 //		event.setDateTime(date);
 		User user = new User();
 		event.setActivity("Drinking");
-		event.setOwnerId(em.find(User.class, 1));
+//		event.setOwnerId(em.find(User.class, 1));
 		Address add = new Address();
 		add = em.find(Address.class, 1);
 		event.setAddress(add);
