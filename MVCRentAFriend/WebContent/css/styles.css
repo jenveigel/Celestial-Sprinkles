@@ -127,3 +127,9 @@ button:hover, a:hover {
 	font-size: 22px;
 	color: orange;
 }
+.container-fluid {
+
+  height: 148px;
+  width: 148px;
+ 
+  }

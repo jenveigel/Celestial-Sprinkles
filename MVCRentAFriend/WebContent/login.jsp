@@ -37,31 +37,30 @@
 
 
 
-	<div class="container-fluid">
+	<div class="container">
 		<form action="login.do" method="post" class="register-form">
 			<div class="card text-white bg-dark mb-3 container center_div"
-            style="max-width: 60rem;">
+            style="max-width: 100%;" >
             <div class="row justify-content-center">
                 <div class="card-header">Login or Create New User</div>
             </div>
-				<div class="card-body">
 					<p class="card-text">
 					<div class="row justify-content-center">
-						<div class="col-sm-6">
-							<!-- <h1>Login or Create New User</h1> -->
+			
+						<div class="col"></div>
+						<div class="col">
+							<input name="userName" class="form-control" type="text" placeholder="username">
 						</div>
+						<div class="col"></div>
+				    </div>
+						<br>
+						<div class="row justify-content-center">
+							<div class="col"></div>
+							<div class="col">
+								<input name="password" class="form-control" type="password" placeholder="password">
+							</div>
+							<div class="col"></div>
 					</div>
-					<div class="row justify-content-center">
-						<div class="col-md-4 col-sm-4 col-lg-4">
-							<label for="userName">USERNAME</label> <input name="userName"
-								class="form-control" type="text">
-						</div>
-
-						<div class="col-md-4 col-sm-4 col-lg-4">
-							<label for="password">PASSWORD</label> <input name="password"
-								class="form-control" type="password">
-
-						</div>
 						<hr>
 						<div class="row justify-content-center">
 							<div class="error">
@@ -71,7 +70,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row justify-content-center">
+						<div class="col"></div>
 							<div class="col">
 								<form action="login.do" method="post">
 									<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
@@ -80,7 +80,12 @@
 									</div>
 								</form>
 							</div>
+							<div class="col"></div>
+							</div>
+							<br>
+							<div class="row justify-content-center">
 							<!-- <div class="row"> -->
+							<div class="col"></div>
 							<div class="col">
 								<form action="createUser.do" method="get">
 									<div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
@@ -89,14 +94,14 @@
 									</div>
 								</form>
 							</div>
+							<div class="col"></div>
 							<!-- </div> -->
 						</div>
 
 					</div>
-				</div>
-			</div>
 			</form>
-	</div>
+				</div>
+	
 
 
 
