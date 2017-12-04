@@ -79,7 +79,7 @@
 		        <c:choose>
 		         <c:when test ="${ewu.id eq event.id}">
 		           <c:forEach var="user" items="${ewu.users}">
-	        					${user.userName}
+	        			<a href="viewUserProfile.do?uid=${user.id }"	>${user.userName}</a>
 	      		 </c:forEach>
 		         </c:when>
 		        </c:choose>    
