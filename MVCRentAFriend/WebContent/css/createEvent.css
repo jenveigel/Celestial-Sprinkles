@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+
+input {
+  display: inline-block;
+  float: left;
+
+}
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: right;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
