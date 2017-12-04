@@ -124,12 +124,19 @@ button:hover, a:hover {
     border-radius: 0px;
 }
 .error {
-	font-size: 22px;
+	font-size: 15px;
 	color: orange;
 }
-.container-fluid {
+.modal-header {
+    color: darkred;
+    
+}
 
-  height: 148px;
-  width: 148px;
+.modal-content {
+	
+}
+.modal-content2 {
+	background-color: grey;
+}
  
-  }
+  
