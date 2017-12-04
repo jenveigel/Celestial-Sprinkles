@@ -42,7 +42,7 @@
 
 				<form action="createEvent.do" method="post" modelAttribute="item">
 
-					<label>Event Title:</label> <input type="text" name="event" /><br> 
+					<label>Event Title:</label> <input type="text" name="title" /><br> 
 					<label>Street Address: </label><input type="text" name="street" /><br> 
 					<label>City:</label><input name="city" /><br>
 					<label> State: </label> <input name="state" /><br>

@@ -41,6 +41,7 @@ public class ProfileController {
 			List<Event> events = eventDao.getAllEventsByUserId(user);
 			List<Event> eventsWithUsers = eventDao.getAllEventsWithUsers();
 			
+			mv.addObject("sessionUser", user);
 			mv.addObject("user", user);
 			mv.addObject("userId", id);
 			mv.addObject("profile", prof);
@@ -50,14 +51,15 @@ public class ProfileController {
 			return mv;
 		}
 		@RequestMapping(path="viewUserProfile.do", method=RequestMethod.GET)
-		public ModelAndView viewUserProfile(@RequestParam("uid") int uid) {
+		public ModelAndView viewUserProfile(@RequestParam("uid") int uid, HttpSession session) {
 			ModelAndView mv = new ModelAndView();
 			User user = dao.getUserById(uid);
-			
+			User sessionUser = (User) session.getAttribute("sessionObj");
 			Profile prof = dao.getProfileByUserId(uid);
 			List<Event> events = eventDao.getAllEventsByUserId(user);
 			List<Event> eventsWithUsers = eventDao.getAllEventsWithUsers();
 			
+			mv.addObject("sessionUser", sessionUser);
 			mv.addObject("user", user);
 			mv.addObject("userId", uid);
 			mv.addObject("profile", prof);

@@ -75,14 +75,14 @@
 									<c:choose>
 										<c:when test="${ewu.id eq event.id}">
 											<c:forEach var="user" items="${ewu.users}">
-	        					${user.userName}
+	        					<a href="viewUserProfile.do?uid=${user.id }"	>${user.userName}</a>
 	      		 </c:forEach>
 										</c:when>
 									</c:choose>
 								</c:forEach>
 							</div>
 							<div class="modal-footer">
-								<c:if test="${user.id == event.owner.id }">
+								<c:if test="${sessionUser.id == event.owner.id }">
 									<form action="deleteEvent.do" method="get">
 										<input type="submit" class="btn btn-primary"
 											value="Delete Event"></input><br> <input type="hidden"
@@ -160,8 +160,10 @@
 		</div>
 		<br>
 		<p>
+		<c:if test="${session.id == user.id }">
 			<a class="btn btn-outline-warning" href="editProfileWithValues.do"
 				role="button">Edit Profile</a>
+			</c:if>
 		</p>
 
 	</div>
