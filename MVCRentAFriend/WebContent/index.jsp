@@ -19,70 +19,72 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-<a class="navbar-brand" href="index.jsp">
-    <img src="mountains.png" style="width:60px;">
-  </a>
-  <ul class="navbar-nav">
-  
-  	<li class="nav-item active">
-      <a class="nav-link" href="index.jsp">Welcome - ${user.userName }</a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="attendEvent.do">Attend</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="createEventPage.do">Create</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="viewprofile.do">Your Profile</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link " href="loginPage.do">Logout</a>
-    </li>
-  </ul>
-</nav>
-<br>
-<!-- ================WLECOME BUTTONS======================= -->
-	
-	<div class="container">
-	
-		<div class="card text-white bg-dark mb-3 container center_div" style="max-width: 30rem;">
-			<div class="row justify-content-center">
-		  		<div class="card-header">Hi ${user.userName },  Select an option below</div>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark"> <a
+		class="navbar-brand" href="index.jsp"> <img src="mountains.png"
+		style="width: 60px;">
+	</a>
+	<ul class="navbar-nav">
+
+		<li class="nav-item active"><a class="nav-link" href="index.jsp">Welcome
+				- ${user.userName }</a></li>
+		<li class="nav-item active"><a class="nav-link"
+			href="attendEvent.do">Attend</a></li>
+		<li class="nav-item active"><a class="nav-link"
+			href="createEventPage.do">Create</a></li>
+		<li class="nav-item active"><a class="nav-link"
+			href="viewprofile.do">Your Profile</a></li>
+		<li class="nav-item">
+			<div class="logout">
+				<a class="nav-link" href="loginPage.do">Logout</a>
 			</div>
-	  		<div class="card-body">
-	    <p class="card-text">
-	    
-	    <div class="row justify-content-center"> 
- 			<form action="createEventPage.do" method="get">
-				<input class="btn btn-lg btn-secondary" type="submit" value="Create Event"></input>
-			</form>
+		</li>
+	</ul>
+	</nav>
+	<br>
+	<!-- ================WLECOME BUTTONS======================= -->
+
+	<div class="container">
+
+		<div class="card text-white bg-dark mb-3 container center_div"
+			style="max-width: 30rem;">
+			<div class="row justify-content-center">
+				<div class="card-header">Hi ${user.userName }, Select an
+					option below</div>
+			</div>
+			<div class="card-body">
+				<p class="card-text">
+				<div class="row justify-content-center">
+					<form action="createEventPage.do" method="get">
+						<input class="btn btn-lg btn-secondary" type="submit"
+							value="Create Event"></input>
+					</form>
+				</div>
+
+				<br>
+
+				<div class="row justify-content-center">
+					<form action="attendEvent.do" method="get">
+						<input class="btn btn-lg btn-secondary" type="submit"
+							value="Attend Event"></input>
+					</form>
+				</div>
+
+				<br>
+
+				<div class="row justify-content-center">
+					<form action="viewprofile.do" method="get">
+						<input class="btn btn-lg btn-secondary" type="submit"
+							value="View Profile"></input>
+					</form>
+				</div>
+
+				<br>
+
+			</div>
 		</div>
-		
-		<br>
-		
-		<div class="row justify-content-center"> 
- 			<form action="attendEvent.do" method="get">
-				<input class="btn btn-lg btn-secondary" type="submit" value="Attend Event"></input>
-			</form>
-		</div>
-		
-		<br>
-		
-		<div class="row justify-content-center"> 
- 			<form action="viewprofile.do" method="get">
-				<input class="btn btn-lg btn-secondary" type="submit" value="View Profile"></input>
-			</form>
-		</div>
-		
-		<br>
-	
 	</div>
-	</div>
-	</div>
-	
-	
+
+
 	<!-- ======================Bootstrap======================== -->
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
