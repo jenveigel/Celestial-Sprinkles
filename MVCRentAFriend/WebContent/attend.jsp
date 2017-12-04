@@ -95,6 +95,8 @@
         <form action="addEventToUser.do" method="get">
 		<input type="submit" class="btn btn-primary" value="Attend Event"></input><br> 
 		<input type="hidden" value="${event.id }" name="eventId"></input>
+		
+		
 </form>
 
       </div>
@@ -107,7 +109,7 @@
 </div>
 </div>
 
-<jsp:include page="bootstrapFooter.jsp"></jsp:include>
+	<jsp:include page="bootstrapFooter.jsp"></jsp:include>
 
 </body>
 </html>
