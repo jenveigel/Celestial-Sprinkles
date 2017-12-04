@@ -27,13 +27,13 @@ public class UserController {
 	}
 
 	////Creates 
-//	@RequestMapping(path="addUser.do", method = RequestMethod.POST)
-//	public ModelAndView addUser(String userName, String password) {
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("login.jsp");
-//		dao.createUser(userName, password, " "," ");
-//		return mv;
-//	}
+	@RequestMapping(path="addUser.do", method = RequestMethod.POST)
+	public ModelAndView addUser(String userName, String password) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("login.jsp");
+		dao.createUser(userName, password, " "," ");
+		return mv;
+	}
 	
 	//For Button to take you to login page
 	@RequestMapping(path="loginPage.do", method=RequestMethod.GET)

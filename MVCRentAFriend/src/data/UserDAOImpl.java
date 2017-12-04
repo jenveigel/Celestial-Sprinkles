@@ -20,7 +20,8 @@ public class UserDAOImpl implements UserDAO {
 	private EntityManager em;
 
 	@Override
-	public boolean createUser(String username, String password, String firstName, String lastName) {
+	public boolean createUser(String username, String password, String firstName
+			, String lastName, String bio, String imageUrl) {
 		try {
 			User user = new User();
 			user.setUserName(username);
