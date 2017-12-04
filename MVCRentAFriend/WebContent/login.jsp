@@ -12,7 +12,6 @@
 <title>Login Page</title>
 </head>
 <body>
-
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark"> <a
 		class="navbar-brand" href="login.jsp"> <img src="mountains.png"
 		style="width: 60px;">
