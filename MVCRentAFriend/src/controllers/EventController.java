@@ -153,4 +153,15 @@ public class EventController {
 		return mv;
 	}
 	
+	@RequestMapping(path="cancelrsvp.do", method = RequestMethod.GET)
+	public ModelAndView login(HttpSession sessionId, Integer eid) {
+		ModelAndView mv = new ModelAndView();
+		Object obj = sessionId.getAttribute("sessionId");
+		int id = (Integer) obj;
+		User user = userDao.getUserById(id);
+		dao.deleteUserFromEvent(user.getId(), eid);		
+		mv.setViewName("viewprofile.do");
+		return mv;
+	}
+	
 }

@@ -85,24 +85,33 @@ public class UserDAOImpl implements UserDAO {
 	public boolean deleteEventFromUser(int uid, int eid) {
 		String query = "SELECT u FROM User u JOIN FETCH u.events WHERE u.id = :uid";
 		User user = em.createQuery(query, User.class).setParameter("uid", uid).getResultList().get(0);
+		//Get list from user
 		List<Event> userEvents = user.getEvents();
-		System.out.println(userEvents);
-		List<Event> updatedEvents = new ArrayList<>();
-		for (Event event : userEvents) {
-			if(event.getId() != eid) {
-				updatedEvents.add(event);
+		//remove event from user list that is equal to eid
+		for(int x=0; x < userEvents.size(); x++) {
+			if(userEvents.get(x).getId() == eid) {
+				System.out.println(userEvents.remove(x));
 			}
 		}
-		System.out.println(updatedEvents);
-		user.setEvents(updatedEvents);
-		em.persist(user);
-		em.flush();
+		//get persisted user
+		user = em.find(User.class, uid);
+		//set users events so that the new events list persists
+		user.setEvents(userEvents);
+//		System.out.println(userEvents);
+//		List<Event> updatedEvents = new ArrayList<>();
+//		for (Event event : userEvents) {
+//			if(event.getId() != eid) {
+//				updatedEvents.add(event);
+//			}
+//		}
+//		System.out.println(updatedEvents);
+//		user.setEvents(updatedEvents);
+	//	em.persist(user);
+//		em.flush();
 
 //		DELETE FROM event_participant WHERE event.id=:eid AND user.id = :uid;
 //		Event event = events.get(0);
-
 		return true;
-
 	}
 
 	@Override

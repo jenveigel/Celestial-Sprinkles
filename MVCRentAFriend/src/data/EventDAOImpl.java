@@ -165,7 +165,27 @@ public class EventDAOImpl implements EventDAO {
 
 			return true;
 		}
+		
+		
+		
 
+		@Override
+		public boolean deleteUserFromEvent(int uid, int eid) {
+			String query = "SELECT e FROM Event e JOIN FETCH e.users WHERE e.id = :eid";
+			Event event = em.createQuery(query, Event.class).setParameter("eid", eid).getResultList().get(0);
+			List<User> listOfUsers = event.getUsers();
+			for(int x=0; x < listOfUsers.size(); x++) {
+				if(listOfUsers.get(x).getId() == uid) {
+					System.out.println(listOfUsers.remove(x));
+				}
+			}
+			//get persisted user
+			event = em.find(Event.class, eid);
+			//set users events so that the new events list persists
+			event.setUsers(listOfUsers);
+			
+			return true;
+		}
 
 
 

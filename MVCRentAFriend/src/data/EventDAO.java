@@ -19,4 +19,5 @@ public interface EventDAO {
 	List<Event> getAllEventsByUserId(User user);
 	List<Event> getAllEventsWithUsers();
 	public Event updateEvent(int eid, String activity, String when, String street, String city, String state, int id);
+	boolean deleteUserFromEvent(int uid, int eid);
 }

@@ -83,7 +83,6 @@ public class ProfileController {
 			return mv;
 		}
 
-//		@Override
 //		public Profile updateProfile(int id, Profile profile) {
 //			User user = em.find(User.class, id);
 //			Profile updatedProfile = user.getProfile();

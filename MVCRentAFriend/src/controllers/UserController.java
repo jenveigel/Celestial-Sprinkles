@@ -27,13 +27,13 @@ public class UserController {
 	}
 
 	////Creates 
-	@RequestMapping(path="addUser.do", method = RequestMethod.POST)
-	public ModelAndView addUser(String userName, String password) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("login.jsp");
-		dao.createUser(userName, password, " "," ");
-		return mv;
-	}
+//	@RequestMapping(path="addUser.do", method = RequestMethod.POST)
+//	public ModelAndView addUser(String userName, String password) {
+//		ModelAndView mv = new ModelAndView();
+//		mv.setViewName("login.jsp");
+//		dao.createUser(userName, password, " "," ");
+//		return mv;
+//	}
 	
 	//For Button to take you to login page
 	@RequestMapping(path="loginPage.do", method=RequestMethod.GET)
@@ -57,17 +57,8 @@ public class UserController {
 		}
 		return mv;
 	}
-	@RequestMapping(path="cancelrsvp.do", method = RequestMethod.GET)
-	public ModelAndView login(HttpSession sessionId, Integer eid) {
-		ModelAndView mv = new ModelAndView();
-		System.out.println(eid);
-		Object obj = sessionId.getAttribute("sessionId");
-		int id = (Integer) obj;
-		User user = dao.getUserById(id);
-		dao.deleteEventFromUser(user.getId(), eid);		
-		mv.setViewName("viewprofile.do");
-		return mv;
-	}
+	
+	
 	
 	
 	

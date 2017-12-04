@@ -127,6 +127,7 @@
 							<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
 							<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
 							<form action="cancelrsvp.do" method="get">
+								<input type="hidden" value="${event.id }" name="eid"></input>
 								<input type="submit" class="btn btn-primary" value="Cancel RSVP"></input><br>
 							</form>
 							<button type="button" class="btn btn-secondary"
