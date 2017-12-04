@@ -58,26 +58,16 @@ public class EventDAOImpl implements EventDAO {
 
 		@Override
 		public boolean destroyById(int id) {
-//			Event event = new Event();
-			
+	
 			Event destroyEvent = em.find(Event.class, id);
-			System.out.println(destroyEvent.getOwner());
-			System.out.println(destroyEvent);
-//			System.out.println(destroyEvent);
-			
-			//trying to remove owner_id foreign key before removing event
-			//still not working
-//			User user = new User();
-			
-//			destroyEvent.setOwner();
-//			em.remove(destroyEvent.getOwner());
 			em.remove(destroyEvent);
+			
 			if (em.find(Event.class, id) == null) {
 				return true;
 			} else
-
+	
 				em.close();
-
+	
 			return false;
 		}
 
