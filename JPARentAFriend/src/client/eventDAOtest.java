@@ -16,12 +16,12 @@
 //	public static void main(String[] args) {
 //		EntityManagerFactory emf = Persistence.createEntityManagerFactory("RentAFriend");
 //		EntityManager em = emf.createEntityManager();
-//		
+//
 //		EventDAO dao = new EventDAO();
 //		Event event = new Event();
-////		
 ////
-////======Create Test============================		
+////
+////======Create Test============================
 //		Date date = new Date();
 ////		event.setDateTime(date);
 //		User user = new User();
@@ -32,12 +32,12 @@
 //		event.setAddress(add);
 //		dao.create(event);
 ////==============================================
-//		
+//
 ////		=======Delete======================
 ////		System.out.println(dao.delete(3));
 ////		===================================
-//		
-//		
+//
+//
 //		em.close();
 //		emf.close();
 ////		System.out.println(user.getUserName());
