@@ -35,16 +35,30 @@ public class EventController {
 	}
 	
 	//This method causes the actual event to populate
-	@RequestMapping(path="createEvent.do", method=RequestMethod.POST)
-	public ModelAndView createEvent(HttpSession session, String activity, String when, String street
-			,String city, String state, String desc, String event, String title) {
+	@RequestMapping(path="createEvent.do", method=RequestMethod.GET)
+	public ModelAndView createEvent(HttpSession session, String activity, 
+			String when, String street
+			,String city, String state, String desc, 
+			String event, String title) {
 		ModelAndView mv = new ModelAndView();
+		
+		//error checking for state field
+		if(state.length()!=2){
+			mv.addObject("errorMessage","Enter two character state code");
+			mv.setViewName("createevent.jsp");
+			return mv;
+		}
 		//Generate a Address object from the address fields
 		Address newAddress= new Address();
 		newAddress.setAddress(street);
 		newAddress.setCity(city);
 		newAddress.setState(state);
 		//date time
+		if(when.trim().equals("")) {
+			mv.addObject("errorMessage","fix you time foo");
+			mv.setViewName("createevent.jsp");
+			return mv;
+		}
 		String str = when;
 		str = str.replace("T", " ");
 		//System.out.println(when);
@@ -58,16 +72,32 @@ public class EventController {
 		}
 		int ownerId = (Integer) contextObject;
 		User owner = userDao.getUserById(ownerId);
+		
 		//Create a new event object
 		Event newEvent = new Event(activity, owner, dateTime, newAddress);
 		newEvent.setDescription(desc);
 		newEvent.setTitle(title);
+		if(newEvent.getTitle()==""||newEvent.getActivity()==""||
+		   newEvent.getDateTime()==null||newEvent.getDescription()==""||
+		   newEvent.getOwner()==null||newEvent.getAddress().getAddress()==""||
+		   newEvent.getAddress().getCity()==""||
+		   newEvent.getAddress().getState()=="") 
+		{
+			mv.addObject("errorMessage","No blank fields");
+			mv.setViewName("createevent.jsp");
+			return mv;
+		}
+			
+		
 		//The dao adds the event to the database here
 		dao.create(newEvent);
 		dao.addUserToEvent(newEvent.getId(), owner);
-		mv.setViewName("createevent.jsp");
+		
+		mv.setViewName("viewprofile.do");
 		return mv;
 	}
+	
+	
 	//This method causes the actual event to populate
 	@RequestMapping(path="updateevent.do", method=RequestMethod.GET)
 	public ModelAndView updateEvent(HttpSession session, int eid, String activity, String when, String street
