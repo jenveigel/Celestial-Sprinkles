@@ -97,8 +97,6 @@ public class Event {
 	public void setOwnerId(User owner) {
 		this.owner = owner;
 	}
-	
-	
 
 	public List<User> getUsers() {
 		return users;
