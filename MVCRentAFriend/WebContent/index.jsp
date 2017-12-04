@@ -52,16 +52,16 @@
 				<p class="card-text">
 				<div class="row justify-content-center">
 					<form action="createEventPage.do" method="get">
-						<input class="btn btn-lg btn-secondary" type="submit"
+						<input  type="submit" class="btn btn-lg btn-secondary" style="background: url(http://www.zingerbug.com/Backgrounds/background_images/green_plaid.jpg)"
 							value="Create Event"></input>
-					</form>
+				</form>
 				</div>
 
 				<br>
 
 				<div class="row justify-content-center">
 					<form action="attendEvent.do" method="get">
-						<input class="btn btn-lg btn-secondary" type="submit"
+						<input  type="submit" class="btn btn-lg btn-secondary" style="background: #ccc url(http://www.zingerbug.com/Backgrounds/background_images/green_plaid.jpg)"
 							value="Attend Event"></input>
 					</form>
 				</div>
@@ -70,7 +70,7 @@
 
 				<div class="row justify-content-center">
 					<form action="viewprofile.do" method="get">
-						<input class="btn btn-lg btn-secondary" type="submit"
+						<input type="submit" class="btn btn-lg btn-secondary"  style="background: #ccc url(http://www.zingerbug.com/Backgrounds/background_images/green_plaid.jpg)" 
 							value="View Profile"></input>
 					</form>
 				</div>
