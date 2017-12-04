@@ -37,7 +37,7 @@ public class EventController {
 	//This method causes the actual event to populate
 	@RequestMapping(path="createEvent.do", method=RequestMethod.POST)
 	public ModelAndView createEvent(HttpSession session, String activity, String when, String street
-			,String city, String state, String desc, String event) {
+			,String city, String state, String desc, String event, String title) {
 		ModelAndView mv = new ModelAndView();
 		//Generate a Address object from the address fields
 		Address newAddress= new Address();
@@ -60,6 +60,8 @@ public class EventController {
 		User owner = userDao.getUserById(ownerId);
 		//Create a new event object
 		Event newEvent = new Event(activity, owner, dateTime, newAddress);
+		newEvent.setDescription(desc);
+		newEvent.setTitle(title);
 		//The dao adds the event to the database here
 		dao.create(newEvent);
 		dao.addUserToEvent(newEvent.getId(), owner);
