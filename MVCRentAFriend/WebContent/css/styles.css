@@ -5,6 +5,10 @@ body {
 
 }
 
+.black-txt{
+	color:darkbrown;
+}
+
 h1 {
 	color: white;
 	text-align: center;
