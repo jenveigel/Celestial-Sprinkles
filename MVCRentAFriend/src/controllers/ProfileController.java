@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestAttribute;
@@ -33,6 +34,7 @@ public class ProfileController {
 			ModelAndView mv = new ModelAndView();
 			User user = (User) sessionObj.getAttribute("sessionObj");
 			Profile prof;
+
 			
 			if(user == null) {
 				mv.setViewName("login.jsp");
