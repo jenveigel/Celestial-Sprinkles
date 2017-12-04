@@ -28,8 +28,8 @@ public class User {
 	private List<Event> events;
 	
 	//added bi-directional mapping, owner events separate from other events
-	@OneToOne(mappedBy = "owner")
-	private Event ownerEvent;
+//	@OneToOne(mappedBy = "owner")
+//	private Event ownerEvent;
 
 	@OneToOne(cascade = { CascadeType.REMOVE , CascadeType.PERSIST})
 	@JoinColumn(name = "profile_id")
@@ -71,13 +71,13 @@ public class User {
 		this.events = events;
 	}
 	
-	public Event getOwnerEvent() {
-		return ownerEvent;
-	}
-
-	public void setOwnerEvent(Event ownerEvent) {
-		this.ownerEvent = ownerEvent;
-	}
+//	public Event getOwnerEvent() {
+//		return ownerEvent;
+//	}
+//
+//	public void setOwnerEvent(Event ownerEvent) {
+//		this.ownerEvent = ownerEvent;
+//	}
 
 	@Override
 	public String toString() {

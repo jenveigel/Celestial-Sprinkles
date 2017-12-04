@@ -28,7 +28,8 @@ public class Event {
 	//created a bi-directional relationship with User owner;
 	//added the cascade persist and remove
 	//but can't an owner have many events? OneToMany?
-	@OneToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
+	//(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
+	@OneToOne
 	@JoinColumn(name="owner_id")
 	private User owner;
 	
@@ -88,6 +89,16 @@ public class Event {
 	public void setOwner(User owner) {
 		this.owner = owner;
 	}
+	
+	public User getOwnerId() {
+		return owner;
+	}
+	
+	public void setOwnerId(User owner) {
+		this.owner = owner;
+	}
+	
+	
 
 	public List<User> getUsers() {
 		return users;
