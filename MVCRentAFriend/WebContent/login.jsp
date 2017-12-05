@@ -85,7 +85,7 @@
 		</div>
 		<div class="container">
 			<div class="row justify-content-center">
-				<audio controls>
+				<audio controls loop autoplay>
 		  			<source src="audio/rain.mp3" type="audio/mpeg">
 					Your browser does not support the audio element.
 				</audio>
