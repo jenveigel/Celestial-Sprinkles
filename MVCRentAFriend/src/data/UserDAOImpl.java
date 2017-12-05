@@ -92,9 +92,6 @@ public class UserDAOImpl implements UserDAO {
 		return em.createQuery(query, User.class).getResultList();
 	}
 
-
-	// Method currently does not work. It will do everything correctly up until about maybe the setEvents
-	// or the persist. It doesnt add the new List<Event> to the database.
 	@Override
 	public boolean deleteEventFromUser(int uid, int eid) {
 		String query = "SELECT u FROM User u JOIN FETCH u.events WHERE u.id = :uid";
@@ -111,27 +108,12 @@ public class UserDAOImpl implements UserDAO {
 		user = em.find(User.class, uid);
 		//set users events so that the new events list persists
 		user.setEvents(userEvents);
-//		System.out.println(userEvents);
-//		List<Event> updatedEvents = new ArrayList<>();
-//		for (Event event : userEvents) {
-//			if(event.getId() != eid) {
-//				updatedEvents.add(event);
-//			}
-//		}
-//		System.out.println(updatedEvents);
-//		user.setEvents(updatedEvents);
-	//	em.persist(user);
-//		em.flush();
-
-//		DELETE FROM event_participant WHERE event.id=:eid AND user.id = :uid;
-//		Event event = events.get(0);
 		return true;
 	}
 
 	@Override
 	public List<User> getAllUsersByEvent(int eventId) {
 		String query = "Select e FROM Event e JOIN FETCH e.users WHERE e.id = :eventId";
-
 		return em.createQuery(query, Event.class).setParameter("eventId", eventId).getResultList().get(0).getUsers();
 	}
 
@@ -167,14 +149,4 @@ public class UserDAOImpl implements UserDAO {
 			return null;
 		}
 	}
-
-
-	// @Override
-	// public List<Profile> getProfileByKey(String keyword) {
-	// String query = "SELECT p FROM profile pLIKE %:keyword%";
-	// return em.createQuery(query, User.class)
-	// .setParameter("keyword", keyword)
-	// .getResultList();
-	// }
-
 }
