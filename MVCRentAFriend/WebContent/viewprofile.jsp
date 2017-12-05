@@ -174,11 +174,11 @@
 					</c:if>
 					
 				</div>
-				<div class="col-sm-5 bg-secondary">
+				<div class="col-sm-5 bg-secondary myBox">
 				<br>
-					<div class="jumbotron jumbotron-fluid ">
+					<div class="col">
   						<div class="container ">
-  						<h1 class="display-3">${user.userName } Bio</h1>
+  						<h4 >${profile.firstName } Bio</h4>
 					    		<p class="lead">${profile.bio }</p>
 					  	</div>
 					</div>
@@ -189,7 +189,7 @@
 		<br>
 		</div>
 		<div class="container-fluid">
-			<div class="row justify-content-center">
+			<div class="row justify-content-center ">
 				<div class="col-1">
 					<form action="deleteUser.do" method="POST">
 						<input  type="submit" class="btn btn-lg btn-secondary" value="Delete Account"></input>
