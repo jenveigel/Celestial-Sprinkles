@@ -36,7 +36,7 @@ public class EventController {
 	}
 	
 	//This method causes the actual event to populate
-	@RequestMapping(path="createEvent.do", method=RequestMethod.GET)
+	@RequestMapping(path="createEvent.do", method=RequestMethod.POST)
 	public ModelAndView createEvent(HttpSession session, String activity, 
 			String when, String street
 			,String city, String state, String desc, 
@@ -92,8 +92,20 @@ public class EventController {
 		//The dao adds the event to the database here
 		dao.create(newEvent);
 		dao.addUserToEvent(newEvent.getId(), owner);
+		//create all model view objects
+		Object obj = session.getAttribute("sessionId");
+		int id  = (Integer) obj;
+		User user = userDao.getUserById(id);
+		List<Event> events = dao.getAllEventsByUserId(user);
+		List<Event> eventsWithUsers = dao.getAllEventsWithUsers();
 		
-		mv.setViewName("viewprofile.do");
+		mv.addObject("sessionUser", user);
+		mv.addObject("user", user);
+		mv.addObject("userId", id);
+		mv.addObject("profile", user.getProfile());
+		mv.addObject("events", events);
+		mv.addObject("eventsWithUsers", eventsWithUsers);
+		mv.setViewName("viewprofile.jsp");
 		return mv;
 	}
 	
