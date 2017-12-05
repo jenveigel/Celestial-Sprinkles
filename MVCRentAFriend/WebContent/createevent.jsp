@@ -15,7 +15,7 @@
 
 <!-- -------------------Navbar----------------- -->
 <jsp:include page="navbar.jsp"></jsp:include>
-
+	<br><br><br><br>
 	<div class="card text-white bg-dark mb-3 container center_div roundCorners"
 		style="max-width: 40rem;">
 		<div class="card-header">Create Event</div>

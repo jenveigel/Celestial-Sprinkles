@@ -43,7 +43,6 @@
 	</ul>
 </nav>
 
-
 <div class="w3-sidebar w3-bar-block bg-dark w3-text-white" style="width:10%"> 
 	<h3>Search By</h3>
 	<hr>
