@@ -14,7 +14,7 @@ import data.UserDAO;
 import data.UserDAOImpl;
 
 public class UserDAOImplTest {
-	private EntityManagerFactory emf;
+	/*private EntityManagerFactory emf;
 	private EntityManager em;
 	private UserDAO userDao;
 
@@ -36,5 +36,5 @@ public class UserDAOImplTest {
 		boolean pass = true;
 		assertEquals(pass, true);
 
-	}
+	}*/
 }
