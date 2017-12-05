@@ -52,10 +52,9 @@
 				<p class="name">${profile.firstName} ${profile.lastName}</p>
 					
 						<div class="col-9">
-							<a href="#"><i class="fa fa-twitter"></i></a> <a
-							href="https://www.linkedin.com/in/david-chirdon-140560b6"><i
+							<a href="${profile.linkedinUrl}"><i
 							class="fa fa-linkedin"></i></a> <a
-							href="https://www.facebook.com/dave.chirdon.9"><i
+							href="${profile.facebookUrl}"><i
 							class="fa fa-facebook"></i></a>
 						</div>
 						<br>

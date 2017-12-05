@@ -34,8 +34,7 @@ h1 {
 }
 
 .logout {
-	text-align: float-right;
-	color: blue;
+	float: right;
 }
 
 .card {
