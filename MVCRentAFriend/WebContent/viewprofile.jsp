@@ -32,10 +32,10 @@
 				<p class="name">${profile.firstName} ${profile.lastName}</p>
 					
 						<div class="col-9">
-							<a href="${profile.linkedinUrl}"><i
-							class="fa fa-linkedin"></i></a> <a
-							href="${profile.facebookUrl}"><i
-							class="fa fa-facebook"></i></a>
+							<a href="${profile.linkedinUrl}"><i 
+							class="fa fa-linkedin"></i></a> 
+							<a href="${profile.facebookUrl}"><i
+							class="fa-facebook fa"></i></a>
 						</div>
 						<br>
 						<p>
@@ -47,12 +47,12 @@
 					
 				</div>
 				
-				<div class="col-sm-4 bg-secondary">		
+				<div class="col-sm-4 bg-secondary myBox" >		
 					<c:if test="${events != null }">
 						<h4>Events Attending</h4>
 						<br>
 						<c:forEach var="event" items="${events }">
-						<div class="col">
+						<div class="col \">
 						<!-- Button trigger modal -->
 						<button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
 							data-target="#details${event.id }">${event.title }</button>
@@ -75,8 +75,9 @@
 											<c:choose>
 												<c:when test="${ewu.id eq event.id}">
 													<c:forEach var="user" items="${ewu.users}">
+													<div class="littleBox">
 			        										<a href="viewUserProfile.do?uid=${user.id }"> ${user.userName} <img src="${user.profile.imageURL }" width="200" height="200"/></a>
-			      		 													
+			      		 							</div>						
 			      		 							</c:forEach>
 												</c:when>
 											</c:choose>
@@ -169,10 +170,10 @@
 					</c:if>
 					
 				</div>
-				<div class="col-sm-5 bg-secondary">
+				<div class="col-sm-5 bg-secondary myBox">
 				<br>
-					<div class="jumbotron jumbotron-fluid">
-  						<div class="container">
+					<div class="jumbotron jumbotron-fluid ">
+  						<div class="container ">
   						<h1 class="display-3">${user.userName } Bio</h1>
 					    		<p class="lead">${profile.bio }</p>
 					  	</div>

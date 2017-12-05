@@ -30,8 +30,8 @@ public class User {
 	//added bi-directional mapping, owner events separate from other events
 //	@OneToOne(mappedBy = "owner")
 //	private Event ownerEvent;
-
-	@OneToOne(cascade = { CascadeType.REMOVE , CascadeType.PERSIST})
+	//CascadeType.REMOVE , CascadeType.PERSIST
+	@OneToOne(cascade={CascadeType.REMOVE, CascadeType.PERSIST})
 	@JoinColumn(name = "profile_id")
 	private Profile profile;
 

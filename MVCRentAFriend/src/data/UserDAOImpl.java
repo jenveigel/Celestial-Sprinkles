@@ -78,9 +78,14 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public boolean destroyUserById(int uid) {
-		String query = "DELETE FROM User u WHERE u.id = :uid";
-		int num = em.createQuery(query).setParameter("uid", uid).executeUpdate();
-		if (num > 0) {
+		String queryUser = "DELETE FROM User u WHERE u.id = :uid";
+		int num1 = em.createQuery(queryUser).setParameter("uid", uid).executeUpdate();
+		
+//		Profile profile = new Profile();
+		String queryProfile = "DELETE FROM Profile p WHERE p.id = :pid";
+		int num2 = em.createQuery(queryProfile).setParameter("pid", uid).executeUpdate();
+		
+		if (num1 > 0 && num2 > 0) {
 			return true;
 		}
 

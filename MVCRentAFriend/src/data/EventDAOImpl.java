@@ -61,11 +61,13 @@ public class EventDAOImpl implements EventDAO {
 		@Override
 		public boolean destroyById(int id) {
 			Event destroyEvent = em.find(Event.class, id);
-			String query = "DELETE FROM Event e WHERE e.id = :id";
-
-			int num = em.createQuery(query).setParameter("id", id).executeUpdate();
+			String queryEvent = "DELETE FROM Event e WHERE e.id = :id";
+			int num1 = em.createQuery(queryEvent).setParameter("id", id).executeUpdate();
+			
+			String queryAddress = "DELETE FROM Address a WHERE a.id = :id";
+			int num2 = em.createQuery(queryAddress).setParameter("id", destroyEvent.getAddress().getId()).executeUpdate();
 //			em.remove(destroyEvent);
-			if (num > 0) {
+			if (num1 > 0 && num2 > 0) {
 				return true;
 			} else
 

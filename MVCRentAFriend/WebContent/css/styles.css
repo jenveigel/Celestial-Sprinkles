@@ -170,9 +170,59 @@ textarea {
     font-size: 16px;
     resize: none;
 }
+.fa {
+    padding: 20px;
+    width: 50px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25%;
+}
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
 
+.myBox {
+border: none;
+padding: 5px;
+font: 24px/36px sans-serif;
+width: 400px;
+height: 500px;
+overflow: scroll;
+}
+.littleBox {
+border: none;
+padding: 5px;
+font: 24px/36px sans-serif;
+width: 700px;
+height: 500px;
+overflow: scroll;
+}
 
+/* Scrollbar styles */
+::-webkit-scrollbar {
+width: 12px;
+height: 12px;
+}
 
+::-webkit-scrollbar-track {
+border: 1px solid yellowgreen;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+background: yellowgreen;  
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #88ba1c;  
+}
 
  
   
