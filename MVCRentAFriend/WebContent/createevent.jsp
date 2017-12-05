@@ -23,7 +23,7 @@
 			<p class="card-text">
 			<div class="row justify-content-center">
 					<h3>${errorMessage}</h3>
-				<form action="createEvent.do" method="get" modelAttribute="item">
+				<form action="createEvent.do" method="post" modelAttribute="item">
 					<label>Event Title:</label> <input type="text" name="title" /><br> 
 					<label>Street Address: </label><input type="text" name="street" /><br> 
 					<label>City:</label><input name="city" /><br>
