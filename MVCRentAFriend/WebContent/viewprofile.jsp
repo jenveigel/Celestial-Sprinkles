@@ -32,7 +32,7 @@
 				<p class="name">${profile.firstName} ${profile.lastName}</p>
 					
 						<div class="col-9">
-							<a href="${profile.linkedinUrl}"><i
+							<a href="${profile.linkedinUrl}"><i 
 							class="fa fa-linkedin"></i></a> <a
 							href="${profile.facebookUrl}"><i
 							class="fa fa-facebook"></i></a>
