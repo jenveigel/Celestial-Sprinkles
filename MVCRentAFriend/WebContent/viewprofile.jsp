@@ -80,13 +80,14 @@
 												<c:when test="${ewu.id eq event.id}">
 													<div class="littleBox">
 													<c:forEach var="user" items="${ewu.users}">
-			        										<a href="viewUserProfile.do?uid=${user.id }"><br> ${user.userName} <br> <img src="${user.profile.imageURL }" width="200" height="200"/></a>
+			        										<a href="viewUserProfile.do?uid=${user.id }"> <img src="${user.profile.imageURL }" alt="${user.userName}" width="200" height="200"/></a>
 			      		 							</c:forEach>
 			      		 							</div>						
 												</c:when>
 											</c:choose>
 										</c:forEach>
 									</div>
+<!-- 									<br>
 									<br>
 									<br>
 									<br>
@@ -101,8 +102,7 @@
 									<br>
 									<br>
 									<br>
-									<br>
-									<br>
+									<br> -->
 									<div class="modal-footer">
 										<c:if test="${sessionUser.id == event.owner.id }">
 											<form action="deleteEvent.do" method="get">
