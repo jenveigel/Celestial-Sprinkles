@@ -38,16 +38,16 @@
 	<div class="row justify-content-center">
 	<h1>Edit Profile</h1>
 	</div>
-	<div class="row">
+	<div class="row justify-content-center" >
 	<form action="editprofile.do" method="get">
 	<div class="col">
-		<input type="text" name="firstName" placeholder="Enter First Name" value="${profile.firstName }"> 
+		<input type="text" name="firstName" width="100" placeholder="Enter First Name" value="${profile.firstName }"> 
 		</div>
 		<div class="col">
 			<input type="text" name="lastName" placeholder="Enter Last Name" value="${profile.lastName }">
 		</div>
 		<div class="col">
-			<textarea rows="" cols="" name="bio" id="bio">${profile.bio }</textarea>
+			<textarea rows="3" cols="3" name="bio" id="bio">${profile.bio }</textarea>
 		</div>
 			<%-- <input type="text" name="bio" placeholder="Enter Bio" value="${profile.bio }"> --%> 
 		<div class="col">
