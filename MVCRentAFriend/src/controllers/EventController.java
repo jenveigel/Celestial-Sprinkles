@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import data.EventDAO;
@@ -167,5 +168,18 @@ public class EventController {
 		mv.setViewName("viewprofile.do");
 		return mv;
 	}
+	
+	@RequestMapping(path="search.do", method=RequestMethod.GET)
+	public ModelAndView search(@RequestParam("search") String search) {
+		ModelAndView mv = new ModelAndView();
+//		List<Event> events = dao.getAllEvents();
+		List<Event> searchedEvents = dao.getAllEventsByKeyword(search);
+		List<Event> eventsWithUsers = dao.getAllEventsWithUsers();
+		mv.addObject("eventsWithUsers", eventsWithUsers);
+		mv.addObject("events", searchedEvents);
+		mv.setViewName("attend.jsp");
+		return mv;
+	}
+	
 	
 }

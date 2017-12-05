@@ -28,8 +28,17 @@
 		<li class="nav-item">
 		  <div class="logout">
 			<a class="nav-link" href="loginPage.do">Logout</a>
-		  </div>
-		</li>
+		  </div></li>
+	 <form action="search.do?search=${search }" class="form-inline my-2 my-lg-0">
+			<li>
+	      <input class="form-control mr-sm-2" align="right" name="search" type="text" placeholder="Search">
+	    	  </li>
+	     	 <li>
+	      <button class="btn btn-outline-success my-2 my-sm-0"  type="submit">Search</button>
+			</li>
+    </form>
+	      
+    
 	</ul>
 </nav>
 <br>

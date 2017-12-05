@@ -14,8 +14,28 @@
 </head>
 <body>
 
-<!-- -------------------Navbar----------------- -->
-<jsp:include page="navbar.jsp"></jsp:include>
+	<nav class="navbar sticky-top navbar-expand-sm bg-dark navbar-dark"> <a
+		class="navbar-brand" href="index.jsp"> <img src="mountains.png"
+		style="width: 60px;">
+	</a>
+	<ul class="navbar-nav">
+
+		<%-- <li class="nav-item active"><a class="nav-link" href="index.jsp">Welcome
+				- ${user.userName }</a></li> --%>
+		<li class="nav-item active"><a class="nav-link"
+			href="attendEvent.do">Attend</a></li>
+		<li class="nav-item active"><a class="nav-link"
+			href="createEventPage.do">Create</a></li>
+		<li class="nav-item active"><a class="nav-link"
+			href="viewprofile.do">Your Profile</a></li>
+		<li class="nav-item">
+			<div class="logout">
+				<a class="nav-link" href="loginPage.do">Logout</a>
+			</div>
+		</li>
+	</ul>
+	</nav>
+	<br>
 	
 	<div class="container-fluid" style="max-width: 95%;">
 		<div class="row justify-content-center">
@@ -32,10 +52,9 @@
 				<p class="name">${profile.firstName} ${profile.lastName}</p>
 					
 						<div class="col-9">
-							<a href="#"><i class="fa fa-twitter"></i></a> <a
-							href="https://www.linkedin.com/in/david-chirdon-140560b6"><i
+							<a href="${profile.linkedinUrl}"><i
 							class="fa fa-linkedin"></i></a> <a
-							href="https://www.facebook.com/dave.chirdon.9"><i
+							href="${profile.facebookUrl}"><i
 							class="fa fa-facebook"></i></a>
 						</div>
 						<br>
