@@ -47,11 +47,13 @@
 <div class="container">
 <c:forEach var="event" items="${events}">
 <div class="row justify-content-center">
-<div class="col-sm-6">
+<div class="col-sm-2">
+</div>
+<div class="col-sm-3">
  ${event.title } <strong>IN</strong> ${event.address.city} 
 </div>
 <!-- Button trigger modal -->
-<div class="col-sm-3">
+<div class="col-sm-2">
 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#details${event.id }">
   See Event Details
 </button>
@@ -61,6 +63,8 @@
 		<input type="submit" class="btn btn-secondary" value="Attend Event"></input><br> 
 		<input type="hidden" value="${event.id }" name="eventId"></input>
 </form>
+</div>
+<div class="col-sm-3">
 </div>
 
 <!-- Modal -->
