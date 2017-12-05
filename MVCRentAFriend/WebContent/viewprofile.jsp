@@ -174,7 +174,7 @@
 				<br>
 					<div class="jumbotron jumbotron-fluid ">
   						<div class="container ">
-  						<h1 class="display-3">${user.userName } Bio</h1>
+  						<h1 class="display-3">${user.userName }'s Bio</h1>
 					    		<p class="lead">${profile.bio }</p>
 					  	</div>
 					</div>
