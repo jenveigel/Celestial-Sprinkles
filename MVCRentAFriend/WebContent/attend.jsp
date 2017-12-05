@@ -11,6 +11,7 @@
 	<jsp:include page="bootstrapHeader.jsp"></jsp:include>
 
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body class="attendbackground">
 
@@ -42,6 +43,16 @@
 	</ul>
 </nav>
 <br>
+
+<div class="w3-sidebar w3-bar-block w3-black" style="width:10%"> 
+  <a href="#" class="w3-bar-item w3-button w3-red">Link 1</a>
+  <br>
+  <a href="#" class="w3-bar-item w3-button w3-red">Link 2</a>
+  <br>
+  <a href="#" class="w3-bar-item w3-button w3-red">Link 3</a>
+</div>
+
+
 
 <div class="container" style="background-color:lightgrey;">
 <div class="row justify-content-center">
