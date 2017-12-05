@@ -170,7 +170,7 @@
 					</c:if>
 					
 				</div>
-				<div class="col-sm-5 bg-secondary myBox">
+				<div class="col-sm-5 bg-secondary">
 				<br>
 					<div class="jumbotron jumbotron-fluid ">
   						<div class="container ">

@@ -187,6 +187,10 @@ textarea {
     color: white;
 }
 
+.roundCorners{
+	border-radius: 25px; 
+}
+
 .myBox {
 border: none;
 padding: 5px;
