@@ -23,7 +23,7 @@
 	<div class="container">
 		<form action="login.do" method="post" class="register-form">
 			<div class="card text-white bg-dark mb-3 container center_div"
-            style="max-width: 100%;" >
+            style="max-width: 100%; border-radius: 25px;" >
             <div class="row justify-content-center">
                 <div class="card-header">Login or Create New User</div>
             </div>
@@ -80,7 +80,7 @@
 							<div class="col"></div>
 							<!-- </div> -->
 						</div>
-
+						<br>
 					</div>
 			</form>
 				</div>
