@@ -73,36 +73,43 @@
 
 
 <br>
+
 <div class="container" style="background-color:lightgrey;">
-<div class="row justify-content-center">
-<h1>ATTEND</h1>
-</div>
-<div class="row justify-content-center">
-<h3>${errorMessage}</h3>
-</div>
+  	<div class="row justify-content-center">
+    		<h1>ATTEND</h1>
+  	</div>
+  	
+  <div class="row justify-content-center">
+	<h3>${errorMessage}</h3>
+  </div>
 
 <div class="container">
-<c:forEach var="event" items="${events}">
-<div class="row justify-content-center">
-<div class="col-sm-2">
-</div>
-<div class="col-sm-3">
- ${event.title } <strong>IN</strong> ${event.address.city} 
-</div>
+	<c:forEach var="event" items="${events}">
+		<div class="row justify-content-center">
+			
+			<div class="col-sm-2">
+			</div>
+			
+	<div class="col-sm-3">
+ 		${event.title } <strong>IN</strong> ${event.address.city} 
+	</div>
 <!-- Button trigger modal -->
-<div class="col-sm-2">
-<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#details${event.id }">
-  See Event Details
-</button>
-</div>
-<div class="col-sm-3">
-<form action="addEventToUser.do" method="get">
-		<input type="submit" class="btn btn-secondary" value="Attend Event"></input><br> 
-		<input type="hidden" value="${event.id }" name="eventId"></input>
-</form>
-</div>
-<div class="col-sm-3">
-</div>
+	<div class="col-sm-3">
+		<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#details${event.id }">
+  			See Event Details
+		</button>
+	</div>
+	
+<!-- Attend Event Button -->
+	<div class="col-sm-3">
+		<form action="addEventToUser.do" method="get">
+			<input type="submit" class="btn btn-secondary" value="Attend Event"></input><br> 
+			<input type="hidden" value="${event.id }" name="eventId"></input>
+		</form>
+	</div>
+
+			<div class="col-sm-2">
+			</div>
 
 <!-- Modal -->
 <div class="modal fade" id="details${event.id }" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
