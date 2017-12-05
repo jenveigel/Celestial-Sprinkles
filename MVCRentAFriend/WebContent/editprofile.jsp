@@ -33,7 +33,12 @@
 			<%-- <input type="text" name="bio" placeholder="Enter Bio" value="${profile.bio }"> --%> 
 		<div class="col">
 			<input type="text" name="imageURL" placeholder="Enter url" value="${profile.imageURL }"> 
-			<br><input class="submit" type="submit" value="Done">
+			<br>
+			<input type="text" name="facebookUrl" placeholder="Enter Facebook URL" value="${profile.facebookUrl }"> 
+			<br>
+			<input type="text" name="linkedinUrl" placeholder="Enter LinkedIn URL" value="${profile.linkedinUrl }"> 
+			<br>
+			<input class="submit" type="submit" value="Done">
 		</div>
 	</form>
 	</div>
