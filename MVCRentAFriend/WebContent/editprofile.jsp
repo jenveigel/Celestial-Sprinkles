@@ -115,7 +115,7 @@
 		</div>
 	</div>>
 
-	<div class="container-fluid">
+	<%-- <div class="container-fluid">
 	
 	<div class="row justify-content-center">
 	<h1>Edit Profile</h1>
@@ -143,7 +143,7 @@
 		</div>
 	</form>
 	</div>
-</div>
+</div> --%>
 	<jsp:include page="bootstrapFooter.jsp"></jsp:include>
 </body>
 </html>
