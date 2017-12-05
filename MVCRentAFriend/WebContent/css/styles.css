@@ -1,8 +1,11 @@
 @charset "UTF-8";
 
-body {
-	background-image: url("http://shop.fieldsfabrics.com/assets/images/D27820.jpg");
-
+body,html {
+	height:100%;
+	background-image: url("http://cdn.lifebuzz.com/images/17001/lifebuzz-8f6bfa334fad6d7a58c50dfb3a2b08e8-limit_2000.gif");
+	background-repeat:no-repeat;
+	background-position:right;
+	background-size: cover;
 }
 
 .navbar navbar-expand-sm bg-dark navbar-dark {
@@ -39,7 +42,7 @@ h1 {
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
+   	max-width: 50%;
     margin: auto;
     text-align: center;
     color: lightgrey;
