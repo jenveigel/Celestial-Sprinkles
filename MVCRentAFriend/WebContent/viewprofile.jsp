@@ -31,11 +31,15 @@
 				<img src="${profile.imageURL }" class="img-thumbnail" alt="${profile.firstName }" style="width: 100%">
 				<p class="name">${profile.firstName} ${profile.lastName}</p>
 					
-						<div class="col-9">
+						<div class="col-12">
 							<a href="${profile.linkedinUrl}"><i 
 							class="fa fa-linkedin"></i></a> 
 							<a href="${profile.facebookUrl}"><i
-							class="fa-facebook fa"></i></a>
+							class="fa fa-facebook"></i></a>
+							<a href="https://www.landof10.com/ohio-state"><i
+							class="fa fa-google"></i></a>
+							<a href="https://www.landof10.com/ohio-state"><i
+							class="fa fa-twitter"></i></a>
 						</div>
 						<br>
 						<p>
