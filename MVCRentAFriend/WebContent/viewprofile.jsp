@@ -37,7 +37,7 @@
 	</nav>
 	<br>
 	
-	<div class="container">
+	<div class="container-fluid" style="max-width: 95%;">
 		<div class="row justify-content-center">
 			<div class="col-sm-12 bg-dark">
 				<h1>Profile</h1>
@@ -50,19 +50,33 @@
 				<br>
 				<img src="${profile.imageURL }" class="img-thumbnail" alt="${profile.firstName }" style="width: 100%">
 				<p class="name">${profile.firstName} ${profile.lastName}</p>
+					
+						<div class="col-9">
+							<a href="#"><i class="fa fa-twitter"></i></a> <a
+							href="https://www.linkedin.com/in/david-chirdon-140560b6"><i
+							class="fa fa-linkedin"></i></a> <a
+							href="https://www.facebook.com/dave.chirdon.9"><i
+							class="fa fa-facebook"></i></a>
+						</div>
+						<br>
+						<p>
+						<c:if test="${sessionUser.id == user.id }">
+							<a class="btn btn-outline-warning" href="editProfileWithValues.do"
+								role="button">Edit Profile</a>
+						</c:if>
+						</p>
+					
+				</div>
+				
+				<div class="col-sm-4 bg-secondary">		
 					<c:if test="${events != null }">
 						<h4>Events Attending</h4>
+						<br>
 						<c:forEach var="event" items="${events }">
-
+						<div class="col">
 						<!-- Button trigger modal -->
 						<button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
 							data-target="#details${event.id }">${event.title }</button>
-						<br>
-
-						<%-- <form action="addEventToUser.do" method="get">
-						<input type="submit" class="btn btn-primary" value="Attend Event"></input><br> 
-						<input type="hidden" value="${event.id }" name="eventId"></input>
-						</form> --%>
 						<!-- Modal -->
 						<div class="modal fade" id="details${event.id }" tabindex="-1"
 							role="dialog" aria-labelledby="exampleModalLabel"
@@ -170,26 +184,13 @@
 							</div>
 						</div>
 		
-					</c:forEach>
-					</c:if>
-						<div class="col-9">
-							<a href="#"><i class="fa fa-twitter"></i></a> <a
-							href="https://www.linkedin.com/in/david-chirdon-140560b6"><i
-							class="fa fa-linkedin"></i></a> <a
-							href="https://www.facebook.com/dave.chirdon.9"><i
-							class="fa fa-facebook"></i></a>
 						</div>
 						<br>
-						<p>
-						<c:if test="${sessionUser.id == user.id }">
-							<a class="btn btn-outline-warning" href="editProfileWithValues.do"
-								role="button">Edit Profile</a>
-						</c:if>
-						</p>
+					</c:forEach>
+					</c:if>
 					
 				</div>
-				
-				<div class="col-sm-9 bg-secondary">
+				<div class="col-sm-5 bg-secondary">
 				<br>
 					<div class="jumbotron jumbotron-fluid">
   						<div class="container">
@@ -200,7 +201,9 @@
 				</div>
 			
 		</div>
-	</div>
+		<br>
+		<br>
+		</div>
 	
 	<jsp:include page="bootstrapFooter.jsp"></jsp:include>
 </body>
