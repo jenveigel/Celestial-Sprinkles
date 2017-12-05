@@ -78,11 +78,11 @@
 										<c:forEach var="ewu" items="${eventsWithUsers}">
 											<c:choose>
 												<c:when test="${ewu.id eq event.id}">
-													<c:forEach var="user" items="${ewu.users}">
 													<div class="littleBox">
-			        										<a href="viewUserProfile.do?uid=${user.id }"> ${user.userName} <img src="${user.profile.imageURL }" width="200" height="200"/></a>
-			      		 							</div>						
+													<c:forEach var="user" items="${ewu.users}">
+			        										<a href="viewUserProfile.do?uid=${user.id }"><br> ${user.userName} <br> <img src="${user.profile.imageURL }" width="200" height="200"/></a>
 			      		 							</c:forEach>
+			      		 							</div>						
 												</c:when>
 											</c:choose>
 										</c:forEach>
