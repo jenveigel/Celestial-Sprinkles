@@ -20,5 +20,5 @@ public interface UserDAO {
 	Profile getProfileByUserId(int id);
 	boolean deleteEventFromUser(int uid, int eid);
 	boolean createUser(String username, String password, String firstName, String lastName, String bio,
-			String imageUrl);
+			String imageUrl, String facebookUrl, String linkedinUrl);
 }
