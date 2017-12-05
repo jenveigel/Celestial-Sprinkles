@@ -27,7 +27,7 @@
 			<a class="nav-link" href="viewprofile.do">Your Profile</a></li>
 		<li class="nav-item">
 		  <div class="logout">
-			<a class="nav-link" href="loginPage.do">Logout</a>
+			<a class="nav-link" style="color:#c0392b" href="loginPage.do">Logout</a>
 		  </div></li>
 	 <form action="search.do?search=${search }" class="form-inline my-2 my-lg-0">
 			<li>
