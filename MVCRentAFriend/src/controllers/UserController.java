@@ -67,6 +67,22 @@ public class UserController {
 		return mv;
 	}
 	
+	@RequestMapping(path="deleteUser.do", method = RequestMethod.POST)
+	public ModelAndView deleteUser(HttpSession session) {
+		
+		Object obj = session.getAttribute("sessionId");
+		int id = (Integer) obj;
+		
+		ModelAndView mv = new ModelAndView();
+		
+		boolean returnBoolean = dao.destroyUserById(id);
+		
+		mv.setViewName("redirect:login.jsp");
+		return mv;
+	}
+	
+	
+	
 	
 	
 	

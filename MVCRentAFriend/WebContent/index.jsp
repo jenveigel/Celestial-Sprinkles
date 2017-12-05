@@ -62,7 +62,6 @@
 		</div>
 	</div>
 
-
 	<!-- ======================Bootstrap======================== -->
 
 	<jsp:include page="bootstrapFooter.jsp"></jsp:include>
