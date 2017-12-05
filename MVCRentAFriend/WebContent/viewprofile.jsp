@@ -76,6 +76,7 @@
 										<strong>Event: </strong> ${event.activity } <br>
 										<strong>Location: </strong> ${event.address}<br>
 										<strong>When: </strong>${event.dateTime} <br> 
+										<strong>Description: </strong>${event.description} <br> 
 										<strong>Attendees:</strong><br>
 										<c:forEach var="ewu" items="${eventsWithUsers}">
 											<c:choose>

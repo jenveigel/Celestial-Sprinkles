@@ -48,7 +48,7 @@
 <c:forEach var="event" items="${events}">
 <div class="row justify-content-center">
 <div class="col-sm-6">
- ${event.activity } ${event.address} 
+ ${event.title } <strong>IN</strong> ${event.address.city} 
 </div>
 <!-- Button trigger modal -->
 <div class="col-sm-3">
@@ -65,7 +65,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="details${event.id }" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">${event.activity }</h5>
@@ -73,23 +73,26 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        ${event.activity } at ${event.address}<br> 
-        on ${event.dateTime} <br>
-        Attendees: 
-        <c:forEach var="ewu" items="${eventsWithUsers}">
-		        <c:choose>
-		         <c:when test ="${ewu.id eq event.id}">
-		           <c:forEach var="user" items="${ewu.users}">
-	        			<a href="viewUserProfile.do?uid=${user.id }"	>${user.userName}</a>
-	      		 </c:forEach>
-		         </c:when>
-		        </c:choose>    
-        </c:forEach>
-        </tbody>
-	</table>
-      </div>
-      <div class="modal-footer">
+								<div class="modal-body">
+									<strong>Event: </strong> ${event.activity } <br> <strong>Location:
+									</strong> ${event.address}<br> <strong>When: </strong>${event.dateTime}
+									<br> <strong>Description: </strong>${event.description} <br>
+									<strong>Attendees:</strong><br>
+									<c:forEach var="ewu" items="${eventsWithUsers}">
+										<c:choose>
+											<c:when test="${ewu.id eq event.id}">
+												<c:forEach var="user" items="${ewu.users}">
+													<a href="viewUserProfile.do?uid=${user.id }">${user.userName}
+														<img src="${user.profile.imageURL }" width="200"
+														height="200" />
+													</a>
+
+												</c:forEach>
+											</c:when>
+										</c:choose>
+									</c:forEach>
+								</div>
+								<div class="modal-footer">
       
         <form action="addEventToUser.do" method="get">
 		<input type="submit" class="btn btn-primary" value="Attend Event"></input><br> 
