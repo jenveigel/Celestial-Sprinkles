@@ -66,13 +66,13 @@
 						<div class="input-group">
 							<span class="input-group-addon"><span
 								class="glyphicon glyphicon-user"></span></span> <input type="text"
-								class="form-control" name="facebookURL" id="facebookURL"
+								class="form-control" name="facebookUrl" id="facebookUrl"
 								placeholder="Paste your Facebook URL here">
 						</div>
 						<div class="input-group">
 							<span class="input-group-addon"><span
 								class="glyphicon glyphicon-user"></span></span> <input type="text"
-								class="form-control" name="linkedinURL" id="linkedinURL"
+								class="form-control" name="linkedinUrl" id="linkedinUrl"
 								placeholder="Paste your LinkedIn URL here">
 						</div>
 			<div class="form-group">
