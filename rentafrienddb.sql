@@ -26,6 +26,8 @@ CREATE TABLE IF NOT EXISTS `profile` (
   `img_url` VARCHAR(500) NULL,
   `first_name` VARCHAR(45) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
+  `facebook_url` VARCHAR(500) NULL,
+  `linkedin_url` VARCHAR(500) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -136,8 +138,8 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `rentafrienddb`;
-INSERT INTO `profile` (`id`, `bio`, `img_url`, `first_name`, `last_name`) VALUES (1, 'falcon\'s bio', NULL, 'aaron', 'ipp');
-INSERT INTO `profile` (`id`, `bio`, `img_url`, `first_name`, `last_name`) VALUES (2, 'stumpe\'s bio', NULL, 'david', 'stumpe');
+INSERT INTO `profile` (`id`, `bio`, `img_url`, `first_name`, `last_name`, `facebook_url`, `linkedin_url`) VALUES (1, 'falcon\'s bio', NULL, 'aaron', 'ipp', NULL, NULL);
+INSERT INTO `profile` (`id`, `bio`, `img_url`, `first_name`, `last_name`, `facebook_url`, `linkedin_url`) VALUES (2, 'stumpe\'s bio', NULL, 'david', 'stumpe', NULL, NULL);
 
 COMMIT;
 
@@ -184,4 +186,3 @@ INSERT INTO `event_participant` (`id`, `user_id`, `event_id`) VALUES (1, 1, 1);
 INSERT INTO `event_participant` (`id`, `user_id`, `event_id`) VALUES (2, 2, 2);
 
 COMMIT;
-
