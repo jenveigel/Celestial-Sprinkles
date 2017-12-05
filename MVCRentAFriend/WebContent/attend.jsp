@@ -52,9 +52,15 @@
             <li><!-- Link with dropdown items -->
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><h3><u>City</u></h3></a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li><a href="filterByCity.do?search=Denver"><h5>->Denver</h5></a></li>
-                    <li><a href="#"><h5>->Orlando</h5></a></li>
-                    <li><a href="#"><h5>->Columbus</h5></a></li>
+                    <li><a href="filterByCity.do?city=Denver"><h5>->Denver</h5></a></li>
+                    <li><a href="filterByCity.do?city=Orlando"><h5>->Orlando</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->Columbus</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->Boise</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->New Jersey</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->Kansas City</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->Phoenix</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->Miami</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->Salt Lake City</h5></a></li>
                 </ul>
 <!-- 
             <li><a href="#">Date</a></li>
