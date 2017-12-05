@@ -58,7 +58,7 @@
 						<c:forEach var="event" items="${events }">
 						<div class="col \">
 						<!-- Button trigger modal -->
-						<button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+						<button type="button" class="btn  btn-lg yellowgreen" data-toggle="modal"
 							data-target="#details${event.id }">${event.title }</button>
 						<!-- Modal -->
 						<div class="modal fade" id="details${event.id }" tabindex="-1"
