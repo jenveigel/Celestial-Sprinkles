@@ -73,13 +73,16 @@
 										<h5 class="modal-title" id="exampleModalLabel">${event.title }</h5>
 									</div>
 									<div class="modal-body">
-										${event.activity } at ${event.address}<br> on
-										${event.dateTime} <br> Attendees:
+										<strong>Event: </strong> ${event.activity } <br>
+										<strong>Location: </strong> ${event.address}<br>
+										<strong>When: </strong>${event.dateTime} <br> 
+										<strong>Attendees:</strong><br>
 										<c:forEach var="ewu" items="${eventsWithUsers}">
 											<c:choose>
 												<c:when test="${ewu.id eq event.id}">
 													<c:forEach var="user" items="${ewu.users}">
-			        										<a href="viewUserProfile.do?uid=${user.id }"	>${user.userName}</a>
+			        										<a href="viewUserProfile.do?uid=${user.id }"> ${user.userName} <img src="${user.profile.imageURL }" width="200" height="200"/></a>
+			      		 													
 			      		 							</c:forEach>
 												</c:when>
 											</c:choose>
@@ -198,7 +201,7 @@
 		</div>
 	</div>
 	
-	<div class="card">
+	<%-- <div class="card">
 		<img src="${profile.imageURL }" class="img-thumbnail"
 			alt="${profile.firstName }" style="width: 100%">
 		<p class="name">${profile.firstName} ${profile.lastName}</p>
@@ -212,10 +215,10 @@
 					data-target="#details${event.id }">${event.title }</button>
 				<br>
 
-				<%-- <form action="addEventToUser.do" method="get">
+				<form action="addEventToUser.do" method="get">
 		<input type="submit" class="btn btn-primary" value="Attend Event"></input><br> 
 		<input type="hidden" value="${event.id }" name="eventId"></input>
-</form> --%>
+</form>
 				<!-- Modal -->
 				<div class="modal fade" id="details${event.id }" tabindex="-1"
 					role="dialog" aria-labelledby="exampleModalLabel"
@@ -290,7 +293,7 @@
 
 														<!-- <input class="submit" type="submit" value="Update"> -->
 														<input type="hidden" value="${event.id }" name="eid"></input>
-														<%-- <input type="hidden" value="${event.owner.id }" name="ownerId"></input> --%>
+														<input type="hidden" value="${event.owner.id }" name="ownerId"></input>
 														<input type="submit" class="btn btn-primary"
 															value="Update"></input>
 													</form>
@@ -313,7 +316,7 @@
 								</form>
 								<button type="button" class="btn btn-secondary"
 									data-dismiss="modal">Close</button>
-								<%-- <a href="cancelrsvp.do?eid=${event.id }">Cancel RSVP</a> --%>
+								<a href="cancelrsvp.do?eid=${event.id }">Cancel RSVP</a>
 							</div>
 						</div>
 					</div>
@@ -336,7 +339,7 @@
 		</c:if>
 		</p>
 
-	</div>
+	</div> --%>
 
 	<%-- <div class="profileDetails">
 		<div class="row justify-content-center">
