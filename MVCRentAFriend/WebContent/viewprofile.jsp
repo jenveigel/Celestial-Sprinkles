@@ -206,24 +206,26 @@
 			</div>
 		</div>
 		</div><br>
+		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-5"></div>
-				<div class="col-1">
+				<div class="col-4"></div>
+				<div class="col-2">
 				<c:if test="${sessionUser.id == user.id }">
 					<form action="deleteUser.do" method="POST">
 						<input  type="submit" class="btn btn-outline-warning"" value="Delete Account"></input>
 					</form>
 					</c:if>
 				</div>
-				<div class="col-1">
+				<div class="col-2">
 				<c:if test="${sessionUser.id == user.id }">
 							<form action="editProfileWithValues.do" method="GET">
-									<input  type="submit" class="btn btn-outline-warning" value=" Edit Profile "></input>
+									<input  type="submit" class="btn btn-outline-warning" value=" Modify Profile "></input>
 							</form>
 						</c:if>
 				</div>
-				<div class="col-5"></div>
+				<div class="col-4"></div>
 			</div>
+		</div>
 		</div>
 		
 
