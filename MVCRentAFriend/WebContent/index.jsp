@@ -21,10 +21,8 @@
 
 	<!-- ================WLECOME BUTTONS======================= -->
 
-	<div class="container">
-
-		<div class="card text-white bg-dark mb-3 container center_div"
-			style="max-width: 30rem;">
+		<br><br><br><br>
+		<div class="card text-white bg-dark mb-3 container-fluid center_div roundCorners">
 			<div class="row justify-content-center">
 				<div class="card-header">Hi ${user.userName }, Select an
 					option below</div>
@@ -32,36 +30,27 @@
 			<div class="card-body">
 				<p class="card-text">
 				<div class="row justify-content-center">
+					<div class="col-12">
 					<form action="createEventPage.do" method="get">
-						<input  type="submit" class="btn btn-lg btn-secondary" style="background: url(http://www.zingerbug.com/Backgrounds/background_images/green_plaid.jpg)"
-							value="Create Event"></input>
-				</form>
-				</div>
-
-				<br>
-
-				<div class="row justify-content-center">
+						<input  type="submit" class="btn btn-lg logbutton" value="Create Event">
+						</input>
+					</form>
+					</div><div class="col-12">&nbsp</div>
+					<div class="col-12">
 					<form action="attendEvent.do" method="get">
-						<input  type="submit" class="btn btn-lg btn-secondary" style="background: #ccc url(http://www.zingerbug.com/Backgrounds/background_images/green_plaid.jpg)"
+						<input  type="submit" class="btn btn-lg logbutton"
 							value="Attend Event"></input>
 					</form>
-				</div>
-
-				<br>
-
-				<div class="row justify-content-center">
+					</div><div class="col-12">&nbsp</div>
+					<div class="col-12">
 					<form action="viewprofile.do" method="get">
-						<input type="submit" class="btn btn-lg btn-secondary"  style="background: #ccc url(http://www.zingerbug.com/Backgrounds/background_images/green_plaid.jpg)" 
-							value="View Profile"></input>
+						<input type="submit" class="btn btn-lg btn-secondary logbutton" value="View Profile"></input>
 					</form>
-				</div>
-
-				<br>
+					</div>
 
 			</div>
 		</div>
 	</div>
-
 	<!-- ======================Bootstrap======================== -->
 
 	<jsp:include page="bootstrapFooter.jsp"></jsp:include>
