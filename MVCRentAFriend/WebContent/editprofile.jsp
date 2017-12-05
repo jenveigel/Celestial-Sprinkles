@@ -7,24 +7,37 @@
 <title>Insert title here</title>
 <jsp:include page="bootstrapHeader.jsp"></jsp:include>
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/editProfile.css">
 </head>
 <body>
 
 <!-- -------------------Navbar----------------- -->
 <jsp:include page="navbar.jsp"></jsp:include>
 
+	<div class="container-fluid">
+	
+	<div class="row justify-content-center">
 	<h1>Edit Profile</h1>
+	</div>
+	<div class="row justify-content-center" >
 	<form action="editprofile.do" method="get">
-		<input type="text" name="firstName" placeholder="Enter First Name"
-			value="${profile.firstName }"> <input type="text"
-			name="lastName" placeholder="Enter Last Name"
-			value="${profile.lastName }"> <input type="text" name="bio"
-			placeholder="Enter Bio" value="${profile.bio }"> <input
-			type="text" name="imageURL" placeholder="Enter url"
-			value="${profile.imageURL }"> <input class="submit"
-			type="submit" value="Done">
+	<div class="col">
+		<input type="text" name="firstName" width="100" placeholder="Enter First Name" value="${profile.firstName }"> 
+		</div>
+		<div class="col">
+			<input type="text" name="lastName" placeholder="Enter Last Name" value="${profile.lastName }">
+		</div>
+		<div class="col">
+			<textarea rows="3" cols="3" name="bio" id="bio">${profile.bio }</textarea>
+		</div>
+			<%-- <input type="text" name="bio" placeholder="Enter Bio" value="${profile.bio }"> --%> 
+		<div class="col">
+			<input type="text" name="imageURL" placeholder="Enter url" value="${profile.imageURL }"> 
+			<br><input class="submit" type="submit" value="Done">
+		</div>
 	</form>
-
+	</div>
+</div>
 	<jsp:include page="bootstrapFooter.jsp"></jsp:include>
 </body>
 </html>

@@ -63,6 +63,18 @@
 								class="form-control" name="lastName" id="lastName"
 								placeholder="Enter your last name">
 						</div>
+						<div class="input-group">
+							<span class="input-group-addon"><span
+								class="glyphicon glyphicon-user"></span></span> <input type="text"
+								class="form-control" name="facebookURL" id="facebookURL"
+								placeholder="Paste your Facebook URL here">
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon"><span
+								class="glyphicon glyphicon-user"></span></span> <input type="text"
+								class="form-control" name="linkedinURL" id="linkedinURL"
+								placeholder="Paste your LinkedIn URL here">
+						</div>
 			<div class="form-group">
 						<!-- <label>bio and image</label> -->
 						<div class="input-group">
