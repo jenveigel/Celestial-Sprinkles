@@ -189,7 +189,16 @@
 		<br>
 		</div>
 		<div class="container-fluid">
-		
+			<div class="row">
+			<c:forEach var="review" items="${reviews }">
+				<div class="col">
+					${review.user }
+					${review.text }                
+					${review.rating }                
+				</div>
+			</c:forEach>
+			${user.rating }
+		</div>
 		
 			<div class="row justify-content-center">
 				<div class="col-1">
