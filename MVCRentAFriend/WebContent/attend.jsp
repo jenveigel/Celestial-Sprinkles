@@ -16,7 +16,7 @@
 <body class="attendbackground">
 
 <!-- -------------------Navbar----------------- -->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar sticky-top navbar-expand-sm bg-dark navbar-dark">
 	<a class="navbar-brand" href="index.jsp"> <img src="mountains.png"
 		style="width: 60px;"></a>
 	<ul class="navbar-nav">
