@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `user_name` VARCHAR(60) NOT NULL,
   `password` VARCHAR(60) NOT NULL,
   `profile_id` INT NULL,
+  `avg_user_rating` INT NULL,
   PRIMARY KEY (`id`),
   INDEX `id_idx1` (`profile_id` ASC),
   UNIQUE INDEX `user_name_UNIQUE` (`user_name` ASC),
@@ -119,6 +120,33 @@ CREATE TABLE IF NOT EXISTS `event_participant` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+
+-- -----------------------------------------------------
+-- Table `reviews`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `reviews` ;
+
+CREATE TABLE IF NOT EXISTS `reviews` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `review` VARCHAR(1000) NULL,
+  `rating` INT(5) NULL,
+  `reviewer_id` INT UNSIGNED NULL,
+  `reviewee_id` INT UNSIGNED NULL,
+  PRIMARY KEY (`id`),
+  INDEX `reviews_user_fk_idx` (`reviewee_id` ASC),
+  INDEX `reviewer_user_fk_idx` (`reviewer_id` ASC),
+  CONSTRAINT `reviews_user_fk`
+    FOREIGN KEY (`reviewee_id`)
+    REFERENCES `user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `reviewer_user_fk`
+    FOREIGN KEY (`reviewer_id`)
+    REFERENCES `user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
 SET SQL_MODE = '';
 GRANT USAGE ON *.* TO admin@localhost;
  DROP USER admin@localhost;
@@ -149,8 +177,8 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `rentafrienddb`;
-INSERT INTO `user` (`id`, `user_name`, `password`, `profile_id`) VALUES (1, 'falcon', 'falcon', 1);
-INSERT INTO `user` (`id`, `user_name`, `password`, `profile_id`) VALUES (2, 'dstumpe', 'dstumpe', 2);
+INSERT INTO `user` (`id`, `user_name`, `password`, `profile_id`, `avg_user_rating`) VALUES (1, 'falcon', 'falcon', 1, 5);
+INSERT INTO `user` (`id`, `user_name`, `password`, `profile_id`, `avg_user_rating`) VALUES (2, 'dstumpe', 'dstumpe', 2, 0);
 
 COMMIT;
 
@@ -184,5 +212,16 @@ START TRANSACTION;
 USE `rentafrienddb`;
 INSERT INTO `event_participant` (`id`, `user_id`, `event_id`) VALUES (1, 1, 1);
 INSERT INTO `event_participant` (`id`, `user_id`, `event_id`) VALUES (2, 2, 2);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `reviews`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `rentafrienddb`;
+INSERT INTO `reviews` (`id`, `review`, `rating`, `reviewer_id`, `reviewee_id`) VALUES (1, 'He is a great person.', 5, NULL, NULL);
+INSERT INTO `reviews` (`id`, `review`, `rating`, `reviewer_id`, `reviewee_id`) VALUES (2, 'What a bitch!', 0, NULL, NULL);
 
 COMMIT;

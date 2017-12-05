@@ -87,6 +87,22 @@
 											</c:choose>
 										</c:forEach>
 									</div>
+<!-- 									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br> -->
 									<div class="modal-footer">
 										<c:if test="${sessionUser.id == event.owner.id }">
 											<form action="deleteEvent.do" method="get">
@@ -137,6 +153,9 @@
 											</div>
 		
 										</c:if>
+										<!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+										<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+										<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
 										<form action="cancelrsvp.do" method="get">
 											<input type="hidden" value="${event.id }" name="eid"></input> <input
 												type="submit" class="btn btn-primary" value="Cancel RSVP"></input><br>
@@ -159,7 +178,7 @@
 				<br>
 					<div class="col">
   						<div class="container ">
-  						<h4 >${profile.firstName }'s Bio</h4>
+  						<h4 >${profile.firstName } Bio</h4>
 					    		<p class="lead">${profile.bio }</p>
 					  	</div>
 					</div>
