@@ -6,35 +6,33 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Attend</title>
-	
+
+<!-- --------------Bootstrap Header------------ -->
 	<jsp:include page="bootstrapHeader.jsp"></jsp:include>
-	
-<%-- <%@ include file=“bootstrapHeader.jsp” %> --%>
+
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="attendbackground">
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark"> <a
-		class="navbar-brand" href="index.jsp"> <img src="mountains.png"
-		style="width: 60px;">
-	</a>
+<!-- -------------------Navbar----------------- -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<a class="navbar-brand" href="index.jsp"> <img src="mountains.png"
+		style="width: 60px;"></a>
 	<ul class="navbar-nav">
-		<%-- <li class="nav-item active"><a class="nav-link" href="index.jsp">Welcome
-				- ${user.userName }</a></li> --%>
-		<li class="nav-item active"><a class="nav-link"
-			href="attendEvent.do">Attend</a></li>
-		<li class="nav-item active"><a class="nav-link"
-			href="createEventPage.do">Create</a></li>
-		<li class="nav-item active"><a class="nav-link"
-			href="viewprofile.do">Your Profile</a></li>
+		<li class="nav-item active">
+			<a class="nav-link" href="attendEvent.do">Attend</a></li>
+		<li class="nav-item active">
+			<a class="nav-link" href="createEventPage.do">Create</a></li>
+		<li class="nav-item active">
+			<a class="nav-link" href="viewprofile.do">Your Profile</a></li>
 		<li class="nav-item">
-			<div class="logout">
-				<a class="nav-link" href="loginPage.do">Logout</a>
-			</div>
+		  <div class="logout">
+			<a class="nav-link" href="loginPage.do">Logout</a>
+		  </div>
 		</li>
 	</ul>
-	</nav>
-	<br>
+</nav>
+<br>
 
 <div class="container" style="background-color:lightgrey;">
 <div class="row justify-content-center">
@@ -116,6 +114,8 @@
 </c:forEach>
 </div>
 </div>
+
+<!-- --------------Bootstrap Footer------------ -->
 
 	<jsp:include page="bootstrapFooter.jsp"></jsp:include>
 

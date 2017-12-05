@@ -21,7 +21,7 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public boolean createUser(String username, String password, String firstName
-			, String lastName, String bio, String imageUrl) 
+			, String lastName, String bio, String imageUrl, String facebookUrl, String linkedinUrl) 
 	{//method returns false if 
 		try {
 			username = username.trim();
@@ -30,6 +30,8 @@ public class UserDAOImpl implements UserDAO {
 			lastName = lastName.trim();
 			bio = bio.trim();
 			imageUrl = imageUrl.trim();
+			facebookUrl = facebookUrl.trim();
+			linkedinUrl = linkedinUrl.trim();
 			if(firstName.equals("")||lastName.equals("")||bio.equals("")
 					||imageUrl.equals("")||username.equals("")||password.equals("")) {
 				return false; 
@@ -44,6 +46,8 @@ public class UserDAOImpl implements UserDAO {
 			profile.setLastName(lastName);
 			profile.setBio(bio);
 			profile.setImageURL(imageUrl);
+			profile.setFacebookUrl(facebookUrl);
+			profile.setLinkedinUrl(linkedinUrl);
 			user.setProfile(profile);
 			em.persist(user);
 			em.flush();
@@ -127,6 +131,8 @@ public class UserDAOImpl implements UserDAO {
 		updatedProfile.setLastName(profile.getLastName());
 		updatedProfile.setBio(profile.getBio());
 		updatedProfile.setImageURL(profile.getImageURL());
+		updatedProfile.setFacebookUrl(profile.getFacebookUrl());
+		updatedProfile.setLinkedinUrl(profile.getLinkedinUrl());
 		return updatedProfile;
 	}
 

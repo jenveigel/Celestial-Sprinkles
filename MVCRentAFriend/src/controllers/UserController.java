@@ -29,9 +29,9 @@ public class UserController {
 	////Creates 
 	@RequestMapping(path="addUser.do", method = RequestMethod.POST)
 	public ModelAndView addUser(String userName, String password, String firstName,
-			String lastName, String imgUrl, String bio) {
+			String lastName, String imgUrl, String bio, String facebookUrl, String linkedinUrl) {
 		ModelAndView mv = new ModelAndView();
-		boolean notNullValues = dao.createUser(userName, password, firstName,lastName , bio,imgUrl);
+		boolean notNullValues = dao.createUser(userName, password, firstName, lastName, bio, imgUrl, facebookUrl, linkedinUrl);
 		
 		
 		if(notNullValues == false) {

@@ -7,43 +7,37 @@
 <title>Insert title here</title>
 <jsp:include page="bootstrapHeader.jsp"></jsp:include>
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/editProfile.css">
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark"> <a
-		class="navbar-brand" href="index.jsp"> <img src="mountains.png"
-		style="width: 60px;">
-	</a>
-	<ul class="navbar-nav">
+<!-- -------------------Navbar----------------- -->
+<jsp:include page="navbar.jsp"></jsp:include>
 
-		<%-- <li class="nav-item active"><a class="nav-link" href="index.jsp">Welcome
-				- ${user.userName }</a></li> --%>
-		<li class="nav-item active"><a class="nav-link"
-			href="attendEvent.do">Attend</a></li>
-		<li class="nav-item active"><a class="nav-link"
-			href="createEventPage.do">Create</a></li>
-		<li class="nav-item active"><a class="nav-link"
-			href="viewprofile.do">Your Profile</a></li>
-		<li class="nav-item">
-			<div class="logout">
-				<a class="nav-link" href="loginPage.do">Logout</a>
-			</div>
-		</li>
-	</ul>
-	</nav>
-
+	<div class="container-fluid">
+	
+	<div class="row justify-content-center">
 	<h1>Edit Profile</h1>
+	</div>
+	<div class="row justify-content-center" >
 	<form action="editprofile.do" method="get">
-		<input type="text" name="firstName" placeholder="Enter First Name"
-			value="${profile.firstName }"> <input type="text"
-			name="lastName" placeholder="Enter Last Name"
-			value="${profile.lastName }"> <input type="text" name="bio"
-			placeholder="Enter Bio" value="${profile.bio }"> <input
-			type="text" name="imageURL" placeholder="Enter url"
-			value="${profile.imageURL }"> <input class="submit"
-			type="submit" value="Done">
+	<div class="col">
+		<input type="text" name="firstName" width="100" placeholder="Enter First Name" value="${profile.firstName }"> 
+		</div>
+		<div class="col">
+			<input type="text" name="lastName" placeholder="Enter Last Name" value="${profile.lastName }">
+		</div>
+		<div class="col">
+			<textarea rows="3" cols="3" name="bio" id="bio">${profile.bio }</textarea>
+		</div>
+			<%-- <input type="text" name="bio" placeholder="Enter Bio" value="${profile.bio }"> --%> 
+		<div class="col">
+			<input type="text" name="imageURL" placeholder="Enter url" value="${profile.imageURL }"> 
+			<br><input class="submit" type="submit" value="Done">
+		</div>
 	</form>
-
+	</div>
+</div>
 	<jsp:include page="bootstrapFooter.jsp"></jsp:include>
 </body>
 </html>

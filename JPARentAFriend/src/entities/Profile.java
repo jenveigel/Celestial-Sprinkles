@@ -23,6 +23,12 @@ public class Profile {
 	
 	@Column(name="img_url")
 	private String imageURL;
+	
+	@Column(name="facebook_url")
+	private String facebookUrl;
+	
+	@Column(name="linkedin_url")
+	private String linkedinUrl;
 
 	public String getFirstName() {
 		return firstName;
@@ -60,12 +66,26 @@ public class Profile {
 		return id;
 	}
 
+	
+	public String getFacebookUrl() {
+		return facebookUrl;
+	}
+
+	public void setFacebookUrl(String facebookUrl) {
+		this.facebookUrl = facebookUrl;
+	}
+
+	public String getLinkedinUrl() {
+		return linkedinUrl;
+	}
+
+	public void setLinkedinUrl(String linkedinUrl) {
+		this.linkedinUrl = linkedinUrl;
+	}
+
 	@Override
 	public String toString() {
 		return "Profile [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", bio=" + bio
-				+ ", imageURL=" + imageURL + "]";
+				+ ", imageURL=" + imageURL + ", facebookUrl=" + facebookUrl + ", linkedinUrl=" + linkedinUrl + "]";
 	}
-	
-	
-	
 }
