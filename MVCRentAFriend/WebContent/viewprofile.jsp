@@ -33,9 +33,9 @@
 					
 						<div class="col-9">
 							<a href="${profile.linkedinUrl}"><i 
-							class="fa fa-linkedin"></i></a> <a
-							href="${profile.facebookUrl}"><i
-							class="fa fa-facebook"></i></a>
+							class="fa fa-linkedin"></i></a> 
+							<a href="${profile.facebookUrl}"><i
+							class="fa-facebook fa"></i></a>
 						</div>
 						<br>
 						<p>
