@@ -11,8 +11,7 @@
 		<li class="nav-item">
 		  <div class="logout">
 			<a class="nav-link" style="color:#c0392b" href="loginPage.do">Logout</a>
-		  </div>
-		</li>
+		  </div></li>
 	</ul>
 </nav>
 <br>
