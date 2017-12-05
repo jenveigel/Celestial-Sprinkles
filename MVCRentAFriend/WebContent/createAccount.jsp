@@ -16,7 +16,7 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark"> <a
+	<nav class="navbar sticky-top navbar-expand-sm bg-dark navbar-dark"> <a
 		class="navbar-brand" href="loginPage.do"> <img src="mountains.png"
 		style="width: 60px;">
 	</a>
