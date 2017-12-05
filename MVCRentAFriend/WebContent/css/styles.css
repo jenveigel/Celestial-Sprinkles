@@ -5,6 +5,10 @@ body {
 
 }
 
+.navbar navbar-expand-sm bg-dark navbar-dark {
+	background-color: blue;
+}
+
 .black-txt{
 	color:darkbrown;
 }
@@ -31,6 +35,7 @@ h1 {
 
 .logout {
 	text-align: float-right;
+	color: blue;
 }
 
 .card {
