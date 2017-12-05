@@ -31,11 +31,15 @@
 				<img src="${profile.imageURL }" class="img-thumbnail" alt="${profile.firstName }" style="width: 100%">
 				<p class="name">${profile.firstName} ${profile.lastName}</p>
 					
-						<div class="col-9">
+						<div class="col-12">
 							<a href="${profile.linkedinUrl}"><i 
 							class="fa fa-linkedin"></i></a> 
 							<a href="${profile.facebookUrl}"><i
-							class="fa-facebook fa"></i></a>
+							class="fa fa-facebook"></i></a>
+							<a href="https://www.google.com/"><i
+							class="fa fa-google"></i></a>
+							<a href="https://twitter.com/?lang=en"><i
+							class="fa fa-twitter"></i></a>
 						</div>
 						<br>
 						<p>
@@ -74,11 +78,11 @@
 										<c:forEach var="ewu" items="${eventsWithUsers}">
 											<c:choose>
 												<c:when test="${ewu.id eq event.id}">
-													<c:forEach var="user" items="${ewu.users}">
 													<div class="littleBox">
-			        										<a href="viewUserProfile.do?uid=${user.id }"> ${user.userName} <img src="${user.profile.imageURL }" width="200" height="200"/></a>
-			      		 							</div>						
+													<c:forEach var="user" items="${ewu.users}">
+			        										<a href="viewUserProfile.do?uid=${user.id }"><br> ${user.userName} <br> <img src="${user.profile.imageURL }" width="200" height="200"/></a>
 			      		 							</c:forEach>
+			      		 							</div>						
 												</c:when>
 											</c:choose>
 										</c:forEach>
