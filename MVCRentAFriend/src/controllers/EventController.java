@@ -192,6 +192,17 @@ public class EventController {
 		mv.setViewName("attend.jsp");
 		return mv;
 	}
+	@RequestMapping(path="filterByCity.do", method=RequestMethod.GET)
+	public ModelAndView cityFilter(@RequestParam("city") String city) {
+		ModelAndView mv = new ModelAndView();
+//		List<Event> events = dao.getAllEvents();
+		List<Event> searchedEvents = dao.getAllEventsByCity(city);
+		List<Event> eventsWithUsers = dao.getAllEventsWithUsers();
+		mv.addObject("eventsWithUsers", eventsWithUsers);
+		mv.addObject("events", searchedEvents);
+		mv.setViewName("attend.jsp");
+		return mv;
+	}
 	
 	
 }
