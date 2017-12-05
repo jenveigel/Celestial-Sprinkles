@@ -183,7 +183,7 @@ public class EventDAOImpl implements EventDAO {
 
 		@Override
 		public List<Event> getAllEventsByKeyword(String title) {
-			String query = "SELECT e FROM Event e Where e.title = like CONCAT('%', :title,'%')";
+			String query = "SELECT e FROM Event e Where e.title LIKE CONCAT('%', :title,'%')";
 			return em.createQuery(query, Event.class).setParameter("title", title).getResultList();
 		}
 
