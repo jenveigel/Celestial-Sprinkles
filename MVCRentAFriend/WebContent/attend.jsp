@@ -11,7 +11,7 @@
 	<jsp:include page="bootstrapHeader.jsp"></jsp:include>
 
 <link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
 </head>
 <body class="attendbackground">
 
@@ -45,11 +45,31 @@
 <br>
 
 <div class="w3-sidebar w3-bar-block w3-black" style="width:10%"> 
-  <a href="#" class="w3-bar-item w3-button w3-red">Link 1</a>
+	<h3>Search By</h3>
+	<hr>
+        <ul class="list-unstyled components">
+            <li class="active"><a href="#"><u>All Events</u></a></li>
+            <li><!-- Link with dropdown items -->
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><h3><u>City</u></h3></a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li><a href="filterByCity.do?city=Denver"><h5>->Denver</h5></a></li>
+                    <li><a href="filterByCity.do?city=Orlando"><h5>->Orlando</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->Columbus</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->Boise</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->New Jersey</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->Kansas City</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->Phoenix</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->Miami</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->Salt Lake City</h5></a></li>
+                </ul>
+<!-- 
+            <li><a href="#">Date</a></li>
+            <li><a href="#">Contact</a></li> -->
+        </ul>	
+	
   <br>
-  <a href="#" class="w3-bar-item w3-button w3-red">Link 2</a>
-  <br>
-  <a href="#" class="w3-bar-item w3-button w3-red">Link 3</a>
+  <a href="#" class="w3-bar-item w3-round w3-red">Date</a>
+
 </div>
 
 

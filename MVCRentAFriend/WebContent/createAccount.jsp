@@ -28,15 +28,19 @@
 			<p class="well"></p>
 			<h1 class="header">Registration</h1>
 			<h1> ${error }</h1>
-			<hr>
-			<div class="row justify-content-center">
-				<div class="col-sm-5">
+			<br>
+			<div class="row justify-content-center text-white bg-dark" style="border-radius: 25px; background-color:darkgrey;">
+				<h4>Requried Fields</h4>
+				<div class="col-sm-12 col-md-12 col-lg-12"></div>
+				<div class="col-sm-6">
 					<div class="input-group">
 						<span class="input-group-addon"><span
 							class="glyphicon glyphicon-user"></span></span> <input type="text"
 							class="form-control" name="userName" id="userName"
 							placeholder="Enter a Username">
 					</div>
+				</div>
+				<div class="col-sm-6">
 					<div class="input-group">
 						<span class="input-group-addon"><span
 							class="glyphicon glyphicon-lock"></span></span> <input type="text"
@@ -44,12 +48,10 @@
 							placeholder="Enter a Password" required data-toggle="popover"
 							title="Password Strength" data-content="Enter Password...">
 					</div>
-
+					<br>
 				</div>
-				<div class="form-group"></div>
-
-				<div class="col-sm-5">
-					<div class="form-group">
+				
+				<div class="col-sm-6">
 						<!-- <label>name</label> -->
 						<div class="input-group">
 							<span class="input-group-addon"><span
@@ -57,74 +59,69 @@
 								class="form-control" name="firstName" id="firstName"
 								placeholder="Enter your first name">
 						</div>
+						</div>
+				<div class="col-sm-6">
 						<div class="input-group">
 							<span class="input-group-addon"><span
 								class="glyphicon glyphicon-user"></span></span> <input type="text"
 								class="form-control" name="lastName" id="lastName"
 								placeholder="Enter your last name">
 						</div>
-						 <div class="input-group">
-							<span class="input-group-addon"><span
-								class="glyphicon glyphicon-user"></span></span> <input type="text"
-								class="form-control" name="facebookUrl" id="facebookUrl"
-								placeholder="Paste your Facebook URL here">
-						</div>
-						<div class="input-group">
-							<span class="input-group-addon"><span
-								class="glyphicon glyphicon-user"></span></span> <input type="text"
-								class="form-control" name="linkedinUrl" id="linkedinUrl"
-								placeholder="Paste your LinkedIn URL here">
-						</div> 
-			<div class="form-group">
-						<!-- <label>bio and image</label> -->
-						<div class="input-group">
+					</div>
+					<div class="col-sm-12">&nbsp</div>
+					</div>
+					<br>
+					
+					<div class="row justify-content-center text-white bg-dark" style="border-radius: 25px; background-color:darkgrey;">
+						<h4>Optional</h4>
+						<div class="input-group col-sm-12">
 							<span class="input-group-addon"><span
 								class="glyphicon glyphicon-user"></span></span>
 								<textarea rows="" cols="" name="bio" id="bio"
 								placeholder="Enter something about you"></textarea>
-<!-- 								<input type="text"
-								class="form-control" name="bio" id="bio"
-								placeholder="Enter something about you"> -->
 						</div>
-						<div class="input-group">
+						<div class="col-sm-12">&nbsp</div>
+						 <div class="input-group col-sm-4">
+							<span class="input-group-addon"><span
+								class="glyphicon glyphicon-user"></span></span> <input type="text"
+								class="form-control" name="facebookUrl" id="facebookUrl"
+								placeholder="Paste your Facebook URL here">
+						</div><br>
+						<div class="input-group col-sm-4">
+							<span class="input-group-addon"><span
+								class="glyphicon glyphicon-user"></span></span> <input type="text"
+								class="form-control" name="linkedinUrl" id="linkedinUrl"
+								placeholder="Paste your LinkedIn URL here">
+						</div><br>
+						<!-- <label>bio and image</label> -->
+						
+						<div class="input-group col-sm-4">
 							<span class="input-group-addon"><span
 								class="glyphicon glyphicon-user"></span></span> <input type="text"
 								class="form-control" name="imgUrl" id="imgUrl"
-								placeholder="Enter your imgUrl">
+								placeholder="Enter a profile image url">
 						</div>
+						<div class="col-sm-12">&nbsp</div>
+						<input type="submit" name="submit" id="submit" value="Submit"
+						class="btn pull-right btn-default logbutton">
+						<div class="col-sm-12">&nbsp</div>
 					</div>
-					</div>
-				<div class="form-group">
-					<input type="submit" name="submit" id="submit" value="Submit"
-						class="btn btn-secondary pull-right">
-				</div>
-				</div>
-				<div class="col-sm-5">
-
 				<br>
 
             </div>  
 
-
-			</div>
 	</form>
-	</div>
-	<p class="row justify-content-center">
-		<a href="loginPage.do"> Return to Login</a>
-	</p>
-	</p>
-	</div>
-	</div>
+	
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col"></div>
+				<form action="loginPage.do">
+		    			<input class="btn btn-default btn-sm" type="submit" value="Back to login" />
+				</form>
+			<div class="col"></div>
+		</div>
+	</div>>
 
-	<%-- <div>
-
-		<form action="addUser.do" method="post">
-			<input type="text" name="userName" placeholder="Enter User Name">
-			<input type="text" name="password" placeholder="Enter Password">
-			<input class="submit" type="submit" value="Create Account">
-		</form>
-
-	</div>  --%>
 
 	<jsp:include page="bootstrapFooter.jsp"></jsp:include>
 </body>
