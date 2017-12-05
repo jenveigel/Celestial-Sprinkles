@@ -85,8 +85,8 @@
 						<div class="input-group col-sm-4">
 							<span class="input-group-addon"><span
 								class="glyphicon glyphicon-user"></span></span> <input type="text"
-								class="form-control" name="imgUrl" id="imgUrl"
-								placeholder="Enter a profile image url" value="${profile.imageURL }">
+								class="form-control" name="imageURL" id="imgUrl"
+								placeholder="Enter a profile image url" value="${profile.imageURL}">
 						</div>
 						<div class="col-sm-12">&nbsp</div>
 						<input type="submit" name="submit" id="submit" value="Submit"
