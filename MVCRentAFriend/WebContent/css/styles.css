@@ -187,6 +187,12 @@ textarea {
     background: #007bb5;
     color: white;
 }
+
+
+.roundCorners{
+	border-radius: 25px; 
+}
+
 .fa-google {
   background: #dd4b39;
   color: white;

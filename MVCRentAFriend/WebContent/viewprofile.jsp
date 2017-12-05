@@ -36,9 +36,9 @@
 							class="fa fa-linkedin"></i></a> 
 							<a href="${profile.facebookUrl}"><i
 							class="fa fa-facebook"></i></a>
-							<a href="https://www.landof10.com/ohio-state"><i
+							<a href="https://www.google.com/"><i
 							class="fa fa-google"></i></a>
-							<a href="https://www.landof10.com/ohio-state"><i
+							<a href="https://twitter.com/?lang=en"><i
 							class="fa fa-twitter"></i></a>
 						</div>
 						<br>
@@ -174,7 +174,7 @@
 					</c:if>
 					
 				</div>
-				<div class="col-sm-5 bg-secondary myBox">
+				<div class="col-sm-5 bg-secondary">
 				<br>
 					<div class="jumbotron jumbotron-fluid ">
   						<div class="container ">
