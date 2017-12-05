@@ -31,7 +31,7 @@
 				<img src="${profile.imageURL }" class="img-thumbnail" alt="${profile.firstName }" style="width: 100%">
 				<p class="name">${profile.firstName} ${profile.lastName}</p>
 
-						<div class="col-12">
+						<%-- <div class="col-12">
 							<a href="${profile.linkedinUrl}"><i
 							class="fa fa-linkedin"></i></a>
 							<a href="${profile.facebookUrl}"><i
@@ -40,7 +40,7 @@
 							class="fa fa-google"></i></a>
 							<a href="https://twitter.com/?lang=en"><i
 							class="fa fa-twitter"></i></a>
-						</div>
+						</div> --%>
 						<br>
 				</div>
 
@@ -179,8 +179,7 @@
 				</div>
 
 		</div>
-		<br>
-		<br>
+		
 		</div>
 		<div class="container-fluid">
 <%-- 			<div class="row">
@@ -193,7 +192,20 @@
 			</c:forEach>
 			${user.rating }
 		</div> --%>
-
+<div class="container-fluid" style="max-width: 97%;">
+		<div class="row justify-content-center">
+			<div class="col-sm-12 bg-dark row justify-content-center">
+				<a href="${profile.linkedinUrl}"><i
+							class="fa fa-linkedin"></i></a>
+							<a href="${profile.facebookUrl}"><i
+							class="fa fa-facebook"></i></a>
+							<a href="https://www.google.com/"><i
+							class="fa fa-google"></i></a>
+							<a href="https://twitter.com/?lang=en"><i
+							class="fa fa-twitter"></i></a>
+			</div>
+		</div>
+		</div><br>
 			<div class="row justify-content-center">
 				<div class="col-5"></div>
 				<div class="col-1">
@@ -213,6 +225,7 @@
 				<div class="col-5"></div>
 			</div>
 		</div>
+		
 
 	<jsp:include page="bootstrapFooter.jsp"></jsp:include>
 </body>
