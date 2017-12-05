@@ -32,8 +32,16 @@ public class UserDAOImpl implements UserDAO {
 			imageUrl = imageUrl.trim();
 			facebookUrl = facebookUrl.trim();
 			linkedinUrl = linkedinUrl.trim();
-			if(firstName.equals("")||lastName.equals("")||bio.equals("")
-					||imageUrl.equals("")||username.equals("")||password.equals("")) {
+			if(bio == null)
+				bio = "";
+			if(imageUrl ==  null)
+				imageUrl = "";
+			if(facebookUrl==null)
+				facebookUrl = "";
+			if(linkedinUrl==null)
+				linkedinUrl = "";
+				
+			if(firstName.equals("")||lastName.equals("")||username.equals("")||password.equals("")) {
 				return false; 
 			}
 			

@@ -105,7 +105,7 @@ public class EventController {
 		mv.addObject("profile", user.getProfile());
 		mv.addObject("events", events);
 		mv.addObject("eventsWithUsers", eventsWithUsers);
-		mv.setViewName("viewprofile.jsp");
+		mv.setViewName("redirect:viewprofile.do");
 		return mv;
 	}
 	
