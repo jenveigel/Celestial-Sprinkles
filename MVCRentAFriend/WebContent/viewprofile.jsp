@@ -159,6 +159,7 @@
 				<br>
 					<div class="col">
   						<div class="container ">
+  						<h1 class="display-3">${user.userName }'s Bio</h1>
   						<h4 >${profile.firstName }'s Bio</h4>
 					    		<p class="lead">${profile.bio }</p>
 					  	</div>

@@ -75,16 +75,19 @@ public class ProfileController {
 		}
 
 		@RequestMapping(path="editProfileWithValues.do", method=RequestMethod.GET)
-		public ModelAndView editProfileWithValues(HttpSession sessionId, Profile profile) {
+		public ModelAndView editProfileWithValues(HttpSession session, Profile profile) {
 
 			ModelAndView mv = new ModelAndView();
-
-			Object obj = sessionId.getAttribute("sessionId");
+			
+			
+			Object obj = session.getAttribute("sessionId");
 			int id = (Integer) obj;
+			Object obj2 = session.getAttribute("user");
+//			int id2 = (Integer) obj;
 
 
 			Profile prof = dao.getProfileByUserId(id);
-
+			mv.addObject("user", obj2);
 			mv.addObject("profile", prof);
 			mv.setViewName("editprofile.jsp");
 
