@@ -189,11 +189,15 @@
 		<br>
 		</div>
 		<div class="container-fluid">
+		
+		
 			<div class="row justify-content-center">
 				<div class="col-1">
+				<c:if test="${sessionUser.id == user.id }">
 					<form action="deleteUser.do" method="POST">
 						<input  type="submit" class="btn btn-lg btn-secondary" value="Delete Account"></input>
 					</form>
+					</c:if>
 				</div>
 			</div>
 		</div>
