@@ -23,6 +23,12 @@ public class Profile {
 	
 	@Column(name="img_url")
 	private String imageURL;
+	
+	@Column(name="facebook_url")
+	private String facebookURL;
+	
+	@Column(name="linkedin_url")
+	private String linkedinURL;
 
 	public String getFirstName() {
 		return firstName;
