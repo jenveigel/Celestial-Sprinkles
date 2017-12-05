@@ -181,6 +181,7 @@ textarea {
     text-align: center;
     text-decoration: none;
     border-radius: 50%;
+    opacity: 0.6;
 }
 .fa-facebook {
     background: #3B5998;
