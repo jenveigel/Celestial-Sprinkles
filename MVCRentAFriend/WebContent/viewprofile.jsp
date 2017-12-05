@@ -57,7 +57,7 @@
 						<br>
 						<c:forEach var="event" items="${events }">
 						<div class="col \">
-						<!-- Button trigger modal -->]
+						<!-- Button trigger modal -->
 						<button type="button" class="btn  btn-lg yellowgreen" data-toggle="modal"
 							data-target="#details${event.id }">${event.title }</button>
 						<!-- Modal -->
@@ -179,11 +179,7 @@
 					<div class="col">
   						<div class="container ">
 
-  						<h4 >${profile.firstName } Bio</h4>
-
-  						<h1 class="display-3">${user.userName }'s Bio</h1>
   						<h4 >${profile.firstName }'s Bio</h4>
-
 					    		<p class="lead">${profile.bio }</p>
 					  	</div>
 					</div>
