@@ -16,24 +16,24 @@
 
 <!-- -------------------Navbar----------------- -->
 <jsp:include page="navbar.jsp"></jsp:include>
-	
+
 	<div class="container-fluid" style="max-width: 95%;">
 		<div class="row justify-content-center">
 			<div class="col-sm-12 bg-dark">
 				<h1>Profile</h1>
 			</div>
 		</div>
-		
+
 		<div class="row">
-		
+
 				<div class="col-sm-3 bg-secondary">
 				<br>
 				<img src="${profile.imageURL }" class="img-thumbnail" alt="${profile.firstName }" style="width: 100%">
 				<p class="name">${profile.firstName} ${profile.lastName}</p>
-					
+
 						<div class="col-12">
-							<a href="${profile.linkedinUrl}"><i 
-							class="fa fa-linkedin"></i></a> 
+							<a href="${profile.linkedinUrl}"><i
+							class="fa fa-linkedin"></i></a>
 							<a href="${profile.facebookUrl}"><i
 							class="fa fa-facebook"></i></a>
 							<a href="https://www.google.com/"><i
@@ -48,10 +48,10 @@
 								role="button">Edit Profile</a>
 						</c:if>
 						</p>
-					
+
 				</div>
-				
-				<div class="col-sm-4 bg-secondary myBox" >		
+
+				<div class="col-sm-4 bg-secondary myBox" >
 					<c:if test="${events != null }">
 						<h4>Events Attending</h4>
 						<br>
@@ -72,8 +72,8 @@
 									<div class="modal-body">
 										<strong>Event: </strong> ${event.activity } <br>
 										<strong>Location: </strong> ${event.address}<br>
-										<strong>When: </strong>${event.dateTime} <br> 
-										<strong>Description: </strong>${event.description} <br> 
+										<strong>When: </strong>${event.dateTime} <br>
+										<strong>Description: </strong>${event.description} <br>
 										<strong>Attendees:</strong><br>
 										<c:forEach var="ewu" items="${eventsWithUsers}">
 											<c:choose>
@@ -82,11 +82,27 @@
 													<c:forEach var="user" items="${ewu.users}">
 			        										<a href="viewUserProfile.do?uid=${user.id }"> <img src="${user.profile.imageURL }" alt="${user.userName}" width="200" height="200"/></a>
 			      		 							</c:forEach>
-			      		 							</div>						
+			      		 							</div>
 												</c:when>
 											</c:choose>
 										</c:forEach>
 									</div>
+<!-- 									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br>
+									<br> -->
 									<div class="modal-footer">
 										<c:if test="${sessionUser.id == event.owner.id }">
 											<form action="deleteEvent.do" method="get">
@@ -94,11 +110,11 @@
 													value="Delete Event"></input><br> <input type="hidden"
 													value="${event.id }" name="eventId"></input>
 											</form>
-		
+
 											<button type="button" class="btn btn-warning"
 												data-toggle="modal" data-target="#updateEvent${event.id }">
 												Update Event</button>
-		
+
 											<div class="modal fade" id="updateEvent${event.id }"
 												tabindex="-1" role="dialog"
 												aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -106,7 +122,7 @@
 													<div class="modal-content2">
 														<div class="modal-header2">
 															<h5 id="" class="modal-title">Update Event</h5>
-						
+
 														</div>
 														<div class="modal-body2">
 															<form action="updateevent.do" method="get">
@@ -120,7 +136,7 @@
 																	value="${event.activity }" /><br> When (date and
 																time): <input type="datetime-local" name="when"
 																	value="${event.dateTime }" /> <br>
-		
+
 																<!-- <input class="submit" type="submit" value="Update"> -->
 																<input type="hidden" value="${event.id }" name="eid"></input>
 																<%-- <input type="hidden" value="${event.owner.id }" name="ownerId"></input> --%>
@@ -135,8 +151,11 @@
 													</div>
 												</div>
 											</div>
-		
+
 										</c:if>
+										<!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+										<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+										<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
 										<form action="cancelrsvp.do" method="get">
 											<input type="hidden" value="${event.id }" name="eid"></input> <input
 												type="submit" class="btn btn-primary" value="Cancel RSVP"></input><br>
@@ -148,24 +167,28 @@
 								</div>
 							</div>
 						</div>
-		
+
 						</div>
 						<br>
 					</c:forEach>
 					</c:if>
-					
+
 				</div>
 				<div class="col-sm-5 bg-secondary myBox">
 				<br>
 					<div class="col">
   						<div class="container ">
+
+  						<h4 >${profile.firstName } Bio</h4>
+
   						<h1 class="display-3">${user.userName }'s Bio</h1>
   						<h4 >${profile.firstName }'s Bio</h4>
+
 					    		<p class="lead">${profile.bio }</p>
 					  	</div>
 					</div>
 				</div>
-			
+
 		</div>
 		<br>
 		<br>
@@ -175,13 +198,13 @@
 			<c:forEach var="review" items="${reviews }">
 				<div class="col">
 					${review.user }
-					${review.text }                
-					${review.rating }                
+					${review.text }
+					${review.rating }
 				</div>
 			</c:forEach>
 			${user.rating }
 		</div> --%>
-		
+
 			<div class="row justify-content-center">
 				<div class="col-1">
 				<c:if test="${sessionUser.id == user.id }">
@@ -192,7 +215,7 @@
 				</div>
 			</div>
 		</div>
-	
+
 	<jsp:include page="bootstrapFooter.jsp"></jsp:include>
 </body>
 </html>

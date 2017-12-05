@@ -118,6 +118,14 @@ button:hover, a:hover {
     border: none !important;
     margin-bottom: 5px;
 }
+
+.yellowGreen{
+	background-color:yellowgreen;
+	color:white;
+    border: none !important;
+    border-radius: 0px;
+}
+
 .logbutton:hover{    
     color: white;
     background-color:darkolivegreen;
