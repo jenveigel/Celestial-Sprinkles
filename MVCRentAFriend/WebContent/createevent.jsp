@@ -16,7 +16,7 @@
 <!-- -------------------Navbar----------------- -->
 <jsp:include page="navbar.jsp"></jsp:include>
 
-	<div class="card text-white bg-dark mb-3 container center_div"
+	<div class="card text-white bg-dark mb-3 container center_div roundCorners"
 		style="max-width: 40rem;">
 		<div class="card-header">Create Event</div>
 		<div class="card-body">
@@ -30,8 +30,9 @@
 					<label>State Abbreviation: </label> <input name="state" /><br>
 					<label>Description:</label> <input name="desc" /><br>
 					<label> Activity:</label><input name="activity" /><br> 
-					<label>When (date and time): </label><input type="datetime-local" name="when" /> <br> <input
-					class="btn btn-success" type="submit" value="Add" />
+					<label>When (date and time): </label><input type="datetime-local" name="when" /> 
+					
+					<input class="btn btn-success" type="submit" value="Create" />
 				</form>
 
 			</div>

@@ -1,8 +1,11 @@
 @charset "UTF-8";
 
-body {
-	background-image: url("http://shop.fieldsfabrics.com/assets/images/D27820.jpg");
-
+body,html {
+	height:100%;
+	background-image: url("http://cdn.lifebuzz.com/images/17001/lifebuzz-8f6bfa334fad6d7a58c50dfb3a2b08e8-limit_2000.gif");
+	background-repeat:no-repeat;
+	background-position:right;
+	background-size: cover;
 }
 
 .navbar navbar-expand-sm bg-dark navbar-dark {
@@ -170,13 +173,14 @@ textarea {
     font-size: 16px;
     resize: none;
 }
+
 .fa {
     padding: 20px;
-    width: 50px;
+    width: 60px;
     font-size: 30px;
     text-align: center;
     text-decoration: none;
-    border-radius: 25%;
+    border-radius: 50%;
 }
 .fa-facebook {
     background: #3B5998;
@@ -187,6 +191,19 @@ textarea {
     color: white;
 }
 
+
+.roundCorners{
+	border-radius: 25px; 
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
 .myBox {
 border: none;
 padding: 5px;
@@ -200,7 +217,7 @@ border: none;
 padding: 5px;
 font: 24px/36px sans-serif;
 width: 700px;
-height: 500px;
+height: 300px;
 overflow: scroll;
 }
 
@@ -211,7 +228,6 @@ height: 12px;
 }
 
 ::-webkit-scrollbar-track {
-border: 1px solid yellowgreen;
 border-radius: 10px;
 }
 
@@ -222,6 +238,10 @@ border-radius: 10px;
 
 ::-webkit-scrollbar-thumb:hover {
 background: #88ba1c;  
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(0,0,0,0);
 }
 
  

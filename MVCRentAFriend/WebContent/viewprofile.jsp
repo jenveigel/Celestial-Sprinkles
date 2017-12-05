@@ -31,11 +31,15 @@
 				<img src="${profile.imageURL }" class="img-thumbnail" alt="${profile.firstName }" style="width: 100%">
 				<p class="name">${profile.firstName} ${profile.lastName}</p>
 					
-						<div class="col-9">
+						<div class="col-12">
 							<a href="${profile.linkedinUrl}"><i 
 							class="fa fa-linkedin"></i></a> 
 							<a href="${profile.facebookUrl}"><i
-							class="fa-facebook fa"></i></a>
+							class="fa fa-facebook"></i></a>
+							<a href="https://www.google.com/"><i
+							class="fa fa-google"></i></a>
+							<a href="https://twitter.com/?lang=en"><i
+							class="fa fa-twitter"></i></a>
 						</div>
 						<br>
 						<p>
@@ -74,31 +78,15 @@
 										<c:forEach var="ewu" items="${eventsWithUsers}">
 											<c:choose>
 												<c:when test="${ewu.id eq event.id}">
-													<c:forEach var="user" items="${ewu.users}">
 													<div class="littleBox">
-			        										<a href="viewUserProfile.do?uid=${user.id }"> ${user.userName} <img src="${user.profile.imageURL }" width="200" height="200"/></a>
-			      		 							</div>						
+													<c:forEach var="user" items="${ewu.users}">
+			        										<a href="viewUserProfile.do?uid=${user.id }"> <img src="${user.profile.imageURL }" alt="${user.userName}" width="200" height="200"/></a>
 			      		 							</c:forEach>
+			      		 							</div>						
 												</c:when>
 											</c:choose>
 										</c:forEach>
 									</div>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
 									<div class="modal-footer">
 										<c:if test="${sessionUser.id == event.owner.id }">
 											<form action="deleteEvent.do" method="get">
@@ -149,9 +137,6 @@
 											</div>
 		
 										</c:if>
-										<!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-										<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-										<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
 										<form action="cancelrsvp.do" method="get">
 											<input type="hidden" value="${event.id }" name="eid"></input> <input
 												type="submit" class="btn btn-primary" value="Cancel RSVP"></input><br>
@@ -172,9 +157,10 @@
 				</div>
 				<div class="col-sm-5 bg-secondary myBox">
 				<br>
-					<div class="jumbotron jumbotron-fluid ">
+					<div class="col">
   						<div class="container ">
   						<h1 class="display-3">${user.userName }'s Bio</h1>
+  						<h4 >${profile.firstName }'s Bio</h4>
 					    		<p class="lead">${profile.bio }</p>
 					  	</div>
 					</div>
@@ -185,11 +171,24 @@
 		<br>
 		</div>
 		<div class="container-fluid">
+<%-- 			<div class="row">
+			<c:forEach var="review" items="${reviews }">
+				<div class="col">
+					${review.user }
+					${review.text }                
+					${review.rating }                
+				</div>
+			</c:forEach>
+			${user.rating }
+		</div> --%>
+		
 			<div class="row justify-content-center">
 				<div class="col-1">
+				<c:if test="${sessionUser.id == user.id }">
 					<form action="deleteUser.do" method="POST">
 						<input  type="submit" class="btn btn-lg btn-secondary" value="Delete Account"></input>
 					</form>
+					</c:if>
 				</div>
 			</div>
 		</div>
