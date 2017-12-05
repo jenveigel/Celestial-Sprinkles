@@ -16,7 +16,7 @@
 <body class="attendbackground">
 
 <!-- -------------------Navbar----------------- -->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar sticky-top navbar-expand-sm bg-dark navbar-dark">
 	<a class="navbar-brand" href="index.jsp"> <img src="mountains.png"
 		style="width: 60px;"></a>
 	<ul class="navbar-nav">
@@ -42,19 +42,25 @@
     
 	</ul>
 </nav>
-<br>
 
-<div class="w3-sidebar w3-bar-block w3-black" style="width:10%"> 
+
+<div class="w3-sidebar w3-bar-block bg-dark w3-text-white" style="width:10%"> 
 	<h3>Search By</h3>
 	<hr>
         <ul class="list-unstyled components">
-            <li class="active"><a href="#"><u>All Events</u></a></li>
+            <li class="active"><a href="attendEvent.do"><u>All Events</u></a></li>
             <li><!-- Link with dropdown items -->
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"><h3><u>City</u></h3></a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li><a href="filterByCity.do?search=Denver"><h5>->Denver</h5></a></li>
-                    <li><a href="#"><h5>->Orlando</h5></a></li>
-                    <li><a href="#"><h5>->Columbus</h5></a></li>
+                <ul class="collapse list-unstyled w3-text-white" id="homeSubmenu">
+                    <li><a href="filterByCity.do?city=Denver"><h5>->Denver</h5></a></li>
+                    <li><a href="filterByCity.do?city=Orlando"><h5>->Orlando</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->Columbus</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->Boise</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->New Jersey</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->Kansas City</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->Phoenix</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->Miami</h5></a></li>
+                    <li><a href="filterByCity.do?city=Columbus"><h5>->Salt Lake City</h5></a></li>
                 </ul>
 <!-- 
             <li><a href="#">Date</a></li>
@@ -62,12 +68,11 @@
         </ul>	
 	
   <br>
-  <a href="#" class="w3-bar-item w3-round w3-red">Date</a>
 
 </div>
 
 
-
+<br>
 <div class="container" style="background-color:lightgrey;">
 <div class="row justify-content-center">
 <h1>ATTEND</h1>
@@ -105,9 +110,6 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">${event.activity }</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
       </div>
 								<div class="modal-body">
 									<strong>Event: </strong> ${event.activity } <br> <strong>Location:
