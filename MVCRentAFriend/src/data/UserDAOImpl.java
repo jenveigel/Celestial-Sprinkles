@@ -77,17 +77,11 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public boolean destroyUserById(int id) {
-		try {
-			if (em.find(User.class, id) != null) {
-				User deletedUser = em.find(User.class, id);
-				em.remove(deletedUser);
-				return true;
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			return false;
+	public boolean destroyUserById(int uid) {
+		String query = "DELETE FROM User u WHERE u.id = :uid";
+		int num = em.createQuery(query).setParameter("uid", uid).executeUpdate();
+		if (num > 0) {
+			return true;
 		}
 
 		return false;

@@ -183,6 +183,10 @@
 		<br>
 		<br>
 		</div>
+		
+		<form action="deleteUser.do" method="POST">
+			<input  type="submit" class="btn btn-lg btn-secondary" value="Delete Account"></input>
+		</form>
 	
 	<jsp:include page="bootstrapFooter.jsp"></jsp:include>
 </body>
