@@ -6,6 +6,7 @@ body,html {
 	background-repeat:no-repeat;
 	background-position:right;
 	background-size: cover;
+	background-attachment: fixed;
 }
 
 .navbar navbar-expand-sm bg-dark navbar-dark {
