@@ -28,7 +28,7 @@
 
 				<div class="col-sm-3 bg-secondary">
 				<br>
-				<img src="${profile.imageURL }" class="img-thumbnail" alt="${profile.firstName }" style="width: 100%">
+				<img src="${profile.imageURL}" class="img-thumbnail" alt="${profile.firstName}" height="400" width="400">
 				<%-- <p class="name">${profile.firstName} ${profile.lastName}</p> --%>
 				<div class="row justify-content-center">
 				<p>

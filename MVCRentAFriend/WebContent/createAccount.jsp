@@ -30,7 +30,7 @@
 			<h1> ${error }</h1>
 			<br>
 			<div class="row justify-content-center text-white bg-dark" style="border-radius: 25px; background-color:darkgrey;">
-				<h4>Requried Fields</h4>
+				<h4>Required Fields</h4>
 				<div class="col-sm-12 col-md-12 col-lg-12"></div>
 				<div class="col-sm-6">
 					<div class="input-group">
