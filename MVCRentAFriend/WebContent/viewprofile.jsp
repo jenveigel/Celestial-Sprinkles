@@ -20,7 +20,7 @@
 	<div class="container-fluid" style="max-width: 95%;">
 		<div class="row justify-content-center">
 			<div class="col-sm-12 bg-dark" style="border-radius: 25px 25px 0px 0px;">
-				<h1>Profile</h1>
+				<h1>${profile.firstName } ${profile.lastName}</h1>
 			</div>
 		</div>
 
@@ -29,7 +29,7 @@
 				<div class="col-sm-3 bg-secondary">
 				<br>
 				<img src="${profile.imageURL }" class="img-thumbnail" alt="${profile.firstName }" style="width: 100%">
-				<p class="name">${profile.firstName} ${profile.lastName}</p>
+				<%-- <p class="name">${profile.firstName} ${profile.lastName}</p> --%>
 
 						<%-- <div class="col-12">
 							<a href="${profile.linkedinUrl}"><i
