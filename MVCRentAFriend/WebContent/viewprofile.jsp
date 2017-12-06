@@ -120,7 +120,49 @@
 														</div>
 														<div class="modal-body">
 															<form action="updateevent.do" method="get">
-																Event Title: <input type="text" name="event" 
+															
+															<table class="table">
+															<tbody>
+														    <tr>
+														      <th scope="row">Event Title:</th>
+														      <td><input type="text" name="event" 
+																	value="${event.title }" /></td>
+														    </tr>
+														    <tr>
+														      <th scope="row">Activity:</th>
+														      <td><input name="activity"
+																	value="${event.activity }" /></td>
+														    </tr>
+														    <tr>
+														      <th scope="row">Street Address:</th>
+														      <td><input type="text" name="street"
+																	value="${event.address.address }" /></td>
+														    </tr>
+														    <tr>
+														      <th scope="row">City:</th>
+														      <td><input type="text" name="city" 
+														      		value="${event.address.city }" /></td>
+														    </tr>
+														    <tr>
+														      <th scope="row">State:</th>
+														      <td><input type="text" name="state" 
+														      		value="${event.address.state }" /></td>
+														    </tr>
+														    <tr>
+														      <th scope="row">Description:</th>
+														      <td><input type="text" name="desc" 
+														      		value="${event.description}" /></td>
+														    </tr>
+														    <tr>
+														      <th scope="row">Date and Time:</th>
+														      <td><input type="datetime-local" 
+																	name="when" value="${event.dateTime }" /></td>
+														    </tr>
+														    </tbody>
+														    </table>
+															
+															
+															<%-- 	Event Title: <input type="text" name="event" 
 																	value="${event.title }" /><br>
 																Activity: <input name="activity"
 																	value="${event.activity }" /><br> 
@@ -131,7 +173,7 @@
 																State: <input name="state" value="${event.address.state }" /><br>
 																Description: <input name="desc" value="${event.description}" /><br>
 																When (date and time): <input type="datetime-local" 
-																	name="when" value="${event.dateTime }" /> <br>
+																	name="when" value="${event.dateTime }" /> <br> --%>
 
 																<!-- <input class="submit" type="submit" value="Update"> -->
 																<input type="hidden" value="${event.id }" name="eid"></input>
