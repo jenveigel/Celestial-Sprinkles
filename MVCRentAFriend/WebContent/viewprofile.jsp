@@ -30,7 +30,22 @@
 				<br>
 				<img src="${profile.imageURL }" class="img-thumbnail" alt="${profile.firstName }" style="width: 100%">
 				<%-- <p class="name">${profile.firstName} ${profile.lastName}</p> --%>
-
+				<div class="row justify-content-center">
+				<p>
+				<c:if test="${sessionUser.id == user.id }">
+					<form action="deleteUser.do" method="POST">
+						<input  type="submit" class="btn btn-secondary btn-sm" value="Delete Account"></input>
+					</form>
+					</c:if>
+				
+				<br>
+				<c:if test="${sessionUser.id == user.id }">
+							<form action="editProfileWithValues.do" method="GET">
+									<input  type="submit" class="btn btn-secondary btn-sm" value=" Modify Profile "></input>
+							</form>
+						</c:if>
+						</p>
+						</div>
 						<%-- <div class="col-12">
 							<a href="${profile.linkedinUrl}"><i
 							class="fa fa-linkedin"></i></a>
@@ -212,31 +227,10 @@
 			</div>
 		</div>
 		</div><br>
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-4"></div>
-				<div class="col-2">
-				<br>
-				<c:if test="${sessionUser.id == user.id }">
-					<form action="deleteUser.do" method="POST">
-						<input  type="submit" class="btn btn-outline-warning"" value="Delete Account"></input>
-					</form>
-					</c:if>
-				</div>
-				<div class="col-2">
-				<br>
-				<c:if test="${sessionUser.id == user.id }">
-							<form action="editProfileWithValues.do" method="GET">
-									<input  type="submit" class="btn btn-outline-warning" value=" Modify Profile "></input>
-							</form>
-						</c:if>
-				</div>
-				<div class="col-4"></div>
-			</div>
-		</div>
+		
 		</div>
 	</div>
-	
+	<br><br>
 	<jsp:include page="bootstrapFooter.jsp"></jsp:include>
 </body>
 </html>
