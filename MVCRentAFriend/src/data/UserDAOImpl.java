@@ -79,6 +79,9 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public boolean destroyUserById(int uid) {
+		String queryReview = "DELETE FROM Review r WHERE r.reviewee.id = :rid";
+		int num3 = em.createQuery(queryReview).setParameter("rid", uid).executeUpdate();
+		
 		String queryUser = "DELETE FROM User u WHERE u.id = :uid";
 		int num1 = em.createQuery(queryUser).setParameter("uid", uid).executeUpdate();
 		
@@ -86,7 +89,8 @@ public class UserDAOImpl implements UserDAO {
 		String queryProfile = "DELETE FROM Profile p WHERE p.id = :pid";
 		int num2 = em.createQuery(queryProfile).setParameter("pid", uid).executeUpdate();
 		
-		if (num1 > 0 && num2 > 0) {
+		
+		if (num1 > 0 && num2 > 0 && num3 > 0) {
 			return true;
 		}
 
@@ -172,6 +176,7 @@ public class UserDAOImpl implements UserDAO {
 		review.setRating(rating);
 		review.setReviewee(user);
 		boolean bool = reviews.add(review);
+		em.persist(review);
 		if(bool == true) {
 			return true;
 		}
