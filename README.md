@@ -1,4 +1,5 @@
 Modjül  - Event Planning Web Application
+
 This was a midterm assignment for Skill Distillery Full-Stack Java Coding Program
 
 GROUP: Dave Chirdon, Aaron Ipp, Jake Simms, David Stumpe, Jen Veigel
