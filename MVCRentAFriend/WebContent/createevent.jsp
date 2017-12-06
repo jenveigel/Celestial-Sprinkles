@@ -99,8 +99,9 @@
 							<br>
 							<input type="submit" name="submit" id="submit" value="Create"
 							class="btn pull-right btn-default logbutton">
+							<br>
 							<div class="col-sm-12"></div>
-
+							<br>
 
 						</div>
 						<br>
@@ -110,7 +111,7 @@
 			<br>
 			<div class="row justify-content-center">
 
-				<form class="attendEvent.do" action="index.html" method="post">
+				<form action="attendEvent.do" method="get">
 					<input type="submit" class="btn btn-outline-warning" value="View Events">
 				</form>
 			</div>
