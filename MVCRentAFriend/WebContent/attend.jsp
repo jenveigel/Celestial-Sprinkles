@@ -122,19 +122,29 @@
 									</strong> ${event.address}<br> <strong>When: </strong>${event.dateTime}
 									<br> <strong>Description: </strong>${event.description} <br>
 									<strong>Attendees:</strong><br>
-									<c:forEach var="ewu" items="${eventsWithUsers}">
-										<c:choose>
-											<c:when test="${ewu.id eq event.id}">
-												<c:forEach var="user" items="${ewu.users}">
-													<a href="viewUserProfile.do?uid=${user.id }">
-														<img src="${user.profile.imageURL }" width="100"
-														height="100" />
-													</a>
-
-												</c:forEach>
-											</c:when>
-										</c:choose>
-									</c:forEach>
+										<c:forEach var="ewu" items="${eventsWithUsers}">
+												<c:choose>
+													<c:when test="${ewu.id eq event.id}">
+														<div class="littleBox">
+														<div class="container-fluid">
+														
+														<div class="row">
+															<c:forEach var="user" items="${ewu.users}">
+															<div class="col-md-5">
+															<div class="image">
+																<a href="viewUserProfile.do?uid=${user.id }">
+																<img src="${user.profile.imageURL }" width="100" height="100" />
+																</a>
+																<div>${user.userName }</div>
+																</div>
+															</div>
+															</c:forEach>
+															</div>
+															</div>
+														</div>
+													</c:when>
+												</c:choose>
+											</c:forEach>
 								</div>
 								<div class="modal-footer">
 								

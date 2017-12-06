@@ -157,12 +157,21 @@
 												<c:choose>
 													<c:when test="${ewu.id eq event.id}">
 														<div class="littleBox">
+														<div class="container">
+														
+														<div class="row">
 															<c:forEach var="user" items="${ewu.users}">
+															<div class="col-md-5">
+															<div class="image pl-2">
 																<a href="viewUserProfile.do?uid=${user.id }">
-														<img src="${user.profile.imageURL }" alt="${user.userName }" width="100"
-														height="100" />
-													</a>
+																<img src="${user.profile.imageURL }" width="100" height="100" />
+																</a>
+																<div>${user.userName }</div>
+																</div>
+																</div>
 															</c:forEach>
+															</div>
+															</div>
 														</div>
 													</c:when>
 												</c:choose>
