@@ -24,4 +24,5 @@ Technologies used:
 	- MVC
 	- JSP
 	- MYSQL
- [[https://github.com/jenveigel/Celestial-Sprinkles/screenshots/octocat.png|alt=octocat]]
+	![Alt text](screenshots/loginPage.png)
+ [[https://github.com/jenveigel/Celestial-Sprinkles/screenshots/loginPage.png|alt=octocat]]
