@@ -85,7 +85,7 @@ public class UserController {
 	public ModelAndView addReview(int uid, String comment, int rating) {
 		ModelAndView mv = new ModelAndView();
 		boolean bool = dao.addReview(uid, comment, rating);
-		System.out.println(bool);
+		//System.out.println(bool);
 		
 		
 		mv.setViewName("redirect:viewprofile.do?uid=uid");

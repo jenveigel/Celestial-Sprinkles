@@ -71,9 +71,9 @@
 </div>
 
 
-<br>
+<br><br><br><br>
 
-<div class="container" style="background-color:lightgrey;">
+<div class="container bg-secondary roundCorners">
   	<div class="row justify-content-center">
     		<h1>ATTEND</h1>
   	</div>
@@ -94,7 +94,7 @@
 	</div>
 <!-- Button trigger modal -->
 	<div class="col-sm-3">
-		<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#details${event.id }">
+		<button type="button" class="btn btn-secondary yellowgreen" data-toggle="modal" data-target="#details${event.id }">
   			See Event Details
 		</button>
 	</div>
@@ -102,7 +102,7 @@
 <!-- Attend Event Button -->
 	<div class="col-sm-3">
 		<form action="addEventToUser.do" method="get">
-			<input type="submit" class="btn btn-secondary" value="Attend Event"></input><br> 
+			<input type="submit" class="btn btn-secondary yellowgreen" value="Attend Event"></input><br> 
 			<input type="hidden" value="${event.id }" name="eventId"></input>
 		</form>
 	</div>
@@ -127,8 +127,8 @@
 											<c:when test="${ewu.id eq event.id}">
 												<c:forEach var="user" items="${ewu.users}">
 													<a href="viewUserProfile.do?uid=${user.id }">${user.userName}
-														<img src="${user.profile.imageURL }" width="200"
-														height="200" />
+														<img src="${user.profile.imageURL }" width="100"
+														height="100" />
 													</a>
 
 												</c:forEach>
