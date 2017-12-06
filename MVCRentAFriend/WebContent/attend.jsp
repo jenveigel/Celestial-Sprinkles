@@ -38,7 +38,7 @@
 
 	<form action="search.do?search=${search }" class="form-inline my-2 my-lg-0">
 	<input class="form-control mr-sm-2" name="search" type="text" placeholder="Search">
-	<button class="btn btn-outline-success my-2 my-sm-0"  type="submit">Search Events</button>
+	<button id="searchButton" class="btn btn-outline-success my-2 my-sm-0"  type="submit">Search Events</button>
 	</form>
 	</div>
 </nav>
