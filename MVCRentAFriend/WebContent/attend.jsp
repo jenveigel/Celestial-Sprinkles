@@ -19,7 +19,11 @@
 <nav class="navbar sticky-top navbar-expand-sm bg-dark navbar-dark">
 	<a class="navbar-brand" href="index.jsp"> <img src="mountains.png"
 		style="width: 60px;"></a>
-	<ul class="navbar-nav">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	<ul class="navbar-nav mr-auto">
 		<li class="nav-item active">
 			<a class="nav-link" href="attendEvent.do">Attend</a></li>
 		<li class="nav-item active">
@@ -29,18 +33,14 @@
 		<li class="nav-item">
 		  <div class="logout">
 			<a class="nav-link" style="color:#97C4C0" href="loginPage.do">Logout</a>
-		  </div></li>
-	 <form action="search.do?search=${search }" class="form-inline my-2 my-lg-0">
-			<li>
-	      <input class="form-control mr-sm-2" align="right" name="search" type="text" placeholder="Search">
-	    	  </li>
-	     	 <li>
-	      <button class="btn btn-outline-success my-2 my-sm-0"  type="submit">Search Events</button>
-			</li>
-    </form>
-	      
-    
+		  </div>	</li>
 	</ul>
+	
+	<form action="search.do?search=${search }" class="form-inline my-2 my-lg-0">
+	<input class="form-control mr-sm-2" name="search" type="text" placeholder="Search">
+	<button class="btn btn-outline-success my-2 my-sm-0"  type="submit">Search Events</button>
+	</form>
+	</div>
 </nav>
 
 <div class="w3-sidebar w3-bar-block bg-dark w3-text-white" style="width:10%"> 
@@ -71,9 +71,9 @@
 </div>
 
 
-<br>
+<br><br><br><br>
 
-<div class="container" style="background-color:lightgrey;">
+<div class="container bg-secondary roundCorners">
   	<div class="row justify-content-center">
     		<h1>ATTEND</h1>
   	</div>
@@ -94,7 +94,7 @@
 	</div>
 <!-- Button trigger modal -->
 	<div class="col-sm-3">
-		<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#details${event.id }">
+		<button type="button" class="btn btn-secondary yellowgreen" data-toggle="modal" data-target="#details${event.id }">
   			See Event Details
 		</button>
 	</div>
@@ -102,7 +102,7 @@
 <!-- Attend Event Button -->
 	<div class="col-sm-3">
 		<form action="addEventToUser.do" method="get">
-			<input type="submit" class="btn btn-secondary" value="Attend Event"></input><br> 
+			<input type="submit" class="btn btn-secondary yellowgreen" value="Attend Event"></input><br> 
 			<input type="hidden" value="${event.id }" name="eventId"></input>
 		</form>
 	</div>
@@ -127,8 +127,8 @@
 											<c:when test="${ewu.id eq event.id}">
 												<c:forEach var="user" items="${ewu.users}">
 													<a href="viewUserProfile.do?uid=${user.id }">${user.userName}
-														<img src="${user.profile.imageURL }" width="200"
-														height="200" />
+														<img src="${user.profile.imageURL }" width="100"
+														height="100" />
 													</a>
 
 												</c:forEach>
