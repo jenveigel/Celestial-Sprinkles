@@ -63,7 +63,7 @@ public class EventDAOImpl implements EventDAO {
 			Event destroyEvent = em.find(Event.class, id);
 			String queryEvent = "DELETE FROM Event e WHERE e.id = :id";
 			int num1 = em.createQuery(queryEvent).setParameter("id", id).executeUpdate();
-			
+
 			String queryAddress = "DELETE FROM Address a WHERE a.id = :id";
 			int num2 = em.createQuery(queryAddress).setParameter("id", destroyEvent.getAddress().getId()).executeUpdate();
 //			em.remove(destroyEvent);
@@ -199,5 +199,5 @@ public class EventDAOImpl implements EventDAO {
 					.setParameter("activity",title)
 					.getResultList();
 		}
-		
+
 }
