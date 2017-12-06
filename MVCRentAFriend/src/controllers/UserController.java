@@ -87,11 +87,10 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="addReview.do", method = RequestMethod.POST)
-	public ModelAndView addReview(int uid, String comment, int rating) {
+	public ModelAndView addReview(Integer uid, String comment, Integer rating) {
 		ModelAndView mv = new ModelAndView();
 		boolean bool = dao.addReview(uid, comment, rating);
 		//System.out.println(bool);
-		
 		
 		mv.setViewName("redirect:viewprofile.do?uid=uid");
 		return mv;

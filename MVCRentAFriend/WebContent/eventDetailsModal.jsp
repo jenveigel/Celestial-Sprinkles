@@ -17,7 +17,7 @@
 								<c:forEach var="user" items="${ewu.users}">
 									<a href="viewUserProfile.do?uid=${user.id }"> <img
 										src="${user.profile.imageURL }" alt="${user.userName}"
-										width="200" height="200" /></a>
+										width="100" height="100" /></a>
 								</c:forEach>
 							</div>
 						</c:when>
