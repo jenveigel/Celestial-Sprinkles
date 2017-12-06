@@ -274,5 +274,9 @@ background: #88ba1c;
   background: rgba(0,0,0,0);
 }
 
+.roundButton{
+	border-radius: 5px;
+}
+
  
   
