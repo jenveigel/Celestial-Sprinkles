@@ -9,10 +9,6 @@ body,html {
 	background-attachment: fixed;
 }
 
-.navbar navbar-expand-sm bg-dark navbar-dark {
-	background-color: blue;
-}
-
 .black-txt{
 	color:darkbrown;
 }
@@ -127,6 +123,12 @@ button:hover, a:hover {
     border-radius: 0px;
     border-radius: 5px;
     
+}
+
+
+.btn-outline-success {
+	color: #97C4C0;
+	border-color: #97C4C0;
 }
 
 .logbutton:hover{    

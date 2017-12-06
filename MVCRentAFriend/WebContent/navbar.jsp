@@ -9,8 +9,8 @@
 		<li class="nav-item active">
 			<a class="nav-link" href="viewprofile.do">Your Profile</a></li>
 		 <li class="nav-item">
-		  <div class="logout" >
-			<a class="nav-link" style="color:#c0392b" href="loginPage.do">Logout</a>
+		  <div class="logout">
+			<a class="nav-link" style="color:#97C4C0" href="loginPage.do">Logout</a>
 		</div>
 		 </li>
 	</ul>
