@@ -19,7 +19,11 @@
 <nav class="navbar sticky-top navbar-expand-sm bg-dark navbar-dark">
 	<a class="navbar-brand" href="index.jsp"> <img src="mountains.png"
 		style="width: 60px;"></a>
-	<ul class="navbar-nav">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+  	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	<ul class="navbar-nav mr-auto">
 		<li class="nav-item active">
 			<a class="nav-link" href="attendEvent.do">Attend</a></li>
 		<li class="nav-item active">
@@ -29,18 +33,14 @@
 		<li class="nav-item">
 		  <div class="logout">
 			<a class="nav-link" style="color:#97C4C0" href="loginPage.do">Logout</a>
-		  </div></li>
-	 <form action="search.do?search=${search }" class="form-inline my-2 my-lg-0">
-			<li>
-	      <input class="form-control mr-sm-2" align="right" name="search" type="text" placeholder="Search">
-	    	  </li>
-	     	 <li>
-	      <button class="btn btn-outline-success my-2 my-sm-0"  type="submit">Search Events</button>
-			</li>
-    </form>
-	      
-    
+		  </div>	</li>
 	</ul>
+	
+	<form action="search.do?search=${search }" class="form-inline my-2 my-lg-0">
+	<input class="form-control mr-sm-2" name="search" type="text" placeholder="Search">
+	<button class="btn btn-outline-success my-2 my-sm-0"  type="submit">Search Events</button>
+	</form>
+	</div>
 </nav>
 
 <div class="w3-sidebar w3-bar-block bg-dark w3-text-white" style="width:10%"> 
