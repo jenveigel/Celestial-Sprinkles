@@ -112,5 +112,18 @@ public class ProfileController {
 			mv.setViewName("viewprofile.do");
 			return mv;
 		}
+		@RequestMapping(path="viewUserReviews.do", method=RequestMethod.GET)
+		public ModelAndView viewUserReviews(@RequestParam("uid") int uid, HttpSession session) {
+			ModelAndView mv = new ModelAndView();
+			User user = dao.getUserById(uid);
+			User sessionUser = (User) session.getAttribute("sessionObj");
+			Profile prof = dao.getProfileByUserId(uid);
+			mv.addObject("sessionUser", sessionUser);
+			mv.addObject("user", user);
+			mv.addObject("userId", uid);
+			mv.addObject("profile", prof);
+			mv.setViewName("userReview.jsp");
+			return mv;
+		}
 
 }
