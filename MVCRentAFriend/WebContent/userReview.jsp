@@ -89,7 +89,7 @@
 			<c:forEach var="review" items="${reviews }">
 				<div class="col">
 					<h4>${review.review }</h4>
-					<h4>${review.rating }</h4>
+					<h4>Rating: ${review.rating }</h4>
 				</div>
 			</c:forEach>
 			<%-- ${user.rating } --%>
