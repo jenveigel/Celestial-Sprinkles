@@ -17,7 +17,7 @@
 
 <!-- -------------------Navbar----------------- -->
 <nav class="navbar sticky-top navbar-expand-sm bg-dark navbar-dark">
-	<a class="navbar-brand" href="index.jsp"> <img src="mountains.png"
+	<a class="navbar-brand" href="index.jsp"><img src="mountains.png"
 		style="width: 60px;"></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
@@ -107,7 +107,7 @@
 		</form>
 	</div>
 
-			<div class="col-sm-2">
+			<div class="col-sm-1">
 			</div>
 
 <!-- Modal -->
@@ -116,7 +116,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">${event.activity }</h5>
-      </div>
+      </div>                    
 								<div class="modal-body">
 									<strong>Event: </strong> ${event.activity } <br> <strong>Location:
 									</strong> ${event.address}<br> <strong>When: </strong>${event.dateTime}
@@ -137,6 +137,8 @@
 									</c:forEach>
 								</div>
 								<div class="modal-footer">
+								
+	    
 
         <form action="addEventToUser.do" method="get">
 		<input type="submit" class="btn btn-primary" value="Attend Event"></input><br>
@@ -154,7 +156,7 @@
 </div>
 <br>
 </c:forEach>
-</div>
+</div><br>
 </div>
 
 <!-- --------------Bootstrap Footer------------ -->
