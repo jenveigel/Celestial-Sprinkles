@@ -48,7 +48,7 @@ public class ProfileController {
 			List<Event> eventsWithUsers = eventDao.getAllEventsWithUsers();
 			List<Review> reviews = dao.getReviewsByUser(user.getId());
 			
-			System.out.println(reviews);
+			//System.out.println(reviews);
 			mv.addObject("sessionUser", user);
 			mv.addObject("user", user);
 			mv.addObject("userId", id);
