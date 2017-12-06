@@ -63,7 +63,8 @@
 										<h5 class="modal-title" id="exampleModalLabel">${event.title }</h5>
 									</div>
 									<div class="modal-body">
-										<strong>Event: </strong> ${event.activity } <br>
+										<strong>Event Title: </strong> ${event.title } <br>
+										<strong>Activity: </strong> ${event.activity } <br>
 										<strong>Location: </strong> ${event.address}<br>
 										<strong>When: </strong>${event.dateTime} <br>
 										<strong>Description: </strong>${event.description} <br>
@@ -112,23 +113,25 @@
 												tabindex="-1" role="dialog"
 												aria-labelledby="exampleModalLabel" aria-hidden="true">
 												<div class="modal-dialog" role="document">
-													<div class="modal-content2">
-														<div class="modal-header2">
+													<div class="modal-content">
+														<div class="modal-header">
 															<h5 id="" class="modal-title">Update Event</h5>
 
 														</div>
-														<div class="modal-body2">
+														<div class="modal-body">
 															<form action="updateevent.do" method="get">
-																Event Title: <input type="text" name="event" value="${event.title }" /><br>
+																Event Title: <input type="text" name="event" 
+																	value="${event.title }" /><br>
+																Activity: <input name="activity"
+																	value="${event.activity }" /><br> 
 																Street Address: <input type="text" name="street"
-																	value="${event.address.address }" /><br> City: <input
+																	value="${event.address.address }" /><br> 
+																City: <input
 																	name="city" value="${event.address.city }" /><br>
 																State: <input name="state" value="${event.address.state }" /><br>
 																Description: <input name="desc" value="${event.description}" /><br>
-																Activity: <input name="activity"
-																	value="${event.activity }" /><br> When (date and
-																time): <input type="datetime-local" name="when"
-																	value="${event.dateTime }" /> <br>
+																When (date and time): <input type="datetime-local" 
+																	name="when" value="${event.dateTime }" /> <br>
 
 																<!-- <input class="submit" type="submit" value="Update"> -->
 																<input type="hidden" value="${event.id }" name="eid"></input>

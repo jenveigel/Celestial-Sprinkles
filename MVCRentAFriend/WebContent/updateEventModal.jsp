@@ -12,8 +12,8 @@
 			<div class="modal-body2">
 				<form action="updateevent.do" method="get">
 					Event Title: <input type="text" name="event"
-						value="${event.title }" /><br> Street Address: <input
-						type="text" name="street" value="${event.address.address }" /><br>
+						value="${event.title }" /><br> 
+					Street Address: <input type="text" name="street" value="${event.address.address }" /><br>
 					City: <input name="city" value="${event.address.city }" /><br>
 					State: <input name="state" value="${event.address.state }" /><br>
 					Description: <input name="desc" value="${event.description}" /><br>
@@ -33,3 +33,5 @@
 		</div>
 	</div>
 </div>
+
+
