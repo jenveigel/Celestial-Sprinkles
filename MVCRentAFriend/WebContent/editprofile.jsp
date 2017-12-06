@@ -99,11 +99,11 @@
 
 	</form>
 	
-	<div class="container">
+	 <div class="container">
 		<div class="row justify-content-center">
 			<div class="col"></div>
-				<form action="loginPage.do">
-		    			<input class="btn btn-default btn-sm" type="submit" value="Back to login" />
+				<form action="viewprofile.do">
+		    			<input class="btn btn-outline-warning" type="submit" value="Return to your profile" />
 				</form>
 			<div class="col"></div>
 		</div>
