@@ -27,7 +27,7 @@ public class UserDAOImpl implements UserDAO {
 			if(bio == null)
 				bio = "";
 			if(imageUrl ==  null || imageUrl=="")
-				imageUrl = "deafult.jpg";
+				imageUrl = "default.jpg";
 			if(facebookUrl==null)
 				facebookUrl = "";
 			if(linkedinUrl==null)

@@ -104,7 +104,7 @@
 					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 									<input type="submit" class="btn btn-primary" value="Submit">
 									<input type="hidden" value=${user.id }>
-									
+
 									<!--need to pass user id to path of this thingy  -->
 							</form>
 					      </div>
