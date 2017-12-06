@@ -37,7 +37,7 @@
 						<input  type="submit" class="btn btn-secondary btn-sm" value="Delete Account"></input>
 					</form>
 					</c:if>
-				
+
 				<br>
 				<c:if test="${sessionUser.id == user.id }">
 							<form action="editProfileWithValues.do" method="GET">
@@ -57,7 +57,60 @@
 							class="fa fa-twitter"></i></a>
 						</div> --%>
 						<br>
-				</div>
+							<div class="row justify-content-center">
+								<!-- Button trigger modal -->
+								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#review${user.id }">
+									Review User
+								</button>
+							</div>
+
+
+
+
+					<!-- Modal -->
+					<div class="modal fade" id="review${user.id }" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					  <div class="modal-dialog" role="document">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <h5 class="modal-title" id="exampleModalLabel">Review User</h5>
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					          <span aria-hidden="true">&times;</span>
+					        </button>
+					      </div>
+					      <div class="modal-body">
+									<div class="container-fluid">
+										<div class="row">
+
+					        		<form action="addReview.do" method="post">
+					            <input type="radio" name="rating" value="1"> 1
+					            <input type="radio" name="rating" value="2"> 2
+					            <input type="radio" name="rating" value="3"> 3
+					            <input type="radio" name="rating" value="4"> 4
+					            <input type="radio" name="rating" value="5"> 5
+
+													</div>
+													<br>
+
+										<div class="row">
+											<div class="col">
+
+					        			<textarea rows="" cols="" name="comment" placeholder="Enter Review"></textarea>
+												</div>
+										</div>
+
+								</div>
+								</div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+									<input type="submit" class="btn btn-primary" value="Submit">
+							</form>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+</div>
+
+
 
 				<div class="col-sm-4 bg-secondary myBox" >
 					<br>
@@ -96,22 +149,7 @@
 											</c:choose>
 										</c:forEach>
 									</div>
-<!-- 								<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br> -->
+
 									<div class="modal-footer">
 										<c:if test="${sessionUser.id == event.owner.id }">
 											<form action="deleteEvent.do" method="get">
@@ -135,12 +173,12 @@
 														</div>
 														<div class="modal-body">
 															<form action="updateevent.do" method="get">
-															
+
 															<table class="table">
 															<tbody>
 														    <tr>
 														      <th scope="row">Event Title:</th>
-														      <td><input type="text" name="event" 
+														      <td><input type="text" name="event"
 																	value="${event.title }" /></td>
 														    </tr>
 														    <tr>
@@ -155,39 +193,39 @@
 														    </tr>
 														    <tr>
 														      <th scope="row">City:</th>
-														      <td><input type="text" name="city" 
+														      <td><input type="text" name="city"
 														      		value="${event.address.city }" /></td>
 														    </tr>
 														    <tr>
 														      <th scope="row">State:</th>
-														      <td><input type="text" name="state" 
+														      <td><input type="text" name="state"
 														      		value="${event.address.state }" /></td>
 														    </tr>
 														    <tr>
 														      <th scope="row">Description:</th>
-														      <td><input type="text" name="desc" 
+														      <td><input type="text" name="desc"
 														      		value="${event.description}" /></td>
 														    </tr>
 														    <tr>
 														      <th scope="row">Date and Time:</th>
-														      <td><input type="datetime-local" 
+														      <td><input type="datetime-local"
 																	name="when" value="${event.dateTime }" /></td>
 														    </tr>
 														    </tbody>
 														    </table>
-															
-															
-															<%-- 	Event Title: <input type="text" name="event" 
+
+
+															<%-- 	Event Title: <input type="text" name="event"
 																	value="${event.title }" /><br>
 																Activity: <input name="activity"
-																	value="${event.activity }" /><br> 
+																	value="${event.activity }" /><br>
 																Street Address: <input type="text" name="street"
-																	value="${event.address.address }" /><br> 
+																	value="${event.address.address }" /><br>
 																City: <input
 																	name="city" value="${event.address.city }" /><br>
 																State: <input name="state" value="${event.address.state }" /><br>
 																Description: <input name="desc" value="${event.description}" /><br>
-																When (date and time): <input type="datetime-local" 
+																When (date and time): <input type="datetime-local"
 																	name="when" value="${event.dateTime }" /> <br> --%>
 
 																<!-- <input class="submit" type="submit" value="Update"> -->
@@ -257,7 +295,7 @@
 			</c:forEach>
 			<%-- ${user.rating } --%>
 		</div>
-		<div class="row"> 
+		<div class="row">
 <div class="container-fluid">
 		<div class="row justify-content-center">
 			<div class="col-sm-12 bg-dark row justify-content-center" style="border-radius: 0px 0px 25px 25px;">
@@ -272,7 +310,7 @@
 			</div>
 		</div>
 		</div><br>
-		
+
 		</div>
 	</div>
 	<br><br>
