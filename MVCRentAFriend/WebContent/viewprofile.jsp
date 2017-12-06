@@ -70,6 +70,7 @@
 					<!-- Button trigger modal -->
 					<form action="viewUserReviews.do" method="get">
 		    			<input class="btn btn-black btn-lg" type="submit" value="See all user reviews" />
+		    			<input class="hidden" value="${user.id }" name="uid"/>
 				</form>
 						
 						
@@ -300,21 +301,6 @@
 				</div>
 			</div>
 
-		</div>
-		<%-- <c:forEach var="review" items="${reviews }">
-				<div class="col">
-					${review.reviewee }
-					${review.review }
-					${review.rating }
-				</div>
-			</c:forEach> --%>
-		<!-- <div class="container-fluid"> -->
-		<div class="row">
-			<c:forEach var="review" items="${reviews }">
-				<div class="col">${review.reviewee } ${review.review }
-					${review.rating }</div>
-			</c:forEach>
-			<%-- ${user.rating } --%>
 		</div>
 		<div class="row">
 			<div class="container-fluid">

@@ -116,10 +116,12 @@ public class ProfileController {
 		public ModelAndView viewUserReviews(@RequestParam("uid") int uid, HttpSession session) {
 			ModelAndView mv = new ModelAndView();
 			User user = dao.getUserById(uid);
+			List<Review> reviews = dao.getReviewsByUser(uid);
 			User sessionUser = (User) session.getAttribute("sessionObj");
 			Profile prof = dao.getProfileByUserId(uid);
 			mv.addObject("sessionUser", sessionUser);
 			mv.addObject("user", user);
+			mv.addObject("reviews", reviews);
 			mv.addObject("userId", uid);
 			mv.addObject("profile", prof);
 			mv.setViewName("userReview.jsp");
