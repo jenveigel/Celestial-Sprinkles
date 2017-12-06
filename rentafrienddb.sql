@@ -240,4 +240,3 @@ INSERT INTO `reviews` (`id`, `review`, `rating`, `reviewer_id`, `reviewee_id`) V
 INSERT INTO `reviews` (`id`, `review`, `rating`, `reviewer_id`, `reviewee_id`) VALUES (5, 'Always on point', 5, NULL, 5);
 
 COMMIT;
-
