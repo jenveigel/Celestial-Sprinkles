@@ -36,10 +36,11 @@ public class UserController {
 		
 		if(notNullValues == false) {
 			mv.setViewName("createAccount.jsp");
-			String error = "Don't be an idiot. \n Fill out all the fields.";
+			String error = "You are missing Required fields.";
 			mv.addObject("error", error);
 			return mv;
 		}
+		
 		mv.setViewName("login.jsp");
 		return mv;
 	}

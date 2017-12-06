@@ -24,6 +24,15 @@ public class UserDAOImpl implements UserDAO {
 			, String lastName, String bio, String imageUrl, String facebookUrl, String linkedinUrl) 
 	{//method returns false if 
 		try {
+			if(bio == null)
+				bio = "";
+			if(imageUrl ==  null || imageUrl=="")
+				imageUrl = "deafult.jpg";
+			if(facebookUrl==null)
+				facebookUrl = "";
+			if(linkedinUrl==null)
+				linkedinUrl = "";
+			
 			username = username.trim();
 			password = password.trim();
 			firstName = firstName.trim(); 
@@ -32,14 +41,6 @@ public class UserDAOImpl implements UserDAO {
 			imageUrl = imageUrl.trim();
 			facebookUrl = facebookUrl.trim();
 			linkedinUrl = linkedinUrl.trim();
-			if(bio == null)
-				bio = "";
-			if(imageUrl ==  null)
-				imageUrl = "";
-			if(facebookUrl==null)
-				facebookUrl = "";
-			if(linkedinUrl==null)
-				linkedinUrl = "";
 				
 			if(firstName.equals("")||lastName.equals("")||username.equals("")||password.equals("")) {
 				return false; 
