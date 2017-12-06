@@ -104,10 +104,12 @@ public class ProfileController {
 
 			Object obj = sessionId.getAttribute("sessionId");
 			int id = (Integer) obj;
-
+			if(profile.getImageURL()==""||profile.getImageURL()==null) {
+				profile.setImageURL("default.jpg");
+			}
 
 			Profile prof = dao.updateProfile(id, profile);
-
+			
 			mv.addObject("profile", prof);
 			mv.setViewName("viewprofile.do");
 			return mv;
