@@ -24,5 +24,11 @@ Technologies used:
 	- MVC
 	- JSP
 	- MYSQL
-	![Login Page](screenshots/loginPage.png)
- [[https://github.com/jenveigel/Celestial-Sprinkles/screenshots/loginPage.png|alt=octocat]]
+
+The first landing page is the login screen.
+![Login Page](screenshots/loginPage.png)
+By clicking create account user is lead to page with forms to create account
+which updates the mysql users table.
+![Create Account Page](screenshots/createAccountPage.png)
+Once you login you lead to the main page with three options
+![Index Page](screenshots/indexPage.png)
