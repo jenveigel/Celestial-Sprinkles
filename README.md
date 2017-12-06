@@ -24,5 +24,5 @@ Technologies used:
 	- MVC
 	- JSP
 	- MYSQL
-	![Alt text](screenshots/loginPage.png)
+	![Login Page](screenshots/loginPage1.png)
  [[https://github.com/jenveigel/Celestial-Sprinkles/screenshots/loginPage.png|alt=octocat]]
