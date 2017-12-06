@@ -15,31 +15,105 @@
 
 <!-- -------------------Navbar----------------- -->
 <jsp:include page="navbar.jsp"></jsp:include>
-	<br><br><br><br>
-	<div class="card text-white bg-dark mb-3 container center_div roundCorners"
-		style="max-width: 40rem;">
-		<div class="card-header">Create Event</div>
-		<div class="card-body">
-			<p class="card-text">
-			<div class="row justify-content-center">
-					<h3>${errorMessage}</h3>
-				<form action="createEvent.do" method="post" modelAttribute="item">
-					<label>Event Title:</label> <input type="text" name="title" /><br> 
-					<label>Street Address: </label><input type="text" name="street" /><br> 
-					<label>City:</label><input name="city" /><br>
-					<label>State Abbreviation: </label> <input name="state" /><br>
-					<label>Description:</label> <input name="desc" /><br>
-					<label> Activity:</label><input name="activity" /><br> 
-					<label>When (date and time): </label><input type="datetime-local" name="when" /> 
-					<br>
-					<input class="btn btn-success" type="submit" value="Create" />
-				</form>
 
+		<form action="addUser.do" method="post">
+			<div class="container">
+				<p class="well"></p>
+				<h1> ${errorMessage }</h1>
+				<br>
+				<div class="row justify-content-center text-white bg-dark" style="border-radius: 25px; background-color:darkgrey;">
+					<h1>Create Event</h1>
+					<div class="col-sm-12 col-md-12 col-lg-12"></div>
+					<div class="col-sm-6">
+						<div class="input-group">
+							<span class="input-group-addon"><span
+								class="glyphicon glyphicon-user"></span></span> <input type="text"
+								class="form-control" name="title" id="title"
+								placeholder="Event Title">
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="input-group">
+							<span class="input-group-addon"><span
+								class="glyphicon glyphicon-lock"></span></span> <input type="text"
+								class="form-control" name="street" id="street"
+								placeholder="Street Address">
+						</div>
+						<br>
+					</div>
+
+					<div class="col-sm-6">
+							<!-- <label>name</label> -->
+							<div class="input-group">
+								<span class="input-group-addon"><span
+									class="glyphicon glyphicon-user"></span></span> <input type="text"
+									class="form-control" name="city" id="city"
+									placeholder="City">
+							</div>
+							</div>
+					<div class="col-sm-6">
+							<div class="input-group">
+								<span class="input-group-addon"><span
+									class="glyphicon glyphicon-user"></span></span> <input type="text"
+									class="form-control" name="state" id="state"
+									placeholder="State Abbreviation">
+							</div>
+							<br>
+						</div>
+						<div class="col-sm-6">
+								<div class="input-group">
+									<span class="input-group-addon"><span
+										class="glyphicon glyphicon-user"></span></span> <input type="text"
+										class="form-control" name="desc" id="desc"
+										placeholder="Short Description">
+								</div>
+							</div>
+							<div class="col-sm-6">
+									<div class="input-group">
+										<span class="input-group-addon"><span
+											class="glyphicon glyphicon-user"></span></span> <input type="text"
+											class="form-control" name="activity" id="activity"
+											placeholder="Activity">
+
+									</div>
+									<br>
+								</div>
+
+								<div class="col-sm-6">
+										<div class="input-group">
+											<br>
+											<span class="input-group-addon"><span
+												class="glyphicon glyphicon-user"></span></span>
+												<br>
+												<input type="datetime-local"
+												class="form-control" name="activity" id="activity"
+												placeholder="Date/Time">
+												<br>
+
+										</div>
+
+									</div>
+									<br>
+
+							<div class="col-sm-12"></div>
+							<br>
+							<input type="submit" name="submit" id="submit" value="Create"
+							class="btn pull-right btn-default logbutton">
+							<div class="col-sm-12"></div>
+
+
+						</div>
+						<br>
+
+		</form>
+
+			<br>
+			<div class="row justify-content-center">
+
+				<form class="attendEvent.do" action="index.html" method="post">
+					<input type="submit" class="btn btn-outline-warning" value="View Events">
+				</form>
 			</div>
-			<p class="row justify-content-center">
-				<a href="index.jsp"> Return To Home </a>&nbsp; <br> 
-				<a href="attendEvent.do"> View Events</a>
-			</p>
 		</div>
 	</div>
 
