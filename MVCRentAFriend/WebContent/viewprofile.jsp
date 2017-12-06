@@ -42,7 +42,7 @@
 
 						<c:if test="${sessionUser.id == user.id }">
 							<form action="deleteUser.do" method="POST">
-								<input type="submit" class="btn btn-secondary btn-sm"
+								<input type="submit" class="btn btn-danger btn-sm"
 									value="Delete Account"></input>
 							</form>
 						</c:if>
@@ -50,7 +50,7 @@
 						<br>
 						<c:if test="${sessionUser.id == user.id }">
 							<form action="editProfileWithValues.do" method="GET">
-								<input type="submit" class="btn btn-secondary btn-sm"
+								<input type="submit" class="btn btn-warning btn-sm"
 									value=" Modify Profile "></input>
 							</form>
 							
@@ -158,9 +158,10 @@
 													<c:when test="${ewu.id eq event.id}">
 														<div class="littleBox">
 															<c:forEach var="user" items="${ewu.users}">
-																<a href="viewUserProfile.do?uid=${user.id }"> <img
-																	src="${user.profile.imageURL }" alt="${user.userName}"
-																	width="200" height="200" /></a>
+																<a href="viewUserProfile.do?uid=${user.id }">
+														<img src="${user.profile.imageURL }" alt="${user.userName }" width="100"
+														height="100" />
+													</a>
 															</c:forEach>
 														</div>
 													</c:when>
@@ -289,7 +290,7 @@
 				<div class="col">
 					<div class="container ">
 
-						<h4>${profile.firstName }'sBio</h4>
+						<h4>${profile.firstName }'s Bio</h4>
 						<p class="lead">${profile.bio }</p>
 					</div>
 				</div>
