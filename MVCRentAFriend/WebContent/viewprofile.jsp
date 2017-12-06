@@ -26,9 +26,9 @@
 
 		<div class="row">
 
-				<div class="col-sm-3 bg-secondary">
+				<div class="col-sm-3 bg-secondary text-center">
 				<br>
-				<img src="${profile.imageURL }" class="img-thumbnail" alt="${profile.firstName }" width="300" height="300">
+				<img src="${profile.imageURL}" class="img-thumbnail" alt="${profile.firstName}" style="max-width:300px; max-height:300px">
 				<%-- <p class="name">${profile.firstName} ${profile.lastName}</p> --%>
 				<div class="row justify-content-center">
 				<p>
@@ -103,9 +103,6 @@
 					      <div class="modal-footer">
 					        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 									<input type="submit" class="btn btn-primary" value="Submit">
-									<input type="hidden" value=${user.id }>
-
-									<!--need to pass user id to path of this thingy  -->
 							</form>
 					      </div>
 					    </div>
