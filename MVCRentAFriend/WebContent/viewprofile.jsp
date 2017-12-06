@@ -198,8 +198,8 @@
 					${review.rating }
 				</div>
 			</c:forEach>
-			${user.rating }
-		</div> --%>
+			<%-- ${user.rating } --%>
+		</div> 
 <div class="container-fluid" style="max-width: 97%;">
 		<div class="row justify-content-center">
 			<div class="col-sm-12 bg-dark row justify-content-center">
