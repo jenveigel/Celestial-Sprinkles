@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -34,6 +35,9 @@ public class User {
 	@OneToOne(cascade={CascadeType.REMOVE, CascadeType.PERSIST})
 	@JoinColumn(name = "profile_id")
 	private Profile profile;
+	
+	@OneToMany(mappedBy="reviewee")
+	private List<Review> reviews;
 
 	public String getUserName() {
 		return userName;
@@ -78,10 +82,19 @@ public class User {
 //	public void setOwnerEvent(Event ownerEvent) {
 //		this.ownerEvent = ownerEvent;
 //	}
+	
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", userName=" + userName + ", password=" + password + "]";
+	}
+
+	public List<Review> getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(List<Review> reviews) {
+		this.reviews = reviews;
 	}
 
 }

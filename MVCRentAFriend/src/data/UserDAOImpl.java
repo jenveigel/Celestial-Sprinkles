@@ -1,6 +1,5 @@
 package data;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -11,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import entities.Event;
 import entities.Profile;
+import entities.Review;
 import entities.User;
 
 @Repository
@@ -162,4 +162,29 @@ public class UserDAOImpl implements UserDAO {
 			return null;
 		}
 	}
+	@Override
+	public boolean addReview(int uid, String comment, int rating) {
+		User user = em.find(User.class, uid);
+		List<Review> reviews = user.getReviews();
+		Review review = new Review();
+		review.setReview(comment);
+		review.setRating(rating);
+		review.setReviewee(user);
+		boolean bool = reviews.add(review);
+		if(bool == true) {
+			return true;
+		}
+		return false;
+	}
+	@Override
+	public List<Review> getReviewsByUser(int uid) {
+		String query = "Select r FROM Review r WHERE r.reviewee.id = :uid";
+		return em.createQuery(query, Review.class).setParameter("uid", uid).getResultList();
+	}
+	
 }
+
+
+
+
+

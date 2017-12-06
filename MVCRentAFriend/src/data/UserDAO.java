@@ -4,6 +4,7 @@ import java.util.List;
 
 import entities.Event;
 import entities.Profile;
+import entities.Review;
 import entities.User;
 
 public interface UserDAO {
@@ -21,4 +22,6 @@ public interface UserDAO {
 	boolean deleteEventFromUser(int uid, int eid);
 	boolean createUser(String username, String password, String firstName, String lastName, String bio,
 			String imageUrl, String facebookUrl, String linkedinUrl);
+	boolean addReview(int uid, String comment, int rating);
+	List<Review> getReviewsByUser(int uid);
 }

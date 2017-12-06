@@ -18,6 +18,7 @@ import data.EventDAO;
 import data.UserDAO;
 import entities.Event;
 import entities.Profile;
+import entities.Review;
 import entities.User;
 
 @Controller
@@ -45,10 +46,13 @@ public class ProfileController {
 			int id = user.getId();
 			List<Event> events = eventDao.getAllEventsByUserId(user);
 			List<Event> eventsWithUsers = eventDao.getAllEventsWithUsers();
+			List<Review> reviews = dao.getReviewsByUser(user.getId());
 			
+			System.out.println(reviews);
 			mv.addObject("sessionUser", user);
 			mv.addObject("user", user);
 			mv.addObject("userId", id);
+			mv.addObject("reviews", reviews);
 			mv.addObject("profile", prof);
 			mv.addObject("events", events);
 			mv.addObject("eventsWithUsers", eventsWithUsers);
@@ -63,7 +67,6 @@ public class ProfileController {
 			Profile prof = dao.getProfileByUserId(uid);
 			List<Event> events = eventDao.getAllEventsByUserId(user);
 			List<Event> eventsWithUsers = eventDao.getAllEventsWithUsers();
-			
 			mv.addObject("sessionUser", sessionUser);
 			mv.addObject("user", user);
 			mv.addObject("userId", uid);

@@ -30,7 +30,7 @@
 				<br>
 				<img src="${profile.imageURL }" class="img-thumbnail" alt="${profile.firstName }" style="width: 100%">
 				<p class="name">${profile.firstName} ${profile.lastName}</p>
-
+						
 						<div class="col-12">
 							<a href="${profile.linkedinUrl}"><i
 							class="fa fa-linkedin"></i></a>
@@ -193,17 +193,25 @@
 		<br>
 		<br>
 		</div>
-		<div class="container-fluid">
-<%-- 			<div class="row">
-			<c:forEach var="review" items="${reviews }">
+						blah ${reviews}
+				<c:forEach var="review" items="${reviews }">
 				<div class="col">
-					${review.user }
-					${review.text }
+					${review.reviewee }
+					${review.review }
 					${review.rating }
 				</div>
 			</c:forEach>
-			${user.rating }
-		</div> --%>
+		<div class="container-fluid">
+		<div class="row">
+			<c:forEach var="review" items="${reviews }">
+				<div class="col">
+					${review.reviewee }
+					${review.review }
+					${review.rating }
+				</div>
+			</c:forEach>
+			<%-- ${user.rating } --%>
+		</div>
 
 			<div class="row justify-content-center">
 				<div class="col-1">

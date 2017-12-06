@@ -9,6 +9,7 @@
         <class>entities.User</class>
         <class>entities.Address</class>
         <class>entities.Event</class>
+        <class>entities.Review</class>
 
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/rentafrienddb" />
