@@ -21,7 +21,7 @@
 		<div class="row justify-content-center">
 			<div class="col-sm-12 bg-dark"
 				style="border-radius: 25px 25px 0px 0px;">
-				<h1>${profile.firstName }${profile.lastName}</h1>
+				<h1>${profile.firstName } ${profile.lastName}</h1>
 			</div>
 		</div>
 
