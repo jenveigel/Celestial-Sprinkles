@@ -166,8 +166,11 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `rentafrienddb`;
-INSERT INTO `profile` (`id`, `bio`, `img_url`, `first_name`, `last_name`, `facebook_url`, `linkedin_url`) VALUES (1, 'falcon\'s bio', NULL, 'aaron', 'ipp', NULL, NULL);
+INSERT INTO `profile` (`id`, `bio`, `img_url`, `first_name`, `last_name`, `facebook_url`, `linkedin_url`) VALUES (1, 'aaron\'s bio', NULL, 'aaron', 'ipp', NULL, 'https://www.linkedin.com/in/aaron-ipp-51550ab/');
 INSERT INTO `profile` (`id`, `bio`, `img_url`, `first_name`, `last_name`, `facebook_url`, `linkedin_url`) VALUES (2, 'stumpe\'s bio', NULL, 'david', 'stumpe', NULL, NULL);
+INSERT INTO `profile` (`id`, `bio`, `img_url`, `first_name`, `last_name`, `facebook_url`, `linkedin_url`) VALUES (3, 'jake\'s bio', NULL, 'jake', 'simms', NULL, NULL);
+INSERT INTO `profile` (`id`, `bio`, `img_url`, `first_name`, `last_name`, `facebook_url`, `linkedin_url`) VALUES (4, 'jen\'s bio', NULL, 'jen', 'veigel', NULL, NULL);
+INSERT INTO `profile` (`id`, `bio`, `img_url`, `first_name`, `last_name`, `facebook_url`, `linkedin_url`) VALUES (5, 'dave\'s bio', NULL, 'dave', 'chirdon', NULL, NULL);
 
 COMMIT;
 
@@ -177,8 +180,11 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `rentafrienddb`;
-INSERT INTO `user` (`id`, `user_name`, `password`, `profile_id`, `avg_user_rating`) VALUES (1, 'falcon', 'falcon', 1, 5);
-INSERT INTO `user` (`id`, `user_name`, `password`, `profile_id`, `avg_user_rating`) VALUES (2, 'dstumpe', 'dstumpe', 2, 0);
+INSERT INTO `user` (`id`, `user_name`, `password`, `profile_id`, `avg_user_rating`) VALUES (1, 'aaron', 'aaron', 1, 5);
+INSERT INTO `user` (`id`, `user_name`, `password`, `profile_id`, `avg_user_rating`) VALUES (2, 'dstumpe', 'dstumpe', 2, 5);
+INSERT INTO `user` (`id`, `user_name`, `password`, `profile_id`, `avg_user_rating`) VALUES (3, 'jake', 'jake', 3, 5);
+INSERT INTO `user` (`id`, `user_name`, `password`, `profile_id`, `avg_user_rating`) VALUES (4, 'jen', 'jen', 4, 5);
+INSERT INTO `user` (`id`, `user_name`, `password`, `profile_id`, `avg_user_rating`) VALUES (5, 'dave', 'dave', 5, 5);
 
 COMMIT;
 
@@ -190,6 +196,9 @@ START TRANSACTION;
 USE `rentafrienddb`;
 INSERT INTO `address` (`id`, `address`, `city`, `state`) VALUES (1, '123 main street', 'Orlando', 'FL');
 INSERT INTO `address` (`id`, `address`, `city`, `state`) VALUES (2, '321 niam street', 'Denver', 'CO');
+INSERT INTO `address` (`id`, `address`, `city`, `state`) VALUES (3, '543 aimn street', 'Houston', 'TX');
+INSERT INTO `address` (`id`, `address`, `city`, `state`) VALUES (4, '345 nami street', 'Denver', 'CO');
+INSERT INTO `address` (`id`, `address`, `city`, `state`) VALUES (5, '435 iman street', 'Denver', 'CO');
 
 COMMIT;
 
@@ -200,7 +209,10 @@ COMMIT;
 START TRANSACTION;
 USE `rentafrienddb`;
 INSERT INTO `event` (`id`, `title`, `address_id`, `description`, `activity`, `time`, `owner_id`) VALUES (1, 'Going to the Movies', 1, 'Going to the Movies', 'movies', '2016-01-15 12:30:00', 1);
-INSERT INTO `event` (`id`, `title`, `address_id`, `description`, `activity`, `time`, `owner_id`) VALUES (2, 'Football Game', 2, 'Football Game', 'football', '2017-12-1 16:30:00', 2);
+INSERT INTO `event` (`id`, `title`, `address_id`, `description`, `activity`, `time`, `owner_id`) VALUES (2, 'Football Game', 2, 'Football Game', 'Football', '2017-12-1 16:30:00', 2);
+INSERT INTO `event` (`id`, `title`, `address_id`, `description`, `activity`, `time`, `owner_id`) VALUES (3, 'Paintball', 3, 'Paintball', 'Paintball', '2016-01-15 12:30:00', 3);
+INSERT INTO `event` (`id`, `title`, `address_id`, `description`, `activity`, `time`, `owner_id`) VALUES (4, 'Knitting Club', 4, 'Knitting', 'Knitting', '2016-01-15 12:30:00', 4);
+INSERT INTO `event` (`id`, `title`, `address_id`, `description`, `activity`, `time`, `owner_id`) VALUES (5, 'Snowboarding', 5, 'hitting the slopes', 'snowboarding', '2016-01-15 12:30:00', 5);
 
 COMMIT;
 
@@ -221,7 +233,11 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `rentafrienddb`;
-INSERT INTO `reviews` (`id`, `review`, `rating`, `reviewer_id`, `reviewee_id`) VALUES (1, 'He is a great person.', 5, NULL, NULL);
-INSERT INTO `reviews` (`id`, `review`, `rating`, `reviewer_id`, `reviewee_id`) VALUES (2, 'What a bitch!', 0, NULL, NULL);
+INSERT INTO `reviews` (`id`, `review`, `rating`, `reviewer_id`, `reviewee_id`) VALUES (1, 'He is a great person.', 5, NULL, 1);
+INSERT INTO `reviews` (`id`, `review`, `rating`, `reviewer_id`, `reviewee_id`) VALUES (2, 'Never complains, always happy', 5, NULL, 2);
+INSERT INTO `reviews` (`id`, `review`, `rating`, `reviewer_id`, `reviewee_id`) VALUES (3, 'He has greate quotes from the Congo', 5, NULL, 3);
+INSERT INTO `reviews` (`id`, `review`, `rating`, `reviewer_id`, `reviewee_id`) VALUES (4, 'Never a dull moment', 5, NULL, 4);
+INSERT INTO `reviews` (`id`, `review`, `rating`, `reviewer_id`, `reviewee_id`) VALUES (5, 'Always on point', 5, NULL, 5);
 
 COMMIT;
+
