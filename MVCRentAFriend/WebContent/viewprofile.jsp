@@ -42,7 +42,7 @@
 
 						<c:if test="${sessionUser.id == user.id }">
 							<form action="deleteUser.do" method="POST">
-								<input type="submit" class="btn btn-secondary btn-sm"
+								<input type="submit" class="btn btn-success btn-sm"
 									value="Delete Account"></input>
 							</form>
 						</c:if>
@@ -50,7 +50,7 @@
 						<br>
 						<c:if test="${sessionUser.id == user.id }">
 							<form action="editProfileWithValues.do" method="GET">
-								<input type="submit" class="btn btn-secondary btn-sm"
+								<input type="submit" class="btn btn-success btn-sm"
 									value=" Modify Profile "></input>
 							</form>
 							
