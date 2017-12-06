@@ -31,7 +31,7 @@
 					<label>Description:</label> <input name="desc" /><br>
 					<label> Activity:</label><input name="activity" /><br> 
 					<label>When (date and time): </label><input type="datetime-local" name="when" /> 
-					
+					<br>
 					<input class="btn btn-success" type="submit" value="Create" />
 				</form>
 

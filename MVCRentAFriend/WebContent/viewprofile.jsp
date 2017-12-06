@@ -19,7 +19,7 @@
 
 	<div class="container-fluid" style="max-width: 95%;">
 		<div class="row justify-content-center">
-			<div class="col-sm-12 bg-dark">
+			<div class="col-sm-12 bg-dark" style="border-radius: 25px 25px 0px 0px;">
 				<h1>Profile</h1>
 			</div>
 		</div>
@@ -80,7 +80,7 @@
 											</c:choose>
 										</c:forEach>
 									</div>
-<!-- 									<br>
+<!-- 								<br>
 									<br>
 									<br>
 									<br>
@@ -179,17 +179,14 @@
 				</div>
 
 		</div>
-
-		</div>
-						blah ${reviews}
-				<c:forEach var="review" items="${reviews }">
+				<%-- <c:forEach var="review" items="${reviews }">
 				<div class="col">
 					${review.reviewee }
 					${review.review }
 					${review.rating }
 				</div>
-			</c:forEach>
-		<div class="container-fluid">
+			</c:forEach> --%>
+		<!-- <div class="container-fluid"> -->
 		<div class="row">
 			<c:forEach var="review" items="${reviews }">
 				<div class="col">
@@ -199,10 +196,11 @@
 				</div>
 			</c:forEach>
 			<%-- ${user.rating } --%>
-		</div> 
-<div class="container-fluid" style="max-width: 97%;">
+		</div>
+		<div class="row"> 
+<div class="container-fluid">
 		<div class="row justify-content-center">
-			<div class="col-sm-12 bg-dark row justify-content-center">
+			<div class="col-sm-12 bg-dark row justify-content-center" style="border-radius: 0px 0px 25px 25px;">
 				<a href="${profile.linkedinUrl}"><i
 							class="fa fa-linkedin"></i></a>
 							<a href="${profile.facebookUrl}"><i
@@ -218,6 +216,7 @@
 			<div class="row justify-content-center">
 				<div class="col-4"></div>
 				<div class="col-2">
+				<br>
 				<c:if test="${sessionUser.id == user.id }">
 					<form action="deleteUser.do" method="POST">
 						<input  type="submit" class="btn btn-outline-warning"" value="Delete Account"></input>
@@ -225,6 +224,7 @@
 					</c:if>
 				</div>
 				<div class="col-2">
+				<br>
 				<c:if test="${sessionUser.id == user.id }">
 							<form action="editProfileWithValues.do" method="GET">
 									<input  type="submit" class="btn btn-outline-warning" value=" Modify Profile "></input>
@@ -235,8 +235,8 @@
 			</div>
 		</div>
 		</div>
-
-
+	</div>
+	
 	<jsp:include page="bootstrapFooter.jsp"></jsp:include>
 </body>
 </html>
