@@ -96,22 +96,7 @@
 											</c:choose>
 										</c:forEach>
 									</div>
-<!-- 								<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br> -->
+
 									<div class="modal-footer">
 										<c:if test="${sessionUser.id == event.owner.id }">
 											<form action="deleteEvent.do" method="get">
