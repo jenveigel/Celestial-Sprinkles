@@ -31,15 +31,20 @@ public class UserController {
 	public ModelAndView addUser(String userName, String password, String firstName,
 			String lastName, String imgUrl, String bio, String facebookUrl, String linkedinUrl) {
 		ModelAndView mv = new ModelAndView();
-		boolean notNullValues = dao.createUser(userName, password, firstName, lastName, bio, imgUrl, facebookUrl, linkedinUrl);
-		
-		
-		if(notNullValues == false) {
+		if(dao.getUserByUserName(userName)!=null) {
 			mv.setViewName("createAccount.jsp");
-			String error = "Don't be an idiot. \n Fill out all the fields.";
+			String error = "UserName is already in use.";
 			mv.addObject("error", error);
 			return mv;
 		}
+		boolean notNullValues = dao.createUser(userName, password, firstName, lastName, bio, imgUrl, facebookUrl, linkedinUrl);
+		if(notNullValues == false) {
+			mv.setViewName("createAccount.jsp");
+			String error = "You are missing Required fields.";
+			mv.addObject("error", error);
+			return mv;
+		}
+		
 		mv.setViewName("login.jsp");
 		return mv;
 	}
