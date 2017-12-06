@@ -19,11 +19,11 @@ Users can:
  - Cancel there RSVP to an event
 
 Technologies used:
-	- JAVA		
-	- JPA
-	- MVC
-	- JSP
-	- MYSQL
+ - JAVA		
+ - JPA
+ - MVC
+ - JSP
+ - MYSQL
 
 The first landing page is the login screen.
 ![Login Page](screenshots/loginPage.png)
@@ -32,3 +32,12 @@ which updates the mysql users table.
 ![Create Account Page](screenshots/createAccountPage.png)
 Once you login you lead to the main page with three options
 ![Index Page](screenshots/indexPage.png)
+Create brings you to the create event page
+![Create Event Page](screenshots/createEventPage.png)
+Attend Event brings you to a page to view all listed events and attend them if you choose
+![Attend Event Page](screenshots/attendEventPage.png)
+Each users profile looks like this
+![Profile Page](screenshots/profilePage.png)
+When you click details on an event entry it displays a modal with information about that events and other users
+who are attending
+![Event Details Page](screenshots/eventDetails.png)

@@ -69,16 +69,10 @@
 				<div class="row justify-content-center">
 					<!-- Button trigger modal -->
 					<form action="viewUserReviews.do" method="get">
+		    			<input type="hidden" value="${user.id }" name="uid"></input>
 		    			<input class="btn btn-black btn-lg" type="submit" value="See all user reviews" />
-		    			<input class="hidden" value="${user.id }" name="uid"/>
 				</form>
-						
-						
-						
-						
-						
-						
-						
+	
 				</div>
 				</div>
 
