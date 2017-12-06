@@ -30,8 +30,8 @@
 				<br>
 				<img src="${profile.imageURL }" class="img-thumbnail" alt="${profile.firstName }" style="width: 100%">
 				<p class="name">${profile.firstName} ${profile.lastName}</p>
-						
-						<div class="col-12">
+
+						<%-- <div class="col-12">
 							<a href="${profile.linkedinUrl}"><i
 							class="fa fa-linkedin"></i></a>
 							<a href="${profile.facebookUrl}"><i
@@ -40,25 +40,18 @@
 							class="fa fa-google"></i></a>
 							<a href="https://twitter.com/?lang=en"><i
 							class="fa fa-twitter"></i></a>
-						</div>
+						</div> --%>
 						<br>
-						<p>
-						<c:if test="${sessionUser.id == user.id }">
-							<a class="btn btn-outline-warning" href="editProfileWithValues.do"
-								role="button">Edit Profile</a>
-						</c:if>
-						</p>
-
 				</div>
 
 				<div class="col-sm-4 bg-secondary myBox" >
+					<br>
 					<c:if test="${events != null }">
-						<h4>Events Attending</h4>
-						<br>
+					<h4>Events Attending</h4>
 						<c:forEach var="event" items="${events }">
-						<div class="col \">
+						<div class="col">
 						<!-- Button trigger modal -->
-						<button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+						<button type="button" class="btn  btn-lg yellowgreen" data-toggle="modal"
 							data-target="#details${event.id }">${event.title }</button>
 						<!-- Modal -->
 						<div class="modal fade" id="details${event.id }" tabindex="-1"
@@ -179,19 +172,14 @@
 					<div class="col">
   						<div class="container ">
 
-  						<h4 >${profile.firstName } Bio</h4>
-
-  						<h1 class="display-3">${user.userName }'s Bio</h1>
-  						<h4 >${profile.firstName }'s Bio</h4>
-
+  						<h4>${profile.firstName }'s Bio</h4>
 					    		<p class="lead">${profile.bio }</p>
 					  	</div>
 					</div>
 				</div>
 
 		</div>
-		<br>
-		<br>
+
 		</div>
 						blah ${reviews}
 				<c:forEach var="review" items="${reviews }">
@@ -210,19 +198,44 @@
 					${review.rating }
 				</div>
 			</c:forEach>
-			<%-- ${user.rating } --%>
+			${user.rating }
+		</div> --%>
+<div class="container-fluid" style="max-width: 97%;">
+		<div class="row justify-content-center">
+			<div class="col-sm-12 bg-dark row justify-content-center">
+				<a href="${profile.linkedinUrl}"><i
+							class="fa fa-linkedin"></i></a>
+							<a href="${profile.facebookUrl}"><i
+							class="fa fa-facebook"></i></a>
+							<a href="https://www.google.com/"><i
+							class="fa fa-google"></i></a>
+							<a href="https://twitter.com/?lang=en"><i
+							class="fa fa-twitter"></i></a>
+			</div>
 		</div>
-
+		</div><br>
+		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-1">
+				<div class="col-4"></div>
+				<div class="col-2">
 				<c:if test="${sessionUser.id == user.id }">
 					<form action="deleteUser.do" method="POST">
-						<input  type="submit" class="btn btn-lg btn-secondary" value="Delete Account"></input>
+						<input  type="submit" class="btn btn-outline-warning"" value="Delete Account"></input>
 					</form>
 					</c:if>
 				</div>
+				<div class="col-2">
+				<c:if test="${sessionUser.id == user.id }">
+							<form action="editProfileWithValues.do" method="GET">
+									<input  type="submit" class="btn btn-outline-warning" value=" Modify Profile "></input>
+							</form>
+						</c:if>
+				</div>
+				<div class="col-4"></div>
 			</div>
 		</div>
+		</div>
+
 
 	<jsp:include page="bootstrapFooter.jsp"></jsp:include>
 </body>

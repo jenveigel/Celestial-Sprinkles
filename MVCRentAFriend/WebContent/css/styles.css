@@ -6,6 +6,7 @@ body,html {
 	background-repeat:no-repeat;
 	background-position:right;
 	background-size: cover;
+	background-attachment: fixed;
 }
 
 .navbar navbar-expand-sm bg-dark navbar-dark {
@@ -112,12 +113,22 @@ button:hover, a:hover {
     height: 50px;
     width: 200px;
     background-color:yellowgreen;
-    border-radius: 0px;
+    border-radius: 5px;
     font-size: 18px;
     color:white;
     border: none !important;
     margin-bottom: 5px;
 }
+
+.yellowgreen{
+	background-color:yellowgreen;
+	color:white;
+    border: none !important;
+    border-radius: 0px;
+    border-radius: 5px;
+    
+}
+
 .logbutton:hover{    
     color: white;
     background-color:darkolivegreen;
@@ -181,6 +192,7 @@ textarea {
     text-align: center;
     text-decoration: none;
     border-radius: 50%;
+    opacity: 0.6;
 }
 .fa-facebook {
     background: #3B5998;

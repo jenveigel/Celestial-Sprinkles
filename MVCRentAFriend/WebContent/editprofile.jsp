@@ -21,9 +21,8 @@
 			<h1> ${error }</h1>
 			<br>
 			<div class="row justify-content-center text-white bg-dark" style="border-radius: 25px; background-color:darkgrey;">
-				<h4>Requried Fields</h4>
-				<div class="col-sm-12 col-md-12 col-lg-12"></div>
-				<div class="col-sm-6">
+				<br><div class="col-sm-12 col-md-12 col-lg-12"></div>
+				<%-- <div class="col-sm-6">
 					<div class="input-group">
 						<span class="input-group-addon"><span
 							class="glyphicon glyphicon-user"></span></span> <input type="text"
@@ -41,7 +40,7 @@
 							data-content="Enter Password...">
 					</div>
 					<br>
-				</div>
+				</div> --%>
 				
 				<div class="col-sm-6">
 						<!-- <label>name</label> -->
@@ -61,11 +60,6 @@
 						</div>
 					</div>
 					<div class="col-sm-12">&nbsp</div>
-					</div>
-					<br>
-					
-					<div class="row justify-content-center text-white bg-dark" style="border-radius: 25px; background-color:darkgrey;">
-						<h4>Optional</h4>
 						<div class="input-group col-sm-12">
 							<span class="input-group-addon"><span
 								class="glyphicon glyphicon-user"></span></span>
@@ -91,8 +85,8 @@
 						<div class="input-group col-sm-4">
 							<span class="input-group-addon"><span
 								class="glyphicon glyphicon-user"></span></span> <input type="text"
-								class="form-control" name="imgUrl" id="imgUrl"
-								placeholder="Enter a profile image url" value="${profile.imageURL }">
+								class="form-control" name="imageURL" id="imgUrl"
+								placeholder="Enter a profile image url" value="${profile.imageURL}">
 						</div>
 						<div class="col-sm-12">&nbsp</div>
 						<input type="submit" name="submit" id="submit" value="Submit"
@@ -105,11 +99,11 @@
 
 	</form>
 	
-	<div class="container">
+	 <div class="container">
 		<div class="row justify-content-center">
 			<div class="col"></div>
-				<form action="loginPage.do">
-		    			<input class="btn btn-default btn-sm" type="submit" value="Back to login" />
+				<form action="viewprofile.do">
+		    			<input class="btn btn-outline-warning" type="submit" value="Return to your profile" />
 				</form>
 			<div class="col"></div>
 		</div>

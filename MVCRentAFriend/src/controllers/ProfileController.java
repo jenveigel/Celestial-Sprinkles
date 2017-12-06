@@ -110,7 +110,6 @@ public class ProfileController {
 
 			mv.addObject("profile", prof);
 			mv.setViewName("viewprofile.do");
-
 			return mv;
 		}
 

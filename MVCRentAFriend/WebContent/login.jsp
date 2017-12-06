@@ -78,12 +78,19 @@
 								</form>
 							</div>
 							<div class="col"></div>
-							<!-- </div> -->
 						</div>
 						<br>
 					</div>
 			</form>
-				</div>
+		</div>
+		<div class="container">
+			<div class="row justify-content-center">
+				<audio controls loop volume="0.2">
+		  			<source src="audio/rain.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>
+			</div>
+		</div>
 	
 	<jsp:include page="bootstrapFooter.jsp"></jsp:include>
 </body>
