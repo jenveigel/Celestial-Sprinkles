@@ -16,7 +16,7 @@
 <!-- -------------------Navbar----------------- -->
 <jsp:include page="navbar.jsp"></jsp:include>
 
-		<form action="addUser.do" method="post">
+		<form action="createEvent.do" method="post">
 			<div class="container">
 				<p class="well"></p>
 				<h1> ${errorMessage }</h1>
@@ -86,7 +86,7 @@
 												class="glyphicon glyphicon-user"></span></span>
 												<br>
 												<input type="datetime-local"
-												class="form-control" name="activity" id="activity"
+												class="form-control" name="when" id="when"
 												placeholder="Date/Time">
 												<br>
 

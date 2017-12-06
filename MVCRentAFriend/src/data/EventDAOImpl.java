@@ -63,7 +63,7 @@ public class EventDAOImpl implements EventDAO {
 			Event destroyEvent = em.find(Event.class, id);
 			String queryEvent = "DELETE FROM Event e WHERE e.id = :id";
 			int num1 = em.createQuery(queryEvent).setParameter("id", id).executeUpdate();
-			
+
 			String queryAddress = "DELETE FROM Address a WHERE a.id = :id";
 			int num2 = em.createQuery(queryAddress).setParameter("id", destroyEvent.getAddress().getId()).executeUpdate();
 //			em.remove(destroyEvent);
@@ -185,11 +185,19 @@ public class EventDAOImpl implements EventDAO {
 
 		@Override
 		public List<Event> getAllEventsByKeyword(String title) {
-			String query = "SELECT e FROM Event e WHERE e.title LIKE CONCAT('%', :title,'%')";
-			return em.createQuery(query, Event.class).setParameter("title", title).getResultList();
+			String query = "SELECT e FROM Event e Where e.title"
+					+ " LIKE CONCAT('%', :title,'%')"
+					+ " OR e.address.city LIKE CONCAT('%', :city,'%')"
+					+ " OR e.address.state LIKE CONCAT('%', :state,'%')"
+					+ " OR e.description LIKE CONCAT('%', :desc,'%')"
+					+ " OR e.activity LIKE CONCAT('%', :activity,'%')";
+			return em.createQuery(query, Event.class)
+					.setParameter("title", title)
+					.setParameter("city", title)
+					.setParameter("state", title)
+					.setParameter("desc", title)
+					.setParameter("activity",title)
+					.getResultList();
 		}
-
-
-
 
 }
