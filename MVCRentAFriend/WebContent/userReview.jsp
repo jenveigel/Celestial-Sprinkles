@@ -28,7 +28,9 @@
 
 				<div class="col-sm-3 bg-secondary text-center">
 				<br>
-				<img src="${profile.imageURL }" class="img-thumbnail" alt="${profile.firstName }" width="300px" height="300px">
+				<img src="${profile.imageURL }"  
+					alt="${profile.firstName }" 
+					style="width: 300px; height: 300px">
 
 					<div class="container" style="max-width: 70%;">
 				<div class="row justify-content-center">
