@@ -56,7 +56,7 @@ public class EventController {
 		newAddress.setState(state);
 		//date time
 		if(when.trim().equals("")) {
-			mv.addObject("errorMessage","fix you time foo");
+			mv.addObject("errorMessage","Enter A Time and Date");
 			mv.setViewName("createevent.jsp");
 			return mv;
 		}

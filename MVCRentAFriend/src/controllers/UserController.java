@@ -89,6 +89,7 @@ public class UserController {
 	@RequestMapping(path="addReview.do", method = RequestMethod.POST)
 	public ModelAndView addReview(Integer uid, String comment, Integer rating) {
 		ModelAndView mv = new ModelAndView();
+
 		boolean bool = dao.addReview(uid, comment, rating);
 		//System.out.println(bool);
 		System.out.println(dao.getReviewsByUser(uid));

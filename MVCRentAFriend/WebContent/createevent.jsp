@@ -29,7 +29,7 @@
 							<span class="input-group-addon"><span
 								class="glyphicon glyphicon-user"></span></span> <input type="text"
 								class="form-control" name="title" id="title"
-								placeholder="Event Title">
+								placeholder="Event Title" required>
 						</div>
 					</div>
 					<div class="col-sm-6">
@@ -37,7 +37,7 @@
 							<span class="input-group-addon"><span
 								class="glyphicon glyphicon-lock"></span></span> <input type="text"
 								class="form-control" name="street" id="street"
-								placeholder="Street Address">
+								placeholder="Street Address" required>
 						</div>
 						<br>
 					</div>
@@ -48,7 +48,7 @@
 								<span class="input-group-addon"><span
 									class="glyphicon glyphicon-user"></span></span> <input type="text"
 									class="form-control" name="city" id="city"
-									placeholder="City">
+									placeholder="City" required>
 							</div>
 							</div>
 					<div class="col-sm-6">
@@ -56,7 +56,7 @@
 								<span class="input-group-addon"><span
 									class="glyphicon glyphicon-user"></span></span> <input type="text"
 									class="form-control" name="state" id="state"
-									placeholder="State Abbreviation">
+									placeholder="State Abbreviation" required>
 							</div>
 							<br>
 						</div>
@@ -65,7 +65,7 @@
 									<span class="input-group-addon"><span
 										class="glyphicon glyphicon-user"></span></span> <input type="text"
 										class="form-control" name="desc" id="desc"
-										placeholder="Short Description">
+										placeholder="Short Description" required>
 								</div>
 							</div>
 							<div class="col-sm-6">
@@ -73,7 +73,7 @@
 										<span class="input-group-addon"><span
 											class="glyphicon glyphicon-user"></span></span> <input type="text"
 											class="form-control" name="activity" id="activity"
-											placeholder="Activity">
+											placeholder="Activity" required>
 
 									</div>
 									<br>
@@ -87,7 +87,7 @@
 												<br>
 												<input type="datetime-local"
 												class="form-control" name="when" id="when"
-												placeholder="Date/Time">
+												placeholder="Date/Time" required>
 												<br>
 
 										</div>

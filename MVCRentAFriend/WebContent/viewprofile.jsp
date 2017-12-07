@@ -97,7 +97,7 @@
 									<div class="row">
 
 										<form action="addReview.do" method="post">
-											<input type="radio" name="rating" value="1"> 1 <input
+											<input type="radio" name="rating" value="1" required> 1 <input
 												type="radio" name="rating" value="2"> 2 <input
 												type="radio" name="rating" value="3"> 3 <input
 												type="radio" name="rating" value="4"> 4 <input
