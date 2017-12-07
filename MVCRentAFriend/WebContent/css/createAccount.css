@@ -15,3 +15,9 @@ textarea {
     font-size: 16px;
     resize: none;
 }
+
+.bg-dark navbar-dark {
+	background-color: pink;
+	color: lavendar;
+	border-color: cyan;
+}

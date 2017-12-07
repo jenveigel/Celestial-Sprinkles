@@ -109,7 +109,7 @@ public class ProfileController {
 			}
 
 			Profile prof = dao.updateProfile(id, profile);
-			
+
 			mv.addObject("profile", prof);
 			mv.setViewName("viewprofile.do");
 			return mv;

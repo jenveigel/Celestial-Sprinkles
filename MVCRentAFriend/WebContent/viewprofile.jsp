@@ -47,6 +47,12 @@
 							</form>
 						</c:if>
 				
+						
+							<div>&nbsp</div>
+							 
+							
+						
+				
 						<br>
 						<c:if test="${sessionUser.id == user.id }">
 							<form action="editProfileWithValues.do" method="GET">
@@ -59,7 +65,7 @@
 				</div>
 				
 				<br>
-				<div class="container" style="max-width: 50%;">
+				<div class="container" style="max-width: 70%;">
 				<div class="row justify-content-center">
 					<!-- Button trigger modal -->
 					<button type="button" class="btn btn-black btn-lg" data-toggle="modal"
@@ -68,15 +74,13 @@
 				<br>
 				<div class="row justify-content-center">
 					<!-- Button trigger modal -->
-					<form action="viewUserReviews.do" method="get">
-		    			<input type="hidden" value="${user.id }" name="uid"></input>
-		    			<input class="btn btn-black btn-lg" type="submit" value="See all user reviews" />
-				</form>
-	
+					
+					<a href="viewUserReviews.do?uid=${user.id }">
+						<button type="button" class="btn btn-black btn-lg">See all user reviews</button>
+					</a>
+					
 				</div>
 				</div>
-
-
 
 				<!-- Modal -->
 				<div class="modal fade" id="review${user.id }" tabindex="-1"
@@ -86,10 +90,7 @@
 						<div class="modal-content">
 							<div class="modal-header">
 								<h5 class="modal-title" id="exampleModalLabel">Review User</h5>
-								<button type="button" class="close" data-dismiss="modal"
-									aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
+								
 							</div>
 							<div class="modal-body">
 								<div class="container-fluid">
@@ -132,7 +133,9 @@
 			<div class="col-sm-4 bg-secondary myBox">
 				<br>
 				<c:if test="${events != null }">
+				<div class="container text-center">
 					<h4>Events Attending</h4>
+					</div>
 					<c:forEach var="event" items="${events }">
 						<div class="col">
 							<!-- Button trigger modal -->
@@ -296,13 +299,11 @@
 			</div>
 			<div class="col-sm-5 bg-secondary myBox">
 				<br>
-				<div class="col">
-					<div class="container ">
-
+					<div class="container text-center">
 						<h4>${profile.firstName }'s Bio</h4>
-						<p class="lead">${profile.bio }</p>
 					</div>
-				</div>
+						<p class="lead">${profile.bio }</p>
+					
 			</div>
 
 		</div>
