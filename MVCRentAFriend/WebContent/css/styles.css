@@ -13,6 +13,12 @@ body,html {
 	color:darkbrown;
 }
 
+.btn-primary {
+	background-color: #B5CEB8;
+	color: black;
+	border-color: #B5CEB8;
+}
+
 .btn-danger {
 	background-color: #4A6B4E;
 	color: white;
