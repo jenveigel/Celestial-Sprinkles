@@ -12,12 +12,12 @@ Users can:
  - Create an Account
  - Login
  - View Posted events and choose to attend them
- - Create there own events
- - Edit there profile to display information about themselves
+ - Create their own events
+ - Edit their profile to display information about themselves
  - View profiles of other users
  - Search through the list of all events
  - Update and Delete an event they created
- - Cancel there RSVP to an event
+ - Cancel their RSVP to an event
 
 Technologies used:
  - JAVA		
