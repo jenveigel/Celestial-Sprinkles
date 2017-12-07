@@ -26,14 +26,14 @@
 
 		<div class="row">
 
-				<div class="col-sm-3 bg-secondary">
+				<div class="col-sm-3 bg-secondary text-center">
 				<br>
-				<img src="${profile.imageURL }" class="img-thumbnail" alt="${profile.firstName }" width="300" height="300">
+				<img src="${profile.imageURL }" class="img-thumbnail" alt="${profile.firstName }" width="300px" height="300px">
 
 					<div class="container" style="max-width: 70%;">
 				<div class="row justify-content-center">
 					<!-- Button trigger modal -->
-					<button type="button" class="btn btn-black btn-lg" data-toggle="modal"
+					<button type="button" class="btn btn-black btn-lg mt-3" data-toggle="modal"
 						data-target="#review${user.id }">Review User</button>
 				</div>
 				<br>

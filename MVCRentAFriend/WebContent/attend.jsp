@@ -43,7 +43,7 @@
 	</div>
 </nav>
 
-<div class="w3-sidebar w3-bar-block bg-dark w3-text-white" style="width:10%">
+<div class="w3-sidebar w3-bar-block bg-dark w3-text-white pl-3" style="width:10%">
 	<h3>Search By</h3>
 	<hr>
         <ul class="list-unstyled components">
