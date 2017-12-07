@@ -296,13 +296,11 @@
 			</div>
 			<div class="col-sm-5 bg-secondary myBox">
 				<br>
-				<div class="col">
-					<div class="container ">
-
+					<div class="container text-center">
 						<h4>${profile.firstName }'s Bio</h4>
-						<p class="lead">${profile.bio }</p>
 					</div>
-				</div>
+						<p class="lead">${profile.bio }</p>
+					
 			</div>
 
 		</div>
