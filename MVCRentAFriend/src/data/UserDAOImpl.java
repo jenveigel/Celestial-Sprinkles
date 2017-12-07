@@ -85,7 +85,7 @@ public class UserDAOImpl implements UserDAO {
 		String queryUser = "DELETE FROM User u WHERE u.id = :uid";
 		int num1 = em.createQuery(queryUser).setParameter("uid", uid).executeUpdate();
 		
-//		//Profile profile = new Profile();
+//		Profile profile = new Profile();
 		String queryProfile = "DELETE FROM Profile p WHERE p.id = :pid";
 		int num2 = em.createQuery(queryProfile).setParameter("pid", uid).executeUpdate();
 		
