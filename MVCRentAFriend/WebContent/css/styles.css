@@ -13,6 +13,23 @@ body,html {
 	color:darkbrown;
 }
 
+.btn-danger {
+	background-color: #4A6B4E;
+	color: white;
+	border-color: #4A6B4E;
+}
+.btn-warning {
+	background-color: #4A6B4E;
+	color: white;
+	border-color: #4A6B4E;
+}
+
+.btn-black {
+	background-color: #B5CEB8;
+	color: black;
+	border-color: #B5CEB8;
+}
+
 h1 {
 	color: white;
 	text-align: center;

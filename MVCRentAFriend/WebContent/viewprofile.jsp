@@ -47,6 +47,12 @@
 							</form>
 						</c:if>
 				
+						
+							<div>&nbsp</div>
+							 
+							
+						
+				
 						<br>
 						<c:if test="${sessionUser.id == user.id }">
 							<form action="editProfileWithValues.do" method="GET">
