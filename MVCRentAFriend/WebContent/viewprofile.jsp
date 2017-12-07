@@ -132,7 +132,9 @@
 			<div class="col-sm-4 bg-secondary myBox">
 				<br>
 				<c:if test="${events != null }">
+				<div class="container text-center">
 					<h4>Events Attending</h4>
+					</div>
 					<c:forEach var="event" items="${events }">
 						<div class="col">
 							<!-- Button trigger modal -->
