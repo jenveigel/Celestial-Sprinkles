@@ -1,6 +1,6 @@
 <nav class="navbar sticky-top navbar-expand-sm bg-dark navbar-dark">
 
-	<a class="navbar-brand" href="index.jsp"> <img src="logo.png"
+	<a class="navbar-brand" href="index.jsp"> <img src="logo2.png"
 		style="width: 65px; padding-top: 10px;"></a>
 	
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
