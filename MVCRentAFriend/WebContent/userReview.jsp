@@ -53,16 +53,13 @@
 					    <div class="modal-content">
 					      <div class="modal-header">
 					        <h5 class="modal-title" id="exampleModalLabel">Review User</h5>
-					        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					          <span aria-hidden="true">&times;</span>
-					        </button>
 					      </div>
 					      <div class="modal-body">
 									<div class="container-fluid">
 										<div class="row">
 
 					        		<form action="addReview.do" method="post">
-					            <input type="radio" name="rating" value="1"> 1
+					            <input type="radio" name="rating" value="1" required> 1
 					            <input type="radio" name="rating" value="2"> 2
 					            <input type="radio" name="rating" value="3"> 3
 					            <input type="radio" name="rating" value="4"> 4
@@ -96,7 +93,7 @@
 				<!-- <div class="col">
 				<div class="row"> -->
 				<c:forEach var="review" items="${reviews }">
-				<div class="row border mr-3 ml-3 mb-3 p-2">
+				<div class="border mr-3 ml-3 mb-3 p-2">
 					<h4>${review.review} &nbsp</h4>
 					<h4><strong>Rating: ${review.rating}</strong></h4>
 				</div>
