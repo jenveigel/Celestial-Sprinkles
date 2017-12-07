@@ -65,7 +65,7 @@
 				</div>
 				
 				<br>
-				<div class="container" style="max-width: 50%;">
+				<div class="container" style="max-width: 75%;">
 				<div class="row justify-content-center">
 					<!-- Button trigger modal -->
 					<button type="button" class="btn btn-black btn-lg" data-toggle="modal"
@@ -74,10 +74,13 @@
 				<br>
 				<div class="row justify-content-center">
 					<!-- Button trigger modal -->
-					<form action="viewUserReviews.do" method="get">
+					
+					<button type="button" class="btn btn-black btn-lg" data-target="viewUserReviews.do">See all user reviews</button>
+					
+				<%-- 	<form action="viewUserReviews.do" method="get">
 		    			<input type="hidden" value="${user.id }" name="uid"></input>
 		    			<input class="btn btn-black btn-lg" type="submit" value="See all user reviews" />
-				</form>
+				</form> --%>
 	
 				</div>
 				</div>
