@@ -65,7 +65,7 @@
 				</div>
 				
 				<br>
-				<div class="container" style="max-width: 75%;">
+				<div class="container" style="max-width: 70%;">
 				<div class="row justify-content-center">
 					<!-- Button trigger modal -->
 					<button type="button" class="btn btn-black btn-lg" data-toggle="modal"
@@ -75,17 +75,12 @@
 				<div class="row justify-content-center">
 					<!-- Button trigger modal -->
 					
-					<button type="button" class="btn btn-black btn-lg" data-target="viewUserReviews.do">See all user reviews</button>
+					<a href="viewUserReviews.do?uid=${user.id }">
+						<button type="button" class="btn btn-black btn-lg">See all user reviews</button>
+					</a>
 					
-				<%-- 	<form action="viewUserReviews.do" method="get">
-		    			<input type="hidden" value="${user.id }" name="uid"></input>
-		    			<input class="btn btn-black btn-lg" type="submit" value="See all user reviews" />
-				</form> --%>
-	
 				</div>
 				</div>
-
-
 
 				<!-- Modal -->
 				<div class="modal fade" id="review${user.id }" tabindex="-1"
@@ -95,10 +90,7 @@
 						<div class="modal-content">
 							<div class="modal-header">
 								<h5 class="modal-title" id="exampleModalLabel">Review User</h5>
-								<button type="button" class="close" data-dismiss="modal"
-									aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
+								
 							</div>
 							<div class="modal-body">
 								<div class="container-fluid">
