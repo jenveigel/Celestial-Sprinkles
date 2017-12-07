@@ -30,13 +30,22 @@
 				<br>
 				<img src="${profile.imageURL }" class="img-thumbnail" alt="${profile.firstName }" width="300" height="300">
 
-						<br>
-							<div class="row justify-content-center">
-								<!-- Button trigger modal -->
-								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#review${user.id }">
-									Review User
-								</button>
-							</div>
+					<div class="container" style="max-width: 70%;">
+				<div class="row justify-content-center">
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-black btn-lg" data-toggle="modal"
+						data-target="#review${user.id }">Review User</button>
+				</div>
+				<br>
+				<div class="row justify-content-center">
+					<!-- Button trigger modal -->
+					
+					<a href="viewUserProfile.do?uid=${user.id }">
+						<button type="button" class="btn btn-black btn-lg">Back to ${user.userName}'s profile</button>
+					</a>
+					
+				</div>
+				</div>
 
 					<!-- Modal -->
 					<div class="modal fade" id="review${user.id }" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -88,7 +97,7 @@
 				<div class="row"> -->
 				<c:forEach var="review" items="${reviews }">
 				<div class="row border mr-3 ml-3 mb-3 p-2">
-					<h4>${review.review}</h4>
+					<h4>${review.review} &nbsp</h4>
 					<h4><strong>Rating: ${review.rating}</strong></h4>
 				</div>
 				</c:forEach>
