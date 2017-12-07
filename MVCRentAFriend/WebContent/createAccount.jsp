@@ -18,7 +18,7 @@
 
 	<nav class="navbar sticky-top navbar-expand-sm bg-dark navbar-dark"> <a
 		class="navbar-brand" href="loginPage.do"> <img src="logo.png"
-		style="width: 65px; padding-top: 10px;">
+		style="width: 65px;">
 	</a>
 
 	</nav>
