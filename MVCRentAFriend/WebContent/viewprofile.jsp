@@ -76,7 +76,7 @@
 					<!-- Button trigger modal -->
 					
 					<a href="viewUserReviews.do?uid=${user.id }">
-						<button type="button" class="btn btn-black btn-lg">See all user reviews</button>
+						<button type="button" class="btn btn-black btn-lg">See all ${user.userName }'s reviews</button>
 					</a>
 					
 				</div>
