@@ -84,18 +84,18 @@
 				</div>
 				<div class="col-sm-9 bg-secondary myBox">
 				<br>
-					<div class="col">
-  					<div class="row">
-			<c:forEach var="review" items="${reviews }">
-				<div class="col">
-					<h4>${review.review }</h4>
-					<h4>Rating: ${review.rating }</h4>
+				<!-- <div class="col">
+				<div class="row"> -->
+				<c:forEach var="review" items="${reviews }">
+				<div class="row border mr-3 ml-3 mb-3 p-2">
+					<h4>${review.review}</h4>
+					<h4><strong>Rating: ${review.rating}</strong></h4>
 				</div>
-			</c:forEach>
-			<%-- ${user.rating } --%>
-		</div>
-					</div>
+				</c:forEach>
+				<%-- ${user.rating } --%>
 				</div>
+				<!-- </div>
+				</div> -->
 
 		</div>
 		<div class="row">

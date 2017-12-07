@@ -93,7 +93,8 @@ public class UserController {
 		//System.out.println(bool);
 		System.out.println(dao.getReviewsByUser(uid));
 		 
-		mv.setViewName("redirect:viewprofile.do?uid=uid");
+		mv.addObject("uid", uid);
+		mv.setViewName("redirect:viewUserReviews.do");
 		return mv;
 	}
 	
