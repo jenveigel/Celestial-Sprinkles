@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import data.UserDAO;
 import entities.Event;
 import entities.User;
-//why
+//why i dont know
 @Controller
 public class UserController {
 
